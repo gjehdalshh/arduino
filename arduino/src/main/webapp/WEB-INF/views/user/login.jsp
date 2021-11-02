@@ -10,6 +10,7 @@
 	<div>
 		<div>ID</div>
 		<div><input class="user_id" type="text" id="user_id"></div>
+		<div>비밀번호</div>
 	</div>
 </div>
 
