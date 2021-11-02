@@ -10,6 +10,7 @@ public class UserEntity {
 	private String user_phone;
 	private int user_gender;
 	private String r_dt;
+	
 	public int getI_user() {
 		return i_user;
 	}
