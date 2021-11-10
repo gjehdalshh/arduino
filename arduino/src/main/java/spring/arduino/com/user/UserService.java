@@ -1,5 +1,7 @@
 package spring.arduino.com.user;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -12,16 +14,19 @@ public class UserService {
 	@Autowired
 	private UserMapper mapper;
 	
-	public void ins_user(UserDTO dto) {
+	@Autowired
+	private HttpSession hs;
+	
+	public int ins_user(UserDTO dto) {
 		
 		UserDomain vo = mapper.selUser(dto);
 		
-		if(!vo.getUser_id().equals("")) {
-			System.out.println("확인");
-			return;
+		if(vo != null) {
+			return 2;
 		}
 		
-		mapper.ins_user(dto);
+		return mapper.ins_user(dto);
+
 	}
 	
 	public int loginProc(UserDTO dto) {
@@ -31,6 +36,8 @@ public class UserService {
 		if(vo == null) {
 			return 2;
 		}
+		
+		hs.setAttribute("user", vo);
 		
 		return 1;
 	}

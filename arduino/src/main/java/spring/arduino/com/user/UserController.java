@@ -36,11 +36,14 @@ public class UserController {
 	@GetMapping("/user/join")
 	public void join() {}
 	
-	@PostMapping("/user/join")
-	public void join(Model model, UserDTO dto) {
-		service.ins_user(dto);
+	@ResponseBody
+	@PostMapping("/user/joinProc")
+	public Map<String, Object> join(@RequestBody UserDTO dto) {
+		Map<String, Object> val = new HashMap<String, Object>();
 		
-		return;
+		val.put("result", service.ins_user(dto));
+		
+		return val;
 	}
 
 }

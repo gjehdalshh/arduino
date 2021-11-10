@@ -7,7 +7,7 @@
 	<div class="title_div">
 		<div><img class="main_logo"alt="" src="/res/img/title_logo.png"></div>
 		<div class="title">내 목소리가 보여</div>
-	</div>
+	</div>   
 	<div class="login_div">
 		<div><input class="user_id" type="text"></div>
 		<div><input class="user_pw" type="password"></div>
