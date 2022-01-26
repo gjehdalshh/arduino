@@ -11,5 +11,6 @@
 	</div>
 </div>
 <div>aa</div>
+<div>bb</div>
 
 <script defer src="/res/js/main/insBoard.js?ver=15"></script>
