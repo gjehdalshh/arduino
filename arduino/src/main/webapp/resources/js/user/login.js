@@ -13,7 +13,6 @@ login_btn.onclick = function() {
 		user_id: id.value,
 		user_pw: pw.value
 	}
-	{"user_id: id.value", "user_pw : "}
 	console.log(param)
 	
 	fetch(`/user/loginProc`, {

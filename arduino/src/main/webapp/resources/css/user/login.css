@@ -34,7 +34,7 @@ body {
 	margin-bottom: 5px;
 }
 
-.user_btn {
+.login_btn {
 	width: 500px;
 	height: 45px;
 	border-radius: 10px;
@@ -43,7 +43,7 @@ body {
 	background-color: aliceblue;
 }
 
-.user_btn {
+.login_btn {
 	font-size: 25px;
 }
 .find_div {
