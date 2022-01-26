@@ -10,7 +10,5 @@
 		<input class="insBoard_btn" type="button" value="글 등록">
 	</div>
 </div>
-<div>aa</div>
-<div>aaaaa</div>
 
 <script defer src="/res/js/main/insBoard.js?ver=15"></script>

@@ -20,9 +20,7 @@ public class UserController {
 	private UserService service;
 	
 	@GetMapping("/user/login")
-	public void login() {
-		System.out.println("aaa");
-	}
+	public void login() {}
 	
 	@ResponseBody
 	@PostMapping("/user/loginProc")
