@@ -21,7 +21,7 @@ public class UserController {
 	
 	@GetMapping("/user/login")
 	public void login() {
-		
+		System.out.println("aaa");
 	}
 	
 	@ResponseBody
