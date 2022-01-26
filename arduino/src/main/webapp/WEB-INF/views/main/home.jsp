@@ -11,6 +11,14 @@
 	<div>${user.user_id}</div>
 	<div>서버 연결</div>
 	<div>test</div>
+<<<<<<< HEAD
+=======
+	<div>aaa</div>
+	<div>sdfsdf</div>
+	<div>asdasdsda</div>
+	<div>asdsadsadds</div>
+	<div>dsfdsf</div>
+>>>>>>> branch 'subBranch' of https://github.com/gjehdalshh/arduino.git
 	<div>test2</div>
 </body>
 </html>
