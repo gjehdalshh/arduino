@@ -15,3 +15,5 @@ public class MainService {
 		return mapper.insBoardProc(dto);
 	}
 }
+
+
