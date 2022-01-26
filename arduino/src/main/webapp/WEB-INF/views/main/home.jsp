@@ -8,5 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<div>${user.user_id}</div>
+	<div>서버 연결</div>
 </body>
 </html>
