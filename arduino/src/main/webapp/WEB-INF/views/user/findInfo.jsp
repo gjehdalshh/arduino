@@ -3,8 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <link rel="stylesheet" href="/res/css/user/findInfo.css?ver=2">
 
-
-
 <div>
 	<c:if test="${param.page == 1}">
 		<div>
