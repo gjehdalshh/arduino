@@ -32,6 +32,8 @@ body {
 	border-radius: 10px;
 	border: 0.1px solid darkgray;
 	margin-bottom: 5px;
+	font-size: 28px;
+    padding: 0 10px;
 }
 
 .login_btn {
