@@ -10,5 +10,5 @@ public interface UserMapper {
 	int ins_user(UserDTO dto);
 	UserDomain selUser(UserDTO dto);
 	UserDomain selNick(UserDTO dto);
-	int loginProc(UserDTO dto);
+	UserDomain findInfo(UserDTO dto);
 }

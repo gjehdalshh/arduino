@@ -3,6 +3,10 @@ function moveJoin() {
 	location.href = "/user/join"
 }
 
+function moveFindInfo(page) {
+	location.href = "/user/findInfo?page="+page
+}
+
 var login_btn = document.querySelector('.login_btn')
 
 login_btn.onclick = function() {

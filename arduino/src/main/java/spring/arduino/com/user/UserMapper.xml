@@ -18,8 +18,8 @@
 	SELECT * FROM t_user WHERE user_nick = #{user_nick};
 </select>
 
-<select id="loginProc" resultType="UserDomain">
-	SELECT * FROM t_user WHERE user_id = 'aaaa' AND user_pw = 'ehdals11';
+<select id="findInfo" resultType="UserDomain">
+	SELECT * FROM t_user WHERE user_nm = #{user_nm} AND user_phone = #{user_phone};
 </select>
 
 </mapper>

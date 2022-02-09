@@ -79,4 +79,28 @@ public class UserService {
 		
 		return 1;
 	}
+	
+	public UserDomain findInfo(UserDTO dto) {
+		
+		UserDomain vo = mapper.findInfo(dto);
+		
+		if(vo == null) {
+			UserDomain emptyVo = null;
+			emptyVo.setUser_id("error");
+			return emptyVo;
+		}
+		
+		return vo;
+	}
+	
+	public String findId(UserDTO dto) {
+		
+		UserDomain vo = mapper.findInfo(dto);
+		return vo.getUser_id();
+	}
+	
+	
+	
+	
+	
 }

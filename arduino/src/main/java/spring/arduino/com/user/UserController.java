@@ -1,5 +1,6 @@
 package spring.arduino.com.user;
 
+import java.lang.ProcessBuilder.Redirect;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import spring.arduino.com.DTO.UserDTO;
 
@@ -43,6 +45,34 @@ public class UserController {
 		
 		return val;
 	}
+	
+	@GetMapping("/user/findInfo")
+	public void findInfo() {}
+	
+	
+	@ResponseBody
+	@PostMapping("/user/findInfo")
+	public Map<String, Object> findInfo(Model model, @RequestBody UserDTO dto){
+		Map<String, Object> val = new HashMap<String, Object>();
+		
+		val.put("result", service.findInfo(dto));	
+		
+		return val;
+	}
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
