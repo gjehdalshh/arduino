@@ -9,7 +9,7 @@
 	<c:if test="${param.page == 1}">
 		<div>
 			<div class="flex">
-				<div>이름</div>
+				<div>이름ㅇ</div>
 				<div><input class="user_nm" type="text"></div>
 			</div>
 			<div class="flex">
