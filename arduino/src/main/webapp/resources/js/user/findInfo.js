@@ -21,7 +21,12 @@ function findInfo() {
 		}).then(function(res) {
 			return res.json()
 		}).then(function(data) {
-			findIdAjax(data.result)
+			console.log(data)
+			if(data.result.user_id == 'error') {
+				alert('아이디가 존재하지 않습니다.')
+			} else {
+				findIdAjax(data.result)
+			}
 		})
 }
 let findId = document.getElementById('findId')
