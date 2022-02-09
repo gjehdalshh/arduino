@@ -3,6 +3,10 @@ function moveJoin() {
 	location.href = "/user/join"
 }
 
+function moveFindInfo(page) {
+	location.href = "/user/findInfo?page="+page
+}
+
 var login_btn = document.querySelector('.login_btn')
 
 login_btn.onclick = function() {
@@ -28,9 +32,13 @@ login_btn.onclick = function() {
 			switch(data.result) {
 				case 1:
 					alert('로그인이 성공하였습니다')
+					location.href = `/main/home`
 					break;
 				case 2:
 					alert('아이디가 존재하지 않습니다')
+					break;
+				case 3:
+					alert('비밀번호가 일치하지 않습니다')
 					break;
 			}
 		})

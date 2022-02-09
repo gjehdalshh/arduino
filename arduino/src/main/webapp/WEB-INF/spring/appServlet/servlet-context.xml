@@ -48,6 +48,10 @@
 			value="spring.arduino.com" />
 	</beans:bean>
 	
+	<beans:bean id="bcryptPasswordEncoder"
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+	
+	
 	<mybatis-spring:scan
 		base-package="spring.arduino.com" />
 	

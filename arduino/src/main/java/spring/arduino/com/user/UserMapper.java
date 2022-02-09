@@ -9,5 +9,6 @@ import spring.arduino.com.domain.UserDomain;
 public interface UserMapper {
 	int ins_user(UserDTO dto);
 	UserDomain selUser(UserDTO dto);
-	int loginProc(UserDTO dto);
+	UserDomain selNick(UserDTO dto);
+	UserDomain findInfo(UserDTO dto);
 }
