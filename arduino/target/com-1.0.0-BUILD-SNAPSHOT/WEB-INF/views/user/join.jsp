@@ -21,6 +21,12 @@
 				</div>
 			</div>
 			<div>
+				<div class="textChkPw">비밀번호 확인</div>
+				<div>
+					<input class="user_chkPw" type="password">
+				</div>
+			</div>
+			<div>
 				<div class="textName">이름</div>
 				<div>
 					<input class="user_name" type="text">

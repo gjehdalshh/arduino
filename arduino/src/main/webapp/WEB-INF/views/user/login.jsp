@@ -9,8 +9,8 @@
 		<div class="title">내 목소리가 보여</div>
 	</div>   
 	<div class="login_div">
-		<div><input class="user_id" type="text"></div>
-		<div><input class="user_pw" type="password"></div>
+		<div><input class="user_id" type="text" placeholder="아이디"></div>
+		<div><input class="user_pw" type="password" placeholder="비밀번호"></div>
 		<div><input class="login_btn" type="button" value="로그인"></div>
 	</div>
 	<div class="find_div">
@@ -24,3 +24,8 @@
 
 
 <script defer src="/res/js/user/login.js?ver=87"></script>
+
+
+
+
+
