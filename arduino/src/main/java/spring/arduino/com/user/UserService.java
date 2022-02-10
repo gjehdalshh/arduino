@@ -85,7 +85,7 @@ public class UserService {
 		UserDomain vo = mapper.findInfo(dto);
 		
 		if(vo == null) {
-			UserDomain emptyVo = null;
+			UserDomain emptyVo = new UserDomain();
 			emptyVo.setUser_id("error");
 			return emptyVo;
 		}
