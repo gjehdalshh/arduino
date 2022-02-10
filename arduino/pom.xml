@@ -219,10 +219,10 @@
                 </configuration>
             </plugin>
             
-              <plugin>
-          <artifactId>maven-war-plugin</artifactId>
-          <version>3.2.2</version>
-        </plugin>
+             <plugin>
+         		 <artifactId>maven-war-plugin</artifactId>
+          		<version>3.2.2</version>
+        	</plugin>
             
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
