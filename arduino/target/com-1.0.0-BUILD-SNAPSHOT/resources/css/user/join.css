@@ -46,8 +46,9 @@ body {
     border-radius: 10px;
     border: 0.1px solid darkgray;
     font-size: 25px;
-    margin-top: 30;
+    margin: 30 0 200;
     background-color: aliceblue;
+   cursor: pointer;
 }
 
 

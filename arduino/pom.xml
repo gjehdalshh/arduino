@@ -219,14 +219,11 @@
                 </configuration>
             </plugin>
             
-<<<<<<< HEAD
-=======
-              <plugin>
-          <artifactId>maven-war-plugin</artifactId>
-          <version>3.2.2</version>
-        </plugin>
+             <plugin>
+         		 <artifactId>maven-war-plugin</artifactId>
+          		<version>3.2.2</version>
+        	</plugin>
             
->>>>>>> branch 'master' of https://github.com/gjehdalshh/arduino.git
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>

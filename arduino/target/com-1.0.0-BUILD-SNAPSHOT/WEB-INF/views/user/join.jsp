@@ -11,7 +11,7 @@
 			<div>
 				<div class="textId">아이디</div>
 				<div>
-					<input class="user_id" type="text">
+					<input class="user_id" type="text" placeholder="이메일 형식">
 				</div>
 			</div>
 			<div>
@@ -29,7 +29,7 @@
 			<div>
 				<div class="textName">이름</div>
 				<div>
-					<input class="user_name" type="text">
+					<input class="user_name" type="text" placeholder="4글자 이하">
 				</div>
 			</div>
 			<div>
@@ -41,7 +41,7 @@
 			<div>
 				<div class="textPhone">휴대전화</div>
 				<div>
-					<input class="user_phone" type="text">
+					<input class="user_phone" type="text" placeholder="-없이 기입">
 				</div>
 			</div>
 			<div>
@@ -52,4 +52,4 @@
 	</div>
 </div>
 
-<script defer src="/res/js/user/join.js?ver=8"></script>
+<script defer src="/res/js/user/join.js?ver=10"></script>
