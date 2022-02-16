@@ -22,6 +22,7 @@ function findInfo() {
 			return res.json()
 		}).then(function(data) {
 			console.log(data)
+			console.log(data.result)
 			if(data.result.user_id == 'error') {
 				alert('아이디가 존재하지 않습니다.')
 			} else {
@@ -29,9 +30,10 @@ function findInfo() {
 			}
 		})
 }
+
 let findId = document.getElementById('findId')
 function findIdAjax(data) {
-	console.log('aaa')
+
 	findId.innerHTML = `
 		<div>${data.user_id}</div>
 	`

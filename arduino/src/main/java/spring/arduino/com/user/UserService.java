@@ -89,7 +89,6 @@ public class UserService {
 			emptyVo.setUser_id("error");
 			return emptyVo;
 		}
-		
 		return vo;
 	}
 	

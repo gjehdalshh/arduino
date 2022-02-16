@@ -24,4 +24,4 @@
 </div>
 
 
-<script defer src="/res/js/user/findInfo.js?ver=44"></script>
+<script defer src="/res/js/user/findInfo.js?ver=45"></script>
