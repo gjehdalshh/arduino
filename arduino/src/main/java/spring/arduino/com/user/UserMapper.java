@@ -11,4 +11,5 @@ public interface UserMapper {
 	UserDomain selUser(UserDTO dto);
 	UserDomain selNick(UserDTO dto);
 	UserDomain findInfo(UserDTO dto);
+	UserDomain findPassword(UserDTO dto);
 }

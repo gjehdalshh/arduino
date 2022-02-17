@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import spring.arduino.com.DTO.UserDTO;
+import spring.arduino.com.domain.UserDomain;
 
 @Controller
 public class UserController {
@@ -56,9 +57,28 @@ public class UserController {
 		Map<String, Object> val = new HashMap<String, Object>();
 		
 		val.put("result", service.findInfo(dto));	
+
+		return val;
+	}
+	
+	@ResponseBody
+	@PostMapping("/user/findPw")
+	public Map<String, Object> findPw(Model model, @RequestBody UserDTO dto){
+		Map<String, Object> val = new HashMap<String, Object>();
+		
+		UserDomain vo = service.findPassword(dto);
+		
+		val.put("result", vo);
+		
+		if(!vo.getUser_id().equals("error")) {
+			//val.put("pincode", service.randomNum());
+			service.sendMail(dto);
+		}
 		
 		return val;
 	}
+	
+	
 	
 	
 }

@@ -1,8 +1,14 @@
 package spring.arduino.com.user;
 
+import java.util.Random;
+
+import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.security.config.method.MethodSecurityMetadataSourceBeanDefinitionParser;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -21,6 +27,9 @@ public class UserService {
 	
 	@Autowired
 	private BCryptPasswordEncoder bcrypt;
+	
+	@Autowired
+	private JavaMailSender mailSender;
 	
 	public int ins_user(UserDTO dto) {
 		
@@ -89,15 +98,50 @@ public class UserService {
 			emptyVo.setUser_id("error");
 			return emptyVo;
 		}
-		
 		return vo;
 	}
 	
-	public String findId(UserDTO dto) {
+	public UserDomain findPassword(UserDTO dto) {
 		
-		UserDomain vo = mapper.findInfo(dto);
-		return vo.getUser_id();
+		UserDomain vo = mapper.findPassword(dto);
+		
+		if(vo == null) {
+			UserDomain emptyVo = new UserDomain();
+			emptyVo.setUser_id("error");
+			return emptyVo;
+		}
+		return vo;
 	}
+	
+	public int randomNum() {
+	
+			Random r = new Random();
+			int num = r.nextInt(999999);
+			return num;
+	}
+	
+	public void sendMail(UserDTO dto) {
+		
+		String setFrom = "smdf01726@naver.com";
+		String toMail = dto.getUser_id();
+		String title = "[너목보]";
+		String content = "123456";
+		
+		try {
+			MimeMessage message = mailSender.createMimeMessage();
+			
+			MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
+			
+			messageHelper.setFrom(setFrom);
+			messageHelper.setTo(toMail);
+			messageHelper.setSubject(title);
+			messageHelper.setText(content);
+			mailSender.send(message);
+		}catch(Exception e) {
+			System.out.println(e);
+		}
+	}
+
 	
 	
 	
