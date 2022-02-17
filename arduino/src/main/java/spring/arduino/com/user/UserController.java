@@ -49,7 +49,6 @@ public class UserController {
 	@GetMapping("/user/findInfo")
 	public void findInfo() {}
 	
-	
 	@ResponseBody
 	@PostMapping("/user/findInfo")
 	public Map<String, Object> findInfo(Model model, @RequestBody UserDTO dto){
@@ -62,16 +61,6 @@ public class UserController {
 	
 	
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

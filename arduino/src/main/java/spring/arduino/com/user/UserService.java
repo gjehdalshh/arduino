@@ -98,8 +98,4 @@ public class UserService {
 		return vo.getUser_id();
 	}
 	
-	
-	
-	
-	
 }

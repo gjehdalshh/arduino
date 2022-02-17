@@ -1,5 +1,13 @@
+let currentPage = document.querySelector('.currentPage')
+let subTitileId = document.querySelector('.subTitileId')
+let subTitilePw = document.querySelector('.subTitilePw')
 
-let page = document.getElementById('page3')
+
+if(currentPage.value == 1) {
+	subTitileId.style.backgroundColor = '#d4f3ff'
+} else if(currentPage.value == 2) {
+	subTitilePw.style.backgroundColor = '#d4f3ff'
+}
 
 function findInfo() {
 	let nm = document.querySelector('.user_nm')
@@ -33,10 +41,41 @@ function findInfo() {
 
 let findId = document.getElementById('findId')
 function findIdAjax(data) {
-
+	findId.style.display = 'block'
 	findId.innerHTML = `
-		<div>${data.user_id}</div>
+		<div>${data.user_nm}님의 아이디는 ${data.user_id} 입니다.</div>
 	`
+}
+
+function movePage(page) {
+	location.href=`/user/findInfo?page=`+page
+}
+
+function moveHome() {
+	location.href = `/user/login`
+}
+
+let findPw_btn = document.querySelector('.findPw_btn')
+let pinCodeDiv = document.querySelector('.pinCodeDiv')
+let chkPwDiv = document.querySelector('.chkPwDiv')
+let pwDiv = document.querySelector('.pwDiv')
+let sub_div = document.querySelector('.sub_div')
+
+chkPwDiv.style.display = 'none'
+
+findPw_btn.onclick = function() {
+	pinCodeDiv.style.display = 'block'
+}
+
+function chkPw() {
+	pwDiv.style.display = 'none'
+	pinCodeDiv.style.display = 'none'
+	pinCodeDiv.style.display = 'none'
+	chkPwDiv.style.display = 'block'
+}
+
+function changePw() {
+	alert('변경완료')
 }
 
 
