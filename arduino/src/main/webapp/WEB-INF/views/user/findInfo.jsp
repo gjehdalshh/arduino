@@ -63,7 +63,7 @@
 				</div>
 			</div>
 			<div>
-				<input onclick="findInfo()" class="findPw_btn" type="button"
+				<input onclick="findPw()" class="findPw_btn" type="button"
 					value="비밀번호 찾기">
 			</div>
 		</div>
@@ -100,4 +100,4 @@
 </div>
 
 
-<script defer src="/res/js/user/findInfo.js?ver=50"></script>
+<script defer src="/res/js/user/findInfo.js?ver=51"></script>

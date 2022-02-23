@@ -2,7 +2,6 @@ let currentPage = document.querySelector('.currentPage')
 let subTitileId = document.querySelector('.subTitileId')
 let subTitilePw = document.querySelector('.subTitilePw')
 
-
 if(currentPage.value == 1) {
 	subTitileId.style.backgroundColor = '#d4f3ff'
 } else if(currentPage.value == 2) {
@@ -12,7 +11,7 @@ if(currentPage.value == 1) {
 function findInfo() {
 	let nm = document.querySelector('.user_nm')
 	let ph = document.querySelector('.user_ph')
-	
+
 	var param = {
 		user_nm: nm.value,
 		user_phone: ph.value
@@ -31,6 +30,38 @@ function findInfo() {
 		}).then(function(data) {
 			console.log(data)
 			console.log(data.result)
+			if(data.result.user_id == 'error') {
+				alert('아이디가 존재하지 않습니다.')
+			} else {
+				findIdAjax(data.result)
+			}
+		})
+}
+
+function findPw() {
+	let nm = document.querySelector('.user_nm')
+	let ph = document.querySelector('.user_ph')
+	let id = document.querySelector('.user_id')
+		
+	var param = {
+		user_nm: nm.value,
+		user_phone: ph.value,
+		user_id : id.value
+	}
+	
+	console.log(param)
+	
+	fetch(`/user/findPw`, {
+			method: 'POST',
+			headers: {
+		'Content-Type': 'application/json'
+			},
+			body:JSON.stringify(param)
+		}).then(function(res) {
+			return res.json()
+		}).then(function(data) {
+			console.log(data)
+			console.log(data.pincode)
 			if(data.result.user_id == 'error') {
 				alert('아이디가 존재하지 않습니다.')
 			} else {

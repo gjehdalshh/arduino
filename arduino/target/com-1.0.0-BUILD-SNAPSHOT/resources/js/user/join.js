@@ -9,7 +9,7 @@ join_btn.onclick = function() {
 	var name = document.querySelector('.user_name')
 	var nick = document.querySelector('.user_nick')
 	var phone = document.querySelector('.user_phone')
-	console.log('aaa')
+
 	var param = {
 		user_id: id.value,
 		user_pw: pw.value,
@@ -59,3 +59,12 @@ join_btn.onclick = function() {
 			}
 		})
 }
+
+
+function moveHome() {
+	location.href = `/user/login`
+}
+
+
+
+

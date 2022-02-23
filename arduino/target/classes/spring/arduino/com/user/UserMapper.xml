@@ -22,4 +22,8 @@
 	SELECT * FROM t_user WHERE user_nm = #{user_nm} AND user_phone = #{user_phone};
 </select>
 
+<select id="findPassword" resultType="UserDomain">
+	SELECT * FROM t_user WHERE user_nm = #{user_nm} AND user_phone = #{user_phone} AND user_id = #{user_id};
+</select>
+
 </mapper>
