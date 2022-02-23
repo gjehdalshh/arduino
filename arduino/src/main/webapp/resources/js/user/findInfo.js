@@ -38,6 +38,10 @@ function findInfo() {
 		})
 }
 
+function aa() {
+	console.log('aa')
+}
+
 function findPw() {
 	let nm = document.querySelector('.user_nm')
 	let ph = document.querySelector('.user_ph')
@@ -66,6 +70,7 @@ function findPw() {
 				alert('아이디가 존재하지 않습니다.')
 			} else {
 				findIdAjax(data.result)
+				pinCodeDiv.style.display = 'block'
 			}
 		})
 }
@@ -86,17 +91,12 @@ function moveHome() {
 	location.href = `/user/login`
 }
 
-let findPw_btn = document.querySelector('.findPw_btn')
 let pinCodeDiv = document.querySelector('.pinCodeDiv')
 let chkPwDiv = document.querySelector('.chkPwDiv')
 let pwDiv = document.querySelector('.pwDiv')
 let sub_div = document.querySelector('.sub_div')
 
 chkPwDiv.style.display = 'none'
-
-findPw_btn.onclick = function() {
-	pinCodeDiv.style.display = 'block'
-}
 
 function chkPw() {
 	pwDiv.style.display = 'none'
