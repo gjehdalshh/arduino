@@ -8,7 +8,9 @@ if(currentPage.value == 1) {
 	subTitilePw.style.backgroundColor = '#d4f3ff'
 }
 
-function findInfo() {
+/* ------------------- 아이디 찾기 ------------------  */
+
+function findId() {
 	let nm = document.querySelector('.user_nm')
 	let ph = document.querySelector('.user_ph')
 
@@ -19,7 +21,7 @@ function findInfo() {
 	
 	console.log(param)
 	
-	fetch(`/user/findInfo`, {
+	fetch(`/user/findId`, {
 			method: 'POST',
 			headers: {
 		'Content-Type': 'application/json'
@@ -37,6 +39,16 @@ function findInfo() {
 			}
 		})
 }
+
+let findId = document.getElementById('findId')
+function findIdAjax(data) {
+	findId.style.display = 'block'
+	findId.innerHTML = `
+		<div>${data.user_nm}님의 아이디는 ${data.user_id} 입니다.</div>
+	`
+}
+
+/* -------------------------- 비밀번호 찾기 --------------------------- */
 
 function findPw() {
 	let nm = document.querySelector('.user_nm')
@@ -60,22 +72,12 @@ function findPw() {
 		}).then(function(res) {
 			return res.json()
 		}).then(function(data) {
-			console.log(data)
-			console.log(data.pincode)
-			if(data.result.user_id == 'error') {
+			if(data.result == 'error') {
 				alert('아이디가 존재하지 않습니다.')
 			} else {
-				findIdAjax(data.result)
+				pinCodeDiv.style.display = 'block'
 			}
 		})
-}
-
-let findId = document.getElementById('findId')
-function findIdAjax(data) {
-	findId.style.display = 'block'
-	findId.innerHTML = `
-		<div>${data.user_nm}님의 아이디는 ${data.user_id} 입니다.</div>
-	`
 }
 
 function movePage(page) {
@@ -86,7 +88,6 @@ function moveHome() {
 	location.href = `/user/login`
 }
 
-let findPw_btn = document.querySelector('.findPw_btn')
 let pinCodeDiv = document.querySelector('.pinCodeDiv')
 let chkPwDiv = document.querySelector('.chkPwDiv')
 let pwDiv = document.querySelector('.pwDiv')
@@ -94,9 +95,6 @@ let sub_div = document.querySelector('.sub_div')
 
 chkPwDiv.style.display = 'none'
 
-findPw_btn.onclick = function() {
-	pinCodeDiv.style.display = 'block'
-}
 
 function chkPw() {
 	pwDiv.style.display = 'none'

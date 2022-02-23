@@ -19,11 +19,18 @@ import spring.arduino.com.domain.UserDomain;
 @Controller
 public class UserController {
 	
+	final String FIND_ID = "findUserId";
+	final String FIND_PW = "findUserPw";
+	
 	@Autowired
 	private UserService service;
 	
+	/* ---------------- 로그인 페이지 열기 ---------------- */
+	
 	@GetMapping("/user/login")
 	public void login() {}
+	
+	/* ---------------- 로그인 ajax ---------------- */
 	
 	@ResponseBody
 	@PostMapping("/user/loginProc")
@@ -34,8 +41,12 @@ public class UserController {
 		return val;
 	}
 	
+	/* ---------------- 회원가입 페이지 열기 ---------------- */
+	
 	@GetMapping("/user/join")
 	public void join() {}
+	
+	/* ---------------- 회원가입 ajax ---------------- */
 	
 	@ResponseBody
 	@PostMapping("/user/joinProc")
@@ -47,32 +58,32 @@ public class UserController {
 		return val;
 	}
 	
+	/* ---------------- 회원정보 찾기 페이지 열기 ---------------- */
+	
 	@GetMapping("/user/findInfo")
 	public void findInfo() {}
 	
+	/* --------------- 아이디 찾기 ajax ----------------*/
+	
 	@ResponseBody
-	@PostMapping("/user/findInfo")
-	public Map<String, Object> findInfo(Model model, @RequestBody UserDTO dto){
-		Map<String, Object> val = new HashMap<String, Object>();
-		
-		val.put("result", service.findInfo(dto));	
+	@PostMapping("/user/findId")
+	public Map<String, Object> findId(Model model, @RequestBody UserDTO dto){
+		Map<String, Object> val = service.findInfo(dto, FIND_ID);
 
 		return val;
 	}
 	
+	/* --------------- 비밀번호 찾기 ajax ----------------*/
+	
 	@ResponseBody
 	@PostMapping("/user/findPw")
 	public Map<String, Object> findPw(Model model, @RequestBody UserDTO dto){
-		Map<String, Object> val = new HashMap<String, Object>();
+		Map<String, Object> val = service.findInfo(dto, FIND_PW);
 		
-		UserDomain vo = service.findPassword(dto);
-		
-		val.put("result", vo);
-		
-		if(!vo.getUser_id().equals("error")) {
-			//val.put("pincode", service.randomNum());
+		/*if(!vo.getUser_id().equals("error")) {
+			//val.put("pincode", service.createRandomPincode());
 			service.sendMail(dto);
-		}
+		}*/
 		
 		return val;
 	}

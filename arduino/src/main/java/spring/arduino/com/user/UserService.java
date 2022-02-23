@@ -1,5 +1,7 @@
 package spring.arduino.com.user;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 import javax.mail.internet.MimeMessage;
@@ -8,13 +10,12 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
-import org.springframework.security.config.method.MethodSecurityMetadataSourceBeanDefinitionParser;
-import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 
 import spring.arduino.com.DTO.UserDTO;
 import spring.arduino.com.domain.UserDomain;
+
 
 @Controller
 public class UserService {
@@ -89,31 +90,27 @@ public class UserService {
 		return 1;
 	}
 	
-	public UserDomain findInfo(UserDTO dto) {
+	public Map<String, Object> findInfo(UserDTO dto, String pageClassification){
+		Map<String, Object> val = new HashMap<String, Object>();
 		
-		UserDomain vo = mapper.findInfo(dto);
+		UserDomain vo = null;
 		
-		if(vo == null) {
-			UserDomain emptyVo = new UserDomain();
-			emptyVo.setUser_id("error");
-			return emptyVo;
+		if(pageClassification.equals("findUserId")) {
+			vo = mapper.findInfo(dto);
+		} else if (pageClassification.equals("findUserPw")) {
+			vo = mapper.findPassword(dto);
 		}
-		return vo;
-	}
-	
-	public UserDomain findPassword(UserDTO dto) {
 		
-		UserDomain vo = mapper.findPassword(dto);
-		
-		if(vo == null) {
-			UserDomain emptyVo = new UserDomain();
-			emptyVo.setUser_id("error");
-			return emptyVo;
+		if (vo != null) {
+			val.put("result", vo);
+		} else {
+			val.put("result", "error");
 		}
-		return vo;
+		
+		return val;
 	}
-	
-	public int randomNum() {
+
+	public int createRandomPincode() {
 	
 			Random r = new Random();
 			int num = r.nextInt(999999);
@@ -123,6 +120,7 @@ public class UserService {
 	public void sendMail(UserDTO dto) {
 		
 		String setFrom = "smdf01726@naver.com";
+		// 보내는 주소 이름을 바꿀순 없을까..?!
 		String toMail = dto.getUser_id();
 		String title = "[너목보]";
 		String content = "123456";
