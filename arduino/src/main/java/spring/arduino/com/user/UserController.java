@@ -67,30 +67,34 @@ public class UserController {
 	
 	@ResponseBody
 	@PostMapping("/user/findId")
-	public Map<String, Object> findId(Model model, @RequestBody UserDTO dto){
+	public Map<String, Object> findId(@RequestBody UserDTO dto){
 		Map<String, Object> val = service.findInfo(dto, FIND_ID);
 
 		return val;
 	}
 	
-	/* --------------- 비밀번호 찾기 ajax ----------------*/
+	/* --------------- 비밀번호 찾기 ajax ---------------- */
 	
 	@ResponseBody
 	@PostMapping("/user/findPw")
-	public Map<String, Object> findPw(Model model, @RequestBody UserDTO dto){
+	public Map<String, Object> findPw(@RequestBody UserDTO dto){
 		Map<String, Object> val = service.findInfo(dto, FIND_PW);
-		
-		/*if(!vo.getUser_id().equals("error")) {
-			//val.put("pincode", service.createRandomPincode());
-			service.sendMail(dto);
-		}*/
 		
 		return val;
 	}
 	
+	/* --------------- 비밀번호 변경 ajax ----------------- */
 	
-	
-	
+	@ResponseBody
+	@PostMapping("/user/changePw")
+	public Map<String, Object> changPw(@RequestBody UserDTO dto){
+		Map<String, Object> val = new HashMap<String, Object>();
+		
+		val.put("result", service.changePw(dto));
+		
+		return val;
+		
+	}
 }
 
 

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link rel="stylesheet" href="/res/css/user/findInfo.css?ver=8">
+<link rel="stylesheet" href="/res/css/user/findInfo.css?ver=13">
 <input class="currentPage" type="hidden" value="${param.page}">
 
 <div id="main_div">
@@ -70,21 +70,21 @@
 		<div class="pinCodeDiv">
 			<div class="flex">
 				<div class="pinCode">보안코드</div>
-				<div><input class="pinCodeInput" type="text"></div>
-				<div><input onclick="chkPw()" class="pinCodeSubmit" type="button" value="확인"></div>
+				<div><input class="inputPinCode" type="text"></div>
+				<div><input onclick="comparePincode()" class="pinCodeSubmit" type="button" value="확인"></div>
 			</div>
 		</div>
 		<div class="chkPwDiv">
 			<div>
 				<div class="newPw">새 비밀번호</div>
 				<div>
-					<input class="user_newPw" type="text">
+					<input class="userNewPw" type="text">
 				</div>
 			</div>
 			<div>
 				<div class="newChkPw">새 비밀번호 확인</div>
 				<div>
-					<input class="user_newChkPw" type="text">
+					<input class="userNewChkPw" type="text">
 				</div>
 			</div>
 			<div>
@@ -100,4 +100,4 @@
 </div>
 
 
-<script defer src="/res/js/user/findInfo.js?ver=53"></script>
+<script defer src="/res/js/user/findInfo.js?ver=57"></script>

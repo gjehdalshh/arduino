@@ -96,13 +96,18 @@ public class UserService {
 		UserDomain vo = null;
 		
 		if(pageClassification.equals("findUserId")) {
-			vo = mapper.findInfo(dto);
+			vo = mapper.findId(dto);
 		} else if (pageClassification.equals("findUserPw")) {
-			vo = mapper.findPassword(dto);
+			vo = mapper.findPw(dto);
 		}
 		
 		if (vo != null) {
 			val.put("result", vo);
+			if(pageClassification.equals("findUserPw")) {
+				int pinCode = createRandomPincode();
+				sendMail(dto, pinCode);
+				val.put("pinCode", pinCode);
+			}
 		} else {
 			val.put("result", "error");
 		}
@@ -113,17 +118,17 @@ public class UserService {
 	public int createRandomPincode() {
 	
 			Random r = new Random();
-			int num = r.nextInt(999999);
-			return num;
+			return r.nextInt(999999);
+
 	}
 	
-	public void sendMail(UserDTO dto) {
+	public void sendMail(UserDTO dto, int pinCode) {
 		
 		String setFrom = "smdf01726@naver.com";
 		// 보내는 주소 이름을 바꿀순 없을까..?!
 		String toMail = dto.getUser_id();
 		String title = "[너목보]";
-		String content = "123456";
+		String content = pinCode + "";
 		
 		try {
 			MimeMessage message = mailSender.createMimeMessage();
@@ -138,5 +143,12 @@ public class UserService {
 		}catch(Exception e) {
 			System.out.println(e);
 		}
+	}
+	
+	public int changePw(UserDTO dto) {
+		
+		 dto.setNewPw(bcrypt.encode(dto.getNewPw()));
+		 
+		 return mapper.changePw(dto);		
 	}
 }
