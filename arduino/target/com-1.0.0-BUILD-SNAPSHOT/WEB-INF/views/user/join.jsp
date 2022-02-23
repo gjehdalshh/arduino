@@ -5,7 +5,7 @@
 
 <div id="main_div">
 	<div class="main_logo">
-		<img alt="" src="/res/img/title_logo.png">
+		<img onclick="moveHome()" alt="" src="/res/img/main_logo.jpg">
 	</div>
 	<div class="input_div">
 			<div>
@@ -52,4 +52,4 @@
 	</div>
 </div>
 
-<script defer src="/res/js/user/join.js?ver=10"></script>
+<script defer src="/res/js/user/join.js?ver=11"></script>
