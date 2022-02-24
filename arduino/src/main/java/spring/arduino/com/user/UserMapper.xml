@@ -18,12 +18,16 @@
 	SELECT * FROM t_user WHERE user_nick = #{user_nick};
 </select>
 
-<select id="findInfo" resultType="UserDomain">
+<select id="findId" resultType="UserDomain">
 	SELECT * FROM t_user WHERE user_nm = #{user_nm} AND user_phone = #{user_phone};
 </select>
 
-<select id="findPassword" resultType="UserDomain">
+<select id="findPw" resultType="UserDomain">
 	SELECT * FROM t_user WHERE user_nm = #{user_nm} AND user_phone = #{user_phone} AND user_id = #{user_id};
 </select>
+
+<update id="changePw">
+	UPDATE t_user SET user_pw = #{newPw} WHERE i_user = #{i_user}
+</update>
 
 </mapper>

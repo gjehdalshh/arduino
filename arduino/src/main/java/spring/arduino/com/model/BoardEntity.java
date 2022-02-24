@@ -9,6 +9,14 @@ public class BoardEntity {
 	private String m_dt;
 	private int board_hit;
 	private String board_img;
+	private int i_board_list;
+	
+	public int getI_board_list() {
+		return i_board_list;
+	}
+	public void setI_board_list(int i_board_list) {
+		this.i_board_list = i_board_list;
+	}
 	public int getI_board() {
 		return i_board;
 	}
