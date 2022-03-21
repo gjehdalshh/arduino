@@ -53,10 +53,6 @@ public class UserService {
 			return 5;
 		}
 		
-		if (selNick != null) {
-			return 6;
-		}
-		
 		String reg = "^[0-9]*$";
 		String parsePh = dto.getUser_phone().substring(0, 3);
 		
