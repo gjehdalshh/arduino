@@ -60,7 +60,7 @@ body {
     top: 23%;
     left: 48%;
     transform: translate(-20%, 0);
-    width: 330px;
+    width: 332px;
 }
 
 .nm, .ph, .id, .newPw, .newChkPw {
@@ -68,7 +68,7 @@ body {
 	font-weight: 100;
 }
 
-.user_nm, .user_id, .user_ph, .user_newPw, .user_newChkPw, .findId_btn, .changePw, .findPw_btn, .login_btn {
+.user_nm, .user_id, .user_ph, .userNewPw, .userNewChkPw, .findId_btn, .changePw, .findPw_btn, .login_btn {
 	width: 500px;
 	height: 40;
 	border-radius: 7px;
@@ -81,13 +81,13 @@ body {
 	padding: 7px;
 }
 
-.user_ph, .user_newPw {
+.user_ph, .userNewPw {
 	margin: 5 0 15;
 	font-size: 25px;
 	padding: 7px;
 }
 
-.user_id, .user_newChkPw {
+.user_id, .userNewChkPw {
 	margin: 5 0 20;
 	font-size: 25px;
 	padding: 7px;
@@ -123,7 +123,7 @@ body {
     margin: 3 10;
 }
 
-.pinCodeInput {
+.inputPinCode {
 	height: 30;
     border-radius: 5px;
     border: 0.1px solid darkgray;

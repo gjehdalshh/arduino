@@ -19,7 +19,7 @@
 	</div>
 	<div id="bodyDiv">
 		<div class="selectMode">
-			<div class="practiceMode">연습모드</div>
+			<div class="practiceMode">연습모드</div>r
 			<div class="liveMode">실전모드</div>
 		</div>
 		<div class="freeBoard">
@@ -47,6 +47,8 @@
 			</div>
 		</div>
 	</div>
+	<div onclick="load(3)">버튼</div>
+	<div id="loadData"></div>
 </div>
 
-<script defer src="/res/js/main/home.js?ver=90"></script>
+<script defer src="/res/js/main/home.js?ver=9"></script>

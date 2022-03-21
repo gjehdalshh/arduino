@@ -8,6 +8,9 @@
 		(#{i_user}, #{board_title}, #{board_ctnt});
 	</insert>
 
-
+	<select id="selectUser" resultType="TestData">
+		SELECT * FROM test_a
+		WHERE firstName = 'firstName_79022'
+	</select>
 
 </mapper>
