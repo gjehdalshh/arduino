@@ -24,14 +24,14 @@ body {
 	margin: auto;
 }
 
-.textId, .textPw, .textName, .textNick, .textPhone, .textChkPw {
+.textId, .textPw, .textName, .textPhone, .textChkPw {
 	font-size: 20px;
     margin-bottom: 5px;
     font-weight: 100;
     margin-top: 15px;
 }
 
-.user_id, .user_pw, .user_name, .user_nick, .user_phone, .user_chkPw {
+.user_id, .user_pw, .user_name, .user_phone, .user_chkPw {
 	width: 500px;
     height: 45px;
     border-radius: 10px;

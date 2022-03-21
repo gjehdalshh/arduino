@@ -19,7 +19,7 @@ public class MainController {
 	private MainService service;
 	
 	@GetMapping("/main/home")
-	public void test() {}
+	public void home() {}
 	
 	@GetMapping("/main/insBoard")
 	public void insBoard() {}

@@ -5,17 +5,13 @@
 
 <insert id="ins_user">
 	INSERT INTO t_user
-	(user_id, user_pw, user_nm, user_nick, user_phone)
+	(user_id, user_pw, user_nm, user_phone)
 	VALUES
-	(#{user_id}, #{user_pw}, #{user_nm}, #{user_nick}, #{user_phone});
+	(#{user_id}, #{user_pw}, #{user_nm}, #{user_phone});
 </insert>
 
 <select id="selUser" resultType="UserDomain">
 	SELECT * FROM t_user WHERE user_id = #{user_id};
-</select>
-
-<select id="selNick" resultType="UserDomain">
-	SELECT * FROM t_user WHERE user_nick = #{user_nick};
 </select>
 
 <select id="findId" resultType="UserDomain">

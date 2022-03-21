@@ -12,6 +12,15 @@ public class MainService {
 	private MainMapper mapper;
 
 	public int insBoardProc(BoardDTO dto) {
+		
+		if(dto.getBoard_title().equals("")) {
+			return 2;
+		} 
+		
+		if(dto.getBoard_ctnt().equals("") || dto.getBoard_ctnt().length() < 10) {
+			return 3;
+		}
+		
 		return mapper.insBoardProc(dto);
 	}
 }
