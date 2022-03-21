@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link rel="stylesheet" href="/res/css/user/findInfo.css?ver=13">
+<link rel="stylesheet" href="/res/css/user/findInfo.css?ver=18">
 <input class="currentPage" type="hidden" value="${param.page}">
 
 <div id="main_div">
@@ -37,7 +37,7 @@
 				</div>
 			</div>
 			<div>
-				<input onclick="findInfo()" class="findId_btn" type="button"
+				<input onclick="findId()" class="findId_btn" type="button"
 					value="아이디 찾기">
 			</div>
 		</div>
@@ -100,4 +100,4 @@
 </div>
 
 
-<script defer src="/res/js/user/findInfo.js?ver=57"></script>
+<script defer src="/res/js/user/findInfo.js?ver=48"></script>

@@ -92,8 +92,6 @@ let chkPwDiv = document.querySelector('.chkPwDiv')
 let pwDiv = document.querySelector('.pwDiv')
 let sub_div = document.querySelector('.sub_div')
 
-chkPwDiv.style.display = 'none'
-
 function comparePincode() {
 	
 	let inputPinCode = document.querySelector('.inputPinCode')
@@ -146,7 +144,4 @@ function movePage(page) {
 function moveHome() {
 	location.href = `/user/login`
 }
-
-
-
 

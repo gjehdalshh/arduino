@@ -3,11 +3,10 @@
 <mapper namespace="spring.arduino.com.main.MainMapper">
 
 	<insert id="insBoardProc">
-		INSERT INTO t_board(i_user, board_title, board_ctnt, i_board_list)
+		INSERT INTO board(i_user, board_title, board_ctnt, i_board_list)
 		VALUES
 		(#{i_user}, #{board_title}, #{board_ctnt}, #{i_board_list});
 	</insert>
-
 
 
 </mapper>
