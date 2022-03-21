@@ -16,6 +16,5 @@ public class BoardListEntity {
 	public void setBoard_list_nm(String board_list_nm) {
 		this.board_list_nm = board_list_nm;
 	}
-	
-	
+
 }

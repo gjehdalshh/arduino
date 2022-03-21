@@ -3,14 +3,10 @@
 <mapper namespace="spring.arduino.com.main.MainMapper">
 
 	<insert id="insBoardProc">
-		INSERT INTO t_board(i_user, board_title, board_ctnt)
+		INSERT INTO board(i_user, board_title, board_ctnt, i_board_list)
 		VALUES
-		(#{i_user}, #{board_title}, #{board_ctnt});
+		(#{i_user}, #{board_title}, #{board_ctnt}, #{i_board_list});
 	</insert>
 
-	<select id="selectUser" resultType="TestData">
-		SELECT * FROM test_a
-		WHERE firstName = 'firstName_79022'
-	</select>
 
 </mapper>

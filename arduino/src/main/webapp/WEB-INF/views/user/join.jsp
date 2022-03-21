@@ -33,12 +33,6 @@
 				</div>
 			</div>
 			<div>
-				<div class="textNick">닉네임</div>
-				<div>
-					<input class="user_nick" type="text">
-				</div>
-			</div>
-			<div>
 				<div class="textPhone">휴대전화</div>
 				<div>
 					<input class="user_phone" type="text" placeholder="-없이 기입">

@@ -35,7 +35,6 @@ public class UserService {
 	public int ins_user(UserDTO dto) {
 		
 		UserDomain vo = mapper.selUser(dto);
-		UserDomain selNick = mapper.selNick(dto);
 		
 		if(vo != null) {
 			return 2;
@@ -52,12 +51,12 @@ public class UserService {
 		if(dto.getUser_nm().length()>4) {
 			return 5;
 		}
-		
+
 		String reg = "^[0-9]*$";
 		String parsePh = dto.getUser_phone().substring(0, 3);
 		
 		if(!dto.getUser_phone().matches(reg) || !parsePh.equals("010") || dto.getUser_phone().length() != 11) {
-			return 8;
+			return 6;
 		}
 		
 		dto.setUser_pw(bcrypt.encode(dto.getUser_pw()));

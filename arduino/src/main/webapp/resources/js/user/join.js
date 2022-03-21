@@ -48,12 +48,6 @@ join_btn.onclick = function() {
 					alert('이름을 4글자 이하로 적어주세요')
 					break;
 				case 6:
-					alert('이미 존재하는 별명입니다')
-					break;
-				case 7:
-					alert('별명을 20글자 이하로 적어주세요')
-					break;
-				case 8:
 					alert('전화번호 형식에 맞게 작성해주세요')
 					break;
 			}

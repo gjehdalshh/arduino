@@ -9,7 +9,6 @@ import spring.arduino.com.domain.UserDomain;
 public interface UserMapper {
 	int ins_user(UserDTO dto);
 	UserDomain selUser(UserDTO dto);
-	UserDomain selNick(UserDTO dto);
 	UserDomain findId(UserDTO dto);
 	UserDomain findPw(UserDTO dto);
 	int changePw(UserDTO dto);

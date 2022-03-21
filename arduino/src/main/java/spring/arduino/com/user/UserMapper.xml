@@ -4,30 +4,26 @@
 
 
 <insert id="ins_user">
-	INSERT INTO t_user
-	(user_id, user_pw, user_nm, user_nick, user_phone)
+	INSERT INTO user
+	(user_id, user_pw, user_nm, user_phone)
 	VALUES
-	(#{user_id}, #{user_pw}, #{user_nm}, #{user_nick}, #{user_phone});
+	(#{user_id}, #{user_pw}, #{user_nm}, #{user_phone});
 </insert>
 
 <select id="selUser" resultType="UserDomain">
-	SELECT * FROM t_user WHERE user_id = #{user_id};
-</select>
-
-<select id="selNick" resultType="UserDomain">
-	SELECT * FROM t_user WHERE user_nick = #{user_nick};
+	SELECT * FROM user WHERE user_id = #{user_id};
 </select>
 
 <select id="findId" resultType="UserDomain">
-	SELECT * FROM t_user WHERE user_nm = #{user_nm} AND user_phone = #{user_phone};
+	SELECT * FROM user WHERE user_nm = #{user_nm} AND user_phone = #{user_phone};
 </select>
 
 <select id="findPw" resultType="UserDomain">
-	SELECT * FROM t_user WHERE user_nm = #{user_nm} AND user_phone = #{user_phone} AND user_id = #{user_id};
+	SELECT * FROM user WHERE user_nm = #{user_nm} AND user_phone = #{user_phone} AND user_id = #{user_id};
 </select>
 
 <update id="changePw">
-	UPDATE t_user SET user_pw = #{newPw} WHERE i_user = #{i_user}
+	UPDATE user SET user_pw = #{newPw} WHERE i_user = #{i_user}
 </update>
 
 </mapper>

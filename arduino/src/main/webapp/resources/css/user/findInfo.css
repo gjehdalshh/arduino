@@ -54,6 +54,10 @@ body {
 	margin: auto;
 }
 
+.chkPwDiv {
+	display: none;
+}
+
 .pinCodeDiv {
 	display: none;
 	position: absolute;
