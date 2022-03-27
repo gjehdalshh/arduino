@@ -8,4 +8,5 @@
 		(#{i_user}, #{board_title}, #{board_ctnt}, #{i_board_list});
 	</insert>
 	
+	
 </mapper>

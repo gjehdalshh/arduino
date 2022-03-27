@@ -60,6 +60,7 @@ public class UserService {
 		}
 		
 		dto.setUser_pw(bcrypt.encode(dto.getUser_pw()));
+		System.out.println("aa");
 		
 		return mapper.ins_user(dto);
 	}
