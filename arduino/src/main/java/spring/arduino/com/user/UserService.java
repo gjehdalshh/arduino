@@ -51,7 +51,7 @@ public class UserService {
 		if(dto.getUser_nm().length()>4) {
 			return 5;
 		}
-		
+
 		String reg = "^[0-9]*$";
 		String parsePh = dto.getUser_phone().substring(0, 3);
 		

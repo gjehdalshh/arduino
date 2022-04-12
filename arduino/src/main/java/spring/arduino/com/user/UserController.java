@@ -21,6 +21,7 @@ public class UserController {
 	
 	final String FIND_ID = "findUserId";
 	final String FIND_PW = "findUserPw";
+	Double a;
 	
 	@Autowired
 	private UserService service;
