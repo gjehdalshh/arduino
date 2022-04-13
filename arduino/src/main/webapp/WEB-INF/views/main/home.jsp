@@ -19,7 +19,7 @@
 	</div>
 	<div id="bodyDiv">
 		<div class="selectMode">
-			<div class="practiceMode">연습모드</div>r
+			<div class="practiceMode"><a href="/serial/practiceMode">연습모드</a></div>
 			<div class="liveMode">실전모드</div>
 		</div>
 		<div class="freeBoard">
