@@ -29,7 +29,11 @@ public class UserController {
 	/* ---------------- 로그인 페이지 열기 ---------------- */
 	
 	@GetMapping("/user/login")
-	public void login() {}
+	public void login() {
+		
+	}
+	
+	
 	
 	/* ---------------- 로그인 ajax ---------------- */
 	
