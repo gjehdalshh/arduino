@@ -1,54 +1,92 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link rel="stylesheet" href="/res/css/main/home.css?ver=5">
+<link rel="stylesheet" href="/res/css/main/home.css?ver=10">
 
 <div id="mainDiv">
-	<div class="flexBetween" id="headerDiv">
-		<div class="leftHeaderDiv">
-			<div class="mainLogoDiv">
-				<img class="mainLogo" alt="" src="/res/img/main_logo.jpg">
+	<div id="header">
+		<div class="top">
+			<div class="logoAndInput">
+				<div class="mainLogoDiv"><img class="mainLogo" alt="" src="/res/img/mainlogo.jpg"></div>
+				<div><input class="search" type="text"></div>
 			</div>
-			<div class="mainTitle">내 목소리가 보여</div>
+			<div class="loginAndJoin">
+				<div class="login">로그인</div>
+				<div class="join">회원가입</div>
+			</div>
 		</div>
-		<div class="rightHeaderDiv">
-			<div class="subInfo">허동민</div>
-			<div class="subInfo">마이페이지</div>
-			<div class="subInfo">로그아웃</div>
+		<div class="subCategori">
+			<div class="myPage">마이페이지</div>
+			<div class="notice">공지사항</div>
+			<div class="questionAndAnswer">Q&A</div>
 		</div>
 	</div>
-	<div id="bodyDiv">
-		<div class="selectMode">
-			<div class="practiceMode">연습모드</div>r
-			<div class="liveMode">실전모드</div>
+	<div class="practiceModeDiv">
+		<div class="introducePractice">
+			<h2>연습모드 소개</h2>
+			연습모드는 사용자가 도구를 사용하기 전<br> 
+			미리 익숙해지는 단계입니다.<br>
+			클릭해서 연습모드를 실행해보세요!<br><br><br>
+			<a href="/serial/practiceMode">연습모드 하러 가기 ></a>
 		</div>
-		<div class="freeBoard">
-			<div class="subTitle">커뮤니티</div>
-			<div class="subCtnt">
-				<div>테스트입니다</div>
-				<div>컴퓨터삽니다</div>
-				<div>객체지향언어</div>
-			</div>
+		<div>
+			<img class="practiceModeImg" alt="" src="/res/img/practiceModeImg.jpg">
 		</div>
-		<div class="subBoard">
-			<div class="noticeBoard">
-				<div class="subTitle">Notice</div>
-				<div class="subCtnt">
-					<div>공지사항입니다</div>
-					<div>확인</div>
+	</div>
+	<div class="actualModeDiv">
+		<div>
+			<img class="actualModeImg" alt="" src="/res/img/actualModeImg.jpg">
+		</div>
+		<div class="introduceActualMode">
+			<h2>실전모드 소개</h2>
+			실전모드는 사용자가 도구를 사용하여<br>
+			직접 느껴보는 단계입니다.<br>
+			클릭해서 실전모드를 실행해보세요!<br><br><br>
+			실전모드 하러 가기 >
+		</div>
+	</div>
+	<div class="board">
+		<div>
+			<h4 class="bestH3">Weekly Best</h4>
+			<div class="bestBoard">
+				<div class="borderBottom">
+					<div>테스트</div>
+					<div>2022-04-18</div>
+					<div>허동민</div>
+				</div>
+				<div class="borderBottom">
+					<div>테스트</div>
+					<div>2022-04-18</div>
+					<div>허동민</div>
+				</div>
+				<div class="borderBottom">
+					<div>테스트</div>
+					<div>2022-04-18</div>
+					<div>허동민</div>
 				</div>
 			</div>
-			<div class="scoreBoard">
-				<div class="subTitle">Weekly Best</div>
-				<div class="subCtnt">
-					<div>점수인증합니다</div>
-					<div>100점이 나왔어요</div>
+		</div>
+		<div>
+			<h4 class="communityH3">커뮤니티</h4>
+			<div class="communityBoard">
+				<div class="borderBottom">
+					<div>테스트</div>
+					<div>2022-04-18</div>
+					<div>허동민</div>
+				</div>
+				<div class="borderBottom">
+					<div>테스트</div>
+					<div>2022-04-18</div>
+					<div>허동민</div>
+				</div>
+				<div class="borderBottom">
+					<div>테스트</div>
+					<div>2022-04-18</div>
+					<div>허동민</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div onclick="load(3)">버튼</div>
-	<div id="loadData"></div>
 </div>
 
 <script defer src="/res/js/main/home.js?ver=9"></script>
