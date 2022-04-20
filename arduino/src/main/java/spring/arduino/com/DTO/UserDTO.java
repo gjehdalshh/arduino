@@ -5,6 +5,15 @@ import spring.arduino.com.model.UserEntity;
 public class UserDTO extends UserEntity{
 	private String user_chkPw;
 	private String newPw;
+	private String id;
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	public String getNewPw() {
 		return newPw;

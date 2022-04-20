@@ -43,7 +43,6 @@ public class Serial
 				InputStream in = serialPort.getInputStream();
 				
 				(new Thread(new SerialRead(in))).start();
-
 			}
 		}	//	end try
 		catch(Exception e) {}

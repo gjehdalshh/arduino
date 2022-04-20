@@ -1,6 +1,10 @@
 package spring.arduino.com.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 public class BoardListEntity {
+	
 	private int i_Board_list;
 	private String board_list_nm;
 	
