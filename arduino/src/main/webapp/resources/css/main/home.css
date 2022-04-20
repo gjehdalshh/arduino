@@ -1,112 +1,124 @@
+@charset "UTF-8";
+
 body {
 	margin: 0px;
-	padding: 0px;
-}
-
-#mainDiv {
-	width: 900px;
-	margin: auto;
-	margin-top: 50px;
-}
-
-.top {
-	display: flex;
-    justify-content: space-between;
-}
-
-.logoAndInput {
-	align-items: center;
-	display: flex;
+	height: 0px;
 }
 
 .flex {
 	display: flex;
 }
+
+#mainDiv {
+	width: 1024px;
+	margin: auto;
+	margin-top: 50px;
+}
+
+.flexBetween {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+	border: 0.1px solid darkgray;
+	border-radius: 10px;
+	margin-bottom: 10px;
+}
+
+.leftHeaderDiv {
+	display: flex;
+	font-size: 25px;
+	align-items: end;
+	padding-bottom: 15px;
+}
+
 .mainLogoDiv {
-	margin-right: 50px;
+	width: 200px;
 }
 
 .mainLogo {
-	width: 150px;
-    height: 100px;
-}
-.search {
-	width: 300px;
-    height: 35px;
-    border-radius: 5px;
-    border: 0.1px solid;
-    padding: 10 0 0 10;
-    font-size: 16px;
+	width: 250px;
 }
 
-.loginAndJoin {
-	align-items: center;
+.mainTitle {
+	
+}
+
+.rightHeaderDiv {
 	display: flex;
+	padding-bottom: 18px;
+	font-size: 17;
+	font-weight: 100;
+	margin-right: 20px;
 }
 
-.login {
-	font-size: 16;
-    margin: 0 20;
-}
-.join {
-	font-size: 16;
-    margin: 0 20;
+.subInfo {
+	margin-right: 15px;
 }
 
-.subCategori {
-	font-size: 17px;
-    margin: 20 0 5;
-    display: flex;
-    border-bottom: 0.1px solid darkgray;
-    padding-bottom: 10px;
+/* ------------------- body ----------------------- */
+.selectMode, .freeBoard, .noticeBoard, .scoreBoard {
+	border: 0.1px solid darkgray;
+	border-radius: 10px;
 }
 
-.myPage, .notice, .questionAndAnswer {
-	margin: 0 15;
-}
-
-.practiceModeDiv, .actualModeDiv {
+#bodyDiv {
 	display: flex;
-    font-size: 15px;
-}
-.introducePractice, .introduceActualMode {
-	width: 300px;
-	padding: 0 10;
-}
-.practiceModeImg, .actualModeImg {
-	width: 600;
-    height: 200;
+	height: 450px;
+	justify-content: space-between;
 }
 
-.introducePractice {
-	background-color: aliceblue;
+.selectMode {
+	width: 260px;
+	position: relative;
 }
-.introduceActualMode {
-	background-color: antiquewhite;
-}
-.board {
-	display : flex;
-	justify-content: space-around;
+
+.practiceMode, .liveMode {
+	position: absolute;
+	border: 0.1px solid darkgray;
+	border-radius: 50%;
+	width: 130px;
 	text-align: center;
-	margin-top: 10px;
+	padding: 45px 0;
+	font-size: 20px;
 }
 
-.bestBoard, .communityBoard {
-	width: 400;
-    height: 300px;
-    border: 0.1px solid darkgray;
-    border-radius: 5px;
-    padding: 10px 0 10 0;
-    border-left: 2px #3a93de solid !important;
-}
-.bestH3, .communityH3 {
-	text-align: left;
+.practiceMode {
+	top: 15%;
+    right: 25%;
 }
 
-.borderBottom {
-	border-bottom: 0.1px solid darkgray;
-    display: flex;
-    margin: 10 0 20;
-    padding: 0 0 5 15;
+.liveMode {
+	top: 55%;
+    right: 25%;
 }
 
+.freeBoard {
+	width: 430px;
+	padding: 10px;
+}
+
+.subBoard {
+	width: 298px;
+	height: 450px;
+}
+
+.noticeBoard {
+	height: 198px;
+    margin-bottom: 9px;
+    padding: 10px;
+}
+
+.scoreBoard {
+	height: 198px;
+	padding: 10px;
+}
+
+.subTitle {
+	font-size: 23px;
+    color: #276668;
+    margin-bottom: 20px;
+}
+
+.subCtnt {
+	padding: 0 15;
+}

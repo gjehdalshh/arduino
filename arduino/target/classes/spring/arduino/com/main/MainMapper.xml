@@ -6,6 +6,6 @@
 		INSERT INTO board(i_user, board_title, board_ctnt, i_board_list)
 		VALUES
 		(#{i_user}, #{board_title}, #{board_ctnt}, #{i_board_list});
-	</insert> 
+	</insert>
 	
 </mapper>

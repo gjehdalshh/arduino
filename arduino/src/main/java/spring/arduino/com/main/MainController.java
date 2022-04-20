@@ -26,21 +26,9 @@ public class MainController {
 	@GetMapping("/main/insBoard")
 	public void insBoard() {}
 	
-	@GetMapping("/main/practiceMode")
-	public void practiceMode() {}
-	
 	@ResponseBody
 	@PostMapping("/main/insBoard")
 	public Map<String, Object> insBoardProc(@RequestBody BoardDTO dto) {
-		Map<String, Object> val = new HashMap<String, Object>();
-		
-		val.put("result", service.insBoardProc(dto));
-		return val;
-	}
-	
-	@ResponseBody
-	@PostMapping("/main/practiceMode")
-	public Map<String, Object> practiceMode(@RequestBody BoardDTO dto) {
 		Map<String, Object> val = new HashMap<String, Object>();
 		
 		val.put("result", service.insBoardProc(dto));

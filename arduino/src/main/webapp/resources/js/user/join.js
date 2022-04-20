@@ -7,6 +7,7 @@ join_btn.onclick = function() {
 	var pw = document.querySelector('.user_pw')
 	var chkPw = document.querySelector('.user_chkPw')
 	var name = document.querySelector('.user_name')
+	var nick = document.querySelector('.user_nick')
 	var phone = document.querySelector('.user_phone')
 
 	var param = {
@@ -14,6 +15,7 @@ join_btn.onclick = function() {
 		user_pw: pw.value,
 		user_chkPw: chkPw.value,
 		user_nm: name.value,
+		user_nick: nick.value,
 		user_phone: phone.value
 	}
 	console.log(param)
