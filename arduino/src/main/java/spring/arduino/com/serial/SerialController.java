@@ -42,4 +42,19 @@ public class SerialController extends HttpServlet {
 		val.put("data", value);
 		return val;
 	}
+	
+	@GetMapping("/serial/actualMode")
+	public void actualMode() {}
+	
+	@ResponseBody
+	@PostMapping("/serial/actualMode")
+	public Map<String, Object> actualModeProc() {
+		
+		Map<String, Object> val = new HashMap<String, Object>();
+		
+		return val;
+	}
 }
+
+
+

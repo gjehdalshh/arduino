@@ -32,5 +32,4 @@ pageEncoding="UTF-8"%>
     <div id="modeTest" class="modeTest"></div>
 </div>
 
-<script defer src="/res/js/serial/practiceMode.js?ver=77"></script>
 <script defer src="/res/js/serial/practiceMode.js?ver=60"></script>
