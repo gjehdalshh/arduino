@@ -20,13 +20,14 @@ public class SerialController extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 	}
 	
-	public String value;
+	public int value;
     
 	@GetMapping("/serial/practice")
 	protected void serialProc(HttpServletRequest request) {
 		
 		String data = request.getParameter("data");
-		value = data;
+		System.out.println("data : "+data);
+		value = Integer.parseInt(data);
 	}
 	
 	@GetMapping("/serial/practiceMode")

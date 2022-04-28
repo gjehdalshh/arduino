@@ -1,1 +1,105 @@
 @charset "UTF-8";
+
+#mainDiv {
+	width: 900px;
+	margin: auto;
+	margin-top: 50px;
+}
+
+.top {
+	display: flex;
+    border-bottom: 1px solid;
+    align-items: baseline;
+    padding-bottom: 5px;
+    justify-content: space-between;
+    font-size: 30px;
+    margin-bottom: 70px;
+}
+
+.bodyDiv {
+	display: flex;
+	align-items: center;
+}
+.showDiv {
+	width: 250px;
+    text-align: center;
+    border: 2px solid;
+    padding: 60 0;
+    margin-right: 50px;
+}
+.handsImg {
+	width: 600px;
+}
+.nameKor {
+	font-size: 110px;
+	margin-bottom: 30px;
+}
+.nameEng {
+	font-size: 40px;
+} 
+
+.handImgDiv {
+	position: relative;
+}
+.C, .D, .E, .F, .G, .A, .B, .P, .one, .two {
+	background-color: white;
+   	border: 1px solid;
+    border-radius: 50%;
+    padding: 5px 8px;
+}
+.C {
+	position: absolute;
+	top: 34%;
+    left: 5%;
+}
+.D {
+	position: absolute;
+	top: 25%;
+    left: 14%;
+}
+.E {
+	position: absolute;
+	top: 22%;
+    left: 22%;
+}
+.F {
+	position: absolute;
+	top: 27%;
+    left: 30%;
+}
+.G {
+	position: absolute;
+	top: 53%;
+    left: 41%;
+}
+.A {
+	position: absolute;
+	top: 53%;
+    left: 55%;
+}
+.B {
+	position: absolute;
+    top: 25%;
+    left: 66%;
+}
+.P {
+	position: absolute;
+	top: 21%;
+    left: 75%;
+}
+.one {
+	position: absolute;
+	top: 25%;
+    left: 83%;
+}
+.two {
+	position: absolute;
+	top: 34%;
+    left: 92%;
+}
+
+.P, .one, .two {
+   border: 1px solid;
+    border-radius: 50%;
+    padding: 5px 11px;
+}

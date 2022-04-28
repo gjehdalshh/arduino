@@ -1,98 +1,116 @@
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+
 body {
-	margin: 0px;
-	padding: 0px;
+   margin: 0px;
+   padding: 0px;
+   font-family: 'NanumSquare', sans-serif;
+}
+
+a {
+   text-decoration: none;
+   color: white;
+   font-weight: bold;
+}
+
+.titleMode {
+   font-size: 25;
+      letter-spacing: 4px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px black;
 }
 
 #mainDiv {
-	width: 900px;
-	margin: auto;
-	margin-top: 50px;
+   width: 900px;
+   margin: auto;
+   margin-top: 50px;
 }
 
 .top {
-	display: flex;
-    justify-content: space-between;
 }
 
 .logoAndInput {
-	align-items: center;
-	display: flex;
 }
 
 .flex {
-	display: flex;
+   display: flex;
+   align-items: baseline;
 }
 .mainLogoDiv {
-	margin-right: 50px;
+   margin: auto;
+   width: 200;
 }
 
 .mainLogo {
-	width: 150px;
+   width: 150px;
     height: 100px;
 }
 .search {
-	width: 300px;
-    height: 35px;
-    border-radius: 5px;
-    border: 0.1px solid;
-    padding: 10 0 0 10;
-    font-size: 16px;
+   border: none;
+   border-bottom: 0.1px solid;
+   margin-right: 50px;
 }
 
 .loginAndJoin {
-	align-items: center;
-	display: flex;
+   align-items: center;
+   display: flex;
 }
 
 .login {
-	font-size: 16;
+   font-size: 16;
     margin: 0 20;
 }
 .join {
-	font-size: 16;
+   font-size: 16;
     margin: 0 20;
 }
 
 .subCategori {
-	font-size: 17px;
+   font-size: 17px;
     margin: 20 0 5;
     display: flex;
     border-bottom: 0.1px solid darkgray;
     padding-bottom: 10px;
+    justify-content: space-between;
 }
 
 .myPage, .notice, .questionAndAnswer {
-	margin: 0 15;
+   margin: 0 15;
 }
 
 .practiceModeDiv, .actualModeDiv {
-	display: flex;
+   display: flex;
     font-size: 15px;
 }
 .introducePractice, .introduceActualMode {
-	width: 300px;
-	padding: 0 10;
+   width: 350px;
+   color:white;
+   padding-left: 20px;
 }
 .practiceModeImg, .actualModeImg {
-	width: 600;
+   width: 550;
     height: 200;
 }
 
 .introducePractice {
-	background-color: aliceblue;
+   background-color: #16537F;
+   line-height:2;
+   padding-top: 8px;
 }
 .introduceActualMode {
-	background-color: antiquewhite;
+   background-color: #26859D;
+   line-height:2;
+   padding-top: 8px;
 }
 .board {
-	display : flex;
-	justify-content: space-around;
-	text-align: center;
-	margin-top: 10px;
+   display : flex;
+   justify-content: space-around;
+   text-align: center;
+   margin-top: 10px;
 }
 
 .bestBoard, .communityBoard {
-	width: 400;
+   width: 400;
     height: 300px;
     border: 0.1px solid darkgray;
     border-radius: 5px;
@@ -100,13 +118,12 @@ body {
     border-left: 2px #3a93de solid !important;
 }
 .bestH3, .communityH3 {
-	text-align: left;
+   text-align: left;
 }
 
 .borderBottom {
-	border-bottom: 0.1px solid darkgray;
+   border-bottom: 0.1px solid darkgray;
     display: flex;
     margin: 10 0 20;
     padding: 0 0 5 15;
 }
-

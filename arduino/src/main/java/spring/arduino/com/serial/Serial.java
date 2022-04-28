@@ -33,7 +33,7 @@ public class Serial
 					//	정상적으로 포트를 사용할 수 있을 경우
 					//	포트에 필요한 정보를 입력해 준다.
 					serialPort.setSerialPortParams(
-							9600,						//	바운드레이트 
+							115200,						//	바운드레이트 
 							SerialPort.DATABITS_8, 
 							SerialPort.STOPBITS_1, 
 							SerialPort.PARITY_NONE);	//	오류제어 비트
