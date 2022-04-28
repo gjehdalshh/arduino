@@ -36,7 +36,7 @@ public class UserService {
 		
 		UserDomain vo = mapper.selUser(dto);
 		
-		if(vo != null) {                                   
+		if(vo != null) {
 			return 2;
 		}
 		
