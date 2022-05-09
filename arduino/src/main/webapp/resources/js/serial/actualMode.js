@@ -5,7 +5,7 @@ let countdown = document.querySelector('.countdown')
 let count = defaultTime.value
 let val = 0
 
-function test() {
+function startActualMode() {
 	if (val == 0) {
 		timer.style = "animation-play-state: running"
 		mask.style = "animation-play-state: running"
@@ -29,3 +29,19 @@ function myTimer() {
 function setTime() {
 	setInterval(myTimer, 1000)
 }
+
+window.onload = function() {
+	
+	document.querySelector('.modal_wrap').style.display = 'block'
+	document.querySelector('.black_bg').style.display = 'block'
+	
+	function offClick() {
+		document.querySelector('.modal_wrap').style.display = 'none'
+		document.querySelector('.black_bg').style.display = 'none'
+		startActualMode();
+	}
+
+	document.querySelector('.modal_close').addEventListener('click', offClick)
+}
+
+
