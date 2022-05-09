@@ -43,8 +43,8 @@
 		</div>
 		<div class="introduceActualMode">
 			<div class="titleMode">실전모드</div>
-			실전모드는 사용자가 도구를 사용하여<br> 직접 느껴보는 단계입니다.<br> 
-			<br> <a href="/serial/actualMode">실전모드 하러 가기 ></a>
+			실전모드는 사용자가 도구를 사용하여<br> 직접 느껴보는 단계입니다.<br> <br> <a
+				href="/serial/actualMode">실전모드 하러 가기 ></a>
 		</div>
 	</div>
 	<div class="board">

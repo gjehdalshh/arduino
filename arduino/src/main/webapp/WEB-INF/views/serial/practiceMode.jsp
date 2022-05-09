@@ -7,7 +7,7 @@
 	<div class="top">
 		<div>연습모드</div>
 		<div>
-			<img class="practiveMainLogo" alt="" src="/res/img/mainlogo.png">
+			<img class="practiceMainLogo" alt="" src="/res/img/mainlogo.png">
 		</div>
 	</div>
 	<div class="bodyDiv">

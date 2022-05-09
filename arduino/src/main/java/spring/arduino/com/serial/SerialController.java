@@ -60,5 +60,3 @@ public class SerialController extends HttpServlet {
 	}
 }
 
-
-
