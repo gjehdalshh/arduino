@@ -28,7 +28,7 @@ public class SerialController extends HttpServlet {
 		
 		String data = request.getParameter("data");
 		System.out.println("data : "+data);
-		value = Integer.parseInt(data);
+		//value = Integer.parseInt(data);
 	}
 	
 	@GetMapping("/serial/practiceMode")
@@ -39,6 +39,8 @@ public class SerialController extends HttpServlet {
 	public Map<String, Object> practiceModeProc() {
 		Map<String, Object> val = new HashMap<String, Object>();
 
+		value = (int)(Math.random()*49);
+		
 		val.put("data", value);
 		return val;
 	}

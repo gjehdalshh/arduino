@@ -14,7 +14,7 @@ function mode() {
 		test(data.data)
 	})
 }
-setInterval(mode, 500)
+setInterval(mode, 2000)
 
 let C = document.querySelector('.C')
 let D = document.querySelector('.D')
@@ -41,320 +41,65 @@ function test(data) {
 	P.style.backgroundColor = 'white';
 	one.style.backgroundColor = 'white';
 	two.style.backgroundColor = 'white';
-	
-	if(data == 0) {
-		nameKor.innerHTML = `<divX</div>`
+
+	if (data == 0) {
+		nameKor.innerHTML = `X`
 	}
-	if (data == 1) {
+	if (data % 12 == 1 || data % 12 == 2) {
 		C.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>도</div>`
-		nameEng.innerHTML = `<div>C3</div>`
+		nameKor.innerHTML = `도`
+		nameEng.innerHTML = `C`
 	}
-	if (data == 2) {
-		C.style.backgroundColor = 'red';
-		P.style.backgroundColor = 'skyblue';
-		nameKor.innerHTML = `<div>도#</div>`
-		nameEng.innerHTML = `<div>C3#</div>`
-	}
-	if (data == 3) {
+	if (data % 12 == 3 || data % 12 == 4) {
 		D.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>레</div>`
-		nameEng.innerHTML = `<div>D3</div>`
+		nameKor.innerHTML = `레`
+		nameEng.innerHTML = `D`
 	}
-	if (data == 4) {
-		D.style.backgroundColor = 'red';
-		P.style.backgroundColor = 'skyblue';
-		nameKor.innerHTML = `<div>레#</div>`
-		nameEng.innerHTML = `<div>D3#</div>`
-	}
-	if (data == 5) {
+	if (data % 12 == 5) {
 		E.style.backgroundColor = 'red';
-		P.style.backgroundColor = 'skyblue';
-		nameKor.innerHTML = `<div>미</div>`
-		nameEng.innerHTML = `<div>E3</div>`
+		nameKor.innerHTML = `미`
+		nameEng.innerHTML = `E`
 	}
-	if (data == 6) {
+	if (data % 12 == 6 || data % 12 == 7) {
 		F.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>파</div>`
-		nameEng.innerHTML = `<div>F3</div>`
+		nameKor.innerHTML = `파`
+		nameEng.innerHTML = `F`
 	}
-	if (data == 7) {
-		F.style.backgroundColor = 'red';
-		P.style.backgroundColor = 'skyblue';
-		nameKor.innerHTML = `<div>파#</div>`
-		nameEng.innerHTML = `<div>F3#</div>`
-	}
-	if (data == 8) {
+	if (data % 12 == 8 || data % 12 == 9) {
 		G.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>솔</div>`
-		nameEng.innerHTML = `<div>G3</div>`
+		nameKor.innerHTML = `솔`
+		nameEng.innerHTML = `G`
 	}
-	if (data == 9) {
-		G.style.backgroundColor = 'red';
-		P.style.backgroundColor = 'skyblue';
-		nameKor.innerHTML = `<div>솔#</div>`
-		nameEng.innerHTML = `<div>G3#</div>`
-	}
-	if (data == 10) {
+	if (data % 12 == 10 || data % 12 == 11) {
 		A.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>라</div>`
-		nameEng.innerHTML = `<div>A3</div>`
+		nameKor.innerHTML = `라`
+		nameEng.innerHTML = `A`
 	}
-	if (data == 11) {
-		A.style.backgroundColor = 'red';
-		P.style.backgroundColor = 'skyblue';
-		nameKor.innerHTML = `<div>라#</div>`
-		nameEng.innerHTML = `<div>A3#</div>`
-	}
-	if (data == 12) {
+	if (data % 12 == 0) {
 		B.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>시</div>`
-		nameEng.innerHTML = `<div>B3</div>`
+		nameKor.innerHTML = `시`
+		nameEng.innerHTML = `B`
 	}
-	if (data == 13) {
-		C.style.backgroundColor = 'red';
+	if (data > 0 && data < 13) {
+		nameEng.innerHTML += `3`
+	}
+	if (data > 12 && data < 25) {
 		two.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>도</div>`
-		nameEng.innerHTML = `<div>C4</div>`
+		nameEng.innerHTML += `4`
 	}
-	if (data == 14) {
-		C.style.backgroundColor = 'red';
+	if (data > 24 && data < 37) {
+		one.style.backgroundColor = 'red';
+		nameEng.innerHTML += `5`
+	}
+	if (data > 36 && data < 49) {
+		one.style.backgroundColor = 'red';
+		two.style.backgroundColor = 'red';
+		nameEng.innerHTML += `6`
+	}
+	if (data %12 == 2 || data % 12 == 4 || data % 12 == 7 || data % 12 == 9 || data % 12 == 11) {
 		P.style.backgroundColor = 'skyblue';
-		two.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>도</div>`
-		nameEng.innerHTML = `<div>C4#</div>`
-	}
-	if (data == 15) {
-		D.style.backgroundColor = 'red';
-		two.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>레</div>`
-		nameEng.innerHTML = `<div>D4</div>`
-	}
-	if (data == 16) {
-		D.style.backgroundColor = 'red';
-		P.style.backgroundColor = 'skyblue';
-		two.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>레#</div>`
-		nameEng.innerHTML = `<div>D4#</div>`
-	}
-	if (data == 17) {
-		E.style.backgroundColor = 'red';
-		P.style.backgroundColor = 'skyblue';
-		two.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>미</div>`
-		nameEng.innerHTML = `<div>E4</div>`
-	}
-	if (data == 18) {
-		F.style.backgroundColor = 'red';
-		two.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>파</div>`
-		nameEng.innerHTML = `<div>F4</div>`
-	}
-	if (data == 19) {
-		F.style.backgroundColor = 'red';
-		P.style.backgroundColor = 'skyblue';
-		two.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>파#</div>`
-		nameEng.innerHTML = `<div>F4#</div>`
-	}
-	if (data == 20) {
-		G.style.backgroundColor = 'red';
-		two.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>솔</div>`
-		nameEng.innerHTML = `<div>G4</div>`
-	}
-	if (data == 21) {
-		G.style.backgroundColor = 'red';
-		P.style.backgroundColor = 'skyblue';
-		two.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>솔#</div>`
-		nameEng.innerHTML = `<div>G4#</div>`
-	}
-	if (data == 22) {
-		A.style.backgroundColor = 'red';
-		two.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>라</div>`
-		nameEng.innerHTML = `<div>A4</div>`
-	}
-	if (data == 23) {
-		A.style.backgroundColor = 'red';
-		P.style.backgroundColor = 'skyblue';
-		two.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>라#</div>`
-		nameEng.innerHTML = `<div>A4#</div>`
-	}
-	if (data == 24) {
-		B.style.backgroundColor = 'red';
-		two.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>시</div>`
-		nameEng.innerHTML = `<div>B4</div>`
-	}
-	if (data == 25) {
-		C.style.backgroundColor = 'red';
-		one.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>도</div>`
-		nameEng.innerHTML = `<div>C5</div>`
-	}
-	if (data == 26) {
-		C.style.backgroundColor = 'red';
-		P.style.backgroundColor = 'skyblue';
-		one.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>도#</div>`
-		nameEng.innerHTML = `<div>C5#</div>`
-	}
-	if (data == 27) {
-		D.style.backgroundColor = 'red';
-		one.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>레</div>`
-		nameEng.innerHTML = `<div>D5</div>`
-	}
-	if (data == 28) {
-		D.style.backgroundColor = 'red';
-		P.style.backgroundColor = 'skyblue';
-		one.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>레#</div>`
-		nameEng.innerHTML = `<div>D5#</div>`
-	}
-	if (data == 29) {
-		E.style.backgroundColor = 'red';
-		P.style.backgroundColor = 'skyblue';
-		one.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>미</div>`
-		nameEng.innerHTML = `<div>E5</div>`
-	}
-	if (data == 30) {
-		F.style.backgroundColor = 'red';
-		one.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>파</div>`
-		nameEng.innerHTML = `<div>F5</div>`
-	}
-	if (data == 31) {
-		F.style.backgroundColor = 'red';
-		P.style.backgroundColor = 'skyblue';
-		one.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>파#</div>`
-		nameEng.innerHTML = `<div>F5#</div>`
-	}
-	if (data == 32) {
-		G.style.backgroundColor = 'red';
-		one.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>솔</div>`
-		nameEng.innerHTML = `<div>G5</div>`
-	}
-	if (data == 33) {
-		G.style.backgroundColor = 'red';
-		P.style.backgroundColor = 'skyblue';
-		one.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>솔#</div>`
-		nameEng.innerHTML = `<div>G5#</div>`
-	}
-	if (data == 34) {
-		A.style.backgroundColor = 'red';
-		one.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>라</div>`
-		nameEng.innerHTML = `<div>A5</div>`
-	}
-	if (data == 35) {
-		A.style.backgroundColor = 'red';
-		P.style.backgroundColor = 'skyblue';
-		one.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>라#</div>`
-		nameEng.innerHTML = `<div>A5#</div>`
-	}
-	if (data == 36) {
-		B.style.backgroundColor = 'red';
-		one.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>시</div>`
-		nameEng.innerHTML = `<div>B5</div>`
-	}
-	if (data == 37) {
-		C.style.backgroundColor = 'red';
-		one.style.backgroundColor = 'red';
-		two.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>도</div>`
-		nameEng.innerHTML = `<div>C6</div>`
-	}
-	if (data == 38) {
-		C.style.backgroundColor = 'red';
-		P.style.backgroundColor = 'skyblue';
-		one.style.backgroundColor = 'red';
-		two.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>도</div>`
-		nameEng.innerHTML = `<div>C6#</div>`
-	}
-	if (data == 39) {
-		D.style.backgroundColor = 'red';
-		one.style.backgroundColor = 'red';
-		two.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>레</div>`
-		nameEng.innerHTML = `<div>D6</div>`
-	}
-	if (data == 40) {
-		D.style.backgroundColor = 'red';
-		P.style.backgroundColor = 'skyblue';
-		one.style.backgroundColor = 'red';
-		two.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>레#</div>`
-		nameEng.innerHTML = `<div>D6#</div>`
-	}
-	if (data == 41) {
-		E.style.backgroundColor = 'red';
-		one.style.backgroundColor = 'red';
-		two.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>미</div>`
-		nameEng.innerHTML = `<div>E6</div>`
-	}
-	if (data == 42) {
-		F.style.backgroundColor = 'red';
-		one.style.backgroundColor = 'red';
-		two.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>파</div>`
-		nameEng.innerHTML = `<div>F6</div>`
-	}
-	if (data == 43) {
-		F.style.backgroundColor = 'red';
-		P.style.backgroundColor = 'skyblue';
-		one.style.backgroundColor = 'red';
-		two.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>파#</div>`
-		nameEng.innerHTML = `<div>F6#</div>`
-	}
-	if (data == 44) {
-		G.style.backgroundColor = 'red';
-		one.style.backgroundColor = 'red';
-		two.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>솔</div>`
-		nameEng.innerHTML = `<div>G6</div>`
-	}
-	if (data == 45) {
-		G.style.backgroundColor = 'red';
-		P.style.backgroundColor = 'skyblue';
-		one.style.backgroundColor = 'red';
-		two.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>솔#</div>`
-		nameEng.innerHTML = `<div>G6#</div>`
-	}
-	if (data == 46) {
-		A.style.backgroundColor = 'red';
-		one.style.backgroundColor = 'red';
-		two.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>라</div>`
-		nameEng.innerHTML = `<div>A6</div>`
-	}
-	if (data == 47) {
-		A.style.backgroundColor = 'red';
-		P.style.backgroundColor = 'skyblue';
-		one.style.backgroundColor = 'red';
-		two.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>라#</div>`
-		nameEng.innerHTML = `<div>A6#</div>`
-	}
-	if (data == 48) {
-		B.style.backgroundColor = 'red';
-		one.style.backgroundColor = 'red';
-		two.style.backgroundColor = 'red';
-		nameKor.innerHTML = `<div>시</div>`
-		nameEng.innerHTML = `<div>B6</div>`
+		nameKor.innerHTML += `#`
+		nameEng.innerHTML += `#`
 	}
 }
 
