@@ -34,21 +34,24 @@ public class SerialRead implements Runnable
 	{
 		byte[] buffer = new byte[1024];
 		int len = -1;
-		
 		try 
 		{
 			//	buffer에 저장하고나서, 그 길이를 반환한다.
 			while ((len = this.in.read(buffer)) > -1)
 			{
-				String s = new String(buffer,0,len);
+				System.out.println("len : "+len);
+				//String s = new String(buffer,0,len);
+				//System.out.println("len : "+len);
+				int s  = buffer[0];
+				
 				HttpURLConnection conn = null;
+				System.out.println("s : "+s);
 				
 				//	들어온 데이터가 있는 경우에만 동작을 한다.
 				if (len != 0) 
 				{
 					//	데이터를 url 형태로 변형시킨다. s가 데이터이다.	
 					String targetURL = "http://localhost:8090/serial/practice?data="+s;
-			
 					URL url = new URL(targetURL);	//	URL은 String클래스와 비슷하나, 파싱까지 해준다.
 					
 					try 
