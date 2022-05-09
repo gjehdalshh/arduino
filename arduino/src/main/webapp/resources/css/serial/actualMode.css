@@ -103,6 +103,20 @@
     bottom: 3%;
 }
 
+.setOctave {
+	display: flex;
+    justify-content: space-around;
+}
+
+.octave {
+	width: 60px;
+    text-align: center;
+    padding: 15px 5px;
+    border: 0.1px solid darkgray;
+    border-radius: 10%;
+}
+
+
 
 
 

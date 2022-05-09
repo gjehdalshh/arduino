@@ -13,6 +13,13 @@
 
 	<div class="black_bg"></div>
 	<div class="modal_wrap">
+		<div>옥타브 설정</div>
+		<div class="setOctave">
+			<div class="octave">3옥타브</div>
+			<div class="octave">4옥타브</div>
+			<div class="octave">5옥타브</div>
+			<div class="octave">6옥타브</div>
+		</div>
 		<div class="modal_close">
 			<div>시작하기</div>
 		</div>
