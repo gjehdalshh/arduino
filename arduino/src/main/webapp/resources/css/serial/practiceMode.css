@@ -1,1 +1,50 @@
 @charset "UTF-8";
+
+#mainDiv {
+   width: 900px;
+   margin: auto;
+   margin-top: 50px;
+}
+
+.top {
+   display: flex;
+    border-bottom: 1px solid;
+    align-items: baseline;
+    padding-bottom: 5px;
+    justify-content: space-between;
+    font-size: 30px;
+    margin-bottom: 70px;
+}
+
+.C, .D, .E, .F, .G, .A, .B, .P, .one, .two {
+	border: 1px solid;
+    border-radius: 50%;
+    padding: 5px 8px;
+}
+
+.P, .one, .two {
+	border: 1px solid;
+    border-radius: 50%;
+    padding: 5px 11px;
+}
+
+.bodyDiv {
+   display: flex;
+   align-items: center;
+}
+.showDiv {
+   width: 250px;
+    text-align: center;
+    border: 2px solid;
+    padding: 85 0;
+    margin-right: 50px;
+}
+.handsImg {
+   width: 600px;
+}
+.nameKor {
+   font-size: 90px;
+}
+.nameEng {
+   font-size: 40px;
+} 
