@@ -5,7 +5,7 @@ let countdown = document.querySelector('.countdown')
 let count = defaultTime.value
 let val = 0
 
-function test() {
+function startActualMode() {
 	if (val == 0) {
 		timer.style = "animation-play-state: running"
 		mask.style = "animation-play-state: running"

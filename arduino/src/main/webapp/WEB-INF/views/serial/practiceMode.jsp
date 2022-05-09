@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link rel="stylesheet" href="/res/css/serial/practiceMode.css?ver=13">
+<link rel="stylesheet" href="/res/css/serial/practiceMode.css?ver=14">
 
 <div id="mainDiv">
 	<div class="top">
 		<div>연습모드</div>
 		<div>
-			<img alt="" src="/res/img/mainlogo.png">
+			<img class="practiveMainLogo" alt="" src="/res/img/mainlogo.png">
 		</div>
 	</div>
 	<div class="bodyDiv">
