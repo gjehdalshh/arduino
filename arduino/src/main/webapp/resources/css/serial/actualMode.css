@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+:root {
+	--duration : 10s;
+}
 
 /* ------------------------ 타이머 작동 ----------------------------- */
 .timer {
@@ -12,7 +15,7 @@
     width: 100px;
     /* Height and width */
     animation-name: time;
-    animation-duration: 5s;
+    animation-duration: var(--duration);
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-play-state: paused;
@@ -26,7 +29,7 @@
     width: 50%;
    
     animation-name: mask;
-    animation-duration: 5s;
+    animation-duration: var(--duration);
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     /* Animation time and number of steps (halved) */
@@ -145,20 +148,23 @@
     bottom: 3%;
 }
 
-.setOctave {
+.setOctave, .setTime {
 	display: flex;
     justify-content: space-around;
 }
 
-.octave {
+.octave, .defaultTime {
 	width: 60px;
     text-align: center;
     padding: 15px 5px;
     border: 0.1px solid darkgray;
     border-radius: 10%;
+    margin-bottom: 15px;
 }
 
-
+.setTime {
+	
+}
 
 
 

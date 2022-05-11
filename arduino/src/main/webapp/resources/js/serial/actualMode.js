@@ -5,33 +5,35 @@ let countdown = document.querySelector('.countdown')
 let count = defaultTime.value
 let val = 0
 let interval = 0
+let time = 0
 
 function startActualMode() {
-	if (val == 0) {
-		timer.style = "animation-play-state: running"
-		mask.style = "animation-play-state: running"
-
-		myTimer()
-		setTime()
-		val = 1
-	}
-}
-
-function myTimer() {
-
-	countdown.innerHTML = `<div>${count}</div>`
-	count = count - 1
+	document.documentElement.style.setProperty("--duration", time + "s")
 	timer.style = "animation-play-state: running"
 	mask.style = "animation-play-state: running"
-
-	if (count == 0) {
-		count = 5
-	}
+	val = 1
 }
 
-function setTime() {
-	interval = setInterval(myTimer, 1000)
-	console.log(interval)
+function setting() {
+
+	timer.style = "animation-play-state: paused"
+	mask.style = "animation-play-state: paused"
+
+	document.querySelector('.setModal_wrap').style.display = 'block'
+	document.querySelector('.setBlack_bg').style.display = 'block'
+
+	function moveHome() {
+		location.href = `/main/home`
+	}
+	function restart() {
+		document.querySelector('.setModal_wrap').style.display = 'none'
+		document.querySelector('.setBlack_bg').style.display = 'none'
+		timer.style = "animation-play-state: running"
+		mask.style = "animation-play-state: running"
+	}
+
+	document.querySelector('.restart').addEventListener('click', restart)
+	document.querySelector('.setModal_close').addEventListener('click', moveHome)
 }
 
 window.onload = function() {
@@ -48,34 +50,17 @@ window.onload = function() {
 	document.querySelector('.modal_close').addEventListener('click', offClick)
 }
 
-function setting() {
-	clearInterval(interval)
-
-	timer.style = "animation-play-state: paused"
-	mask.style = "animation-play-state: paused"
-
-	document.querySelector('.setModal_wrap').style.display = 'block'
-	document.querySelector('.setBlack_bg').style.display = 'block'
-
-	function moveHome() {
-		location.href = `/main/home`
-	}
-	function restart() {
-		document.querySelector('.setModal_wrap').style.display = 'none'
-		document.querySelector('.setBlack_bg').style.display = 'none'
-		interval = setInterval(myTimer, 1000)
-	}
-
-	document.querySelector('.restart').addEventListener('click', restart)
-	document.querySelector('.setModal_close').addEventListener('click', moveHome)
-}
-
 let oc3 = document.querySelector('#oc3')
 let oc4 = document.querySelector('#oc4')
 let oc5 = document.querySelector('#oc5')
 let oc6 = document.querySelector('#oc6')
 
-function getOctaveValue(value) {
+let time10 = document.querySelector('#time10')
+let time15 = document.querySelector('#time15')
+let time20 = document.querySelector('#time20')
+let time25 = document.querySelector('#time25')
+
+function setDefaultOctave(value) {
 	oc3.style.backgroundColor = 'white'
 	oc4.style.backgroundColor = 'white'
 	oc5.style.backgroundColor = 'white'
@@ -91,6 +76,23 @@ function getOctaveValue(value) {
 		oc6.style.backgroundColor = 'skyblue'
 	}
 }
-
+function setDefaultTime(value) {
+	time = value
+	
+	time10.style.backgroundColor = 'white'
+	time15.style.backgroundColor = 'white'
+	time20.style.backgroundColor = 'white'
+	time25.style.backgroundColor = 'white'
+	
+	if (value == 10) {
+		time10.style.backgroundColor = 'skyblue'
+	} else if (value == 15) {
+		time15.style.backgroundColor = 'skyblue'
+	} else if (value == 20) {
+		time20.style.backgroundColor = 'skyblue'
+	} else if (value == 25) {
+		time25.style.backgroundColor = 'skyblue'
+	}
+}
 
 
