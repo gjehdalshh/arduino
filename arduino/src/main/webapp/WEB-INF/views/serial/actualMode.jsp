@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link rel="stylesheet" href="/res/css/serial/actualMode.css?ver=3">
+<link rel="stylesheet" href="/res/css/serial/actualMode.css?ver=6">
 <input class="defaultTime" type="hidden" value="5">
 <div>
 	<div id="Timer">
@@ -30,5 +30,5 @@
 	</div>
 </div>
 
-<script defer src="/res/js/serial/actualMode.js?ver=23"></script>
+<script defer src="/res/js/serial/actualMode.js?ver=31"></script>
 

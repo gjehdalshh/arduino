@@ -6,6 +6,33 @@ let count = defaultTime.value
 let val = 0
 let octave = -1
 let randomMelody = new Array('도', '도#', '레', '레#', '미', '파', '파#', '솔', '솔#', '라', '라#','시');
+let melody = 0
+
+function mode() {
+	fetch(`/serial/actualMode`, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+
+	}).then(function(res) {
+		return res.json()
+	}).then(function(data) {
+		console.log(data.data)
+		if(melody != 0){
+			check(data.data)
+		}
+	})
+}
+setInterval(mode, 2000)
+
+function check(data) {
+	if(data == ((melody + 1) + 12 * octave)) {
+		console.log('정답입니다! +1')
+	} else {
+		console.log('틀렸습니다ㅠㅠ -1')
+	}
+}
 
 function getOctaveValue(oc){
 	octave = oc
@@ -13,7 +40,7 @@ function getOctaveValue(oc){
 }
 
 function runActualMode() {
-	let melody = parseInt(Math.random()*12)
+	melody = parseInt(Math.random()*12)
 	console.log(melody)
 	let value = randomMelody[melody]
 	console.log(value)
