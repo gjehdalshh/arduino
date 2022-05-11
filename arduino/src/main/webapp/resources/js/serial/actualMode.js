@@ -5,6 +5,7 @@ let octave = -1
 let randomMelody = new Array('도', '도#', '레', '레#', '미', '파', '파#', '솔', '솔#', '라', '라#', '시');
 let melody = 0
 let time = 0
+let nameKor = document.querySelector('#real')
 
 function mode() {
 	fetch(`/serial/actualMode`, {
@@ -19,6 +20,7 @@ function mode() {
 		console.log(data.data)
 		if (melody != 0) {
 			check(data.data)
+			printData(data.data)
 		}
 	})
 }
@@ -131,3 +133,38 @@ function setDefaultTime(value) {
 		time25.style.backgroundColor = 'skyblue'
 	}
 }
+
+
+
+function printData(data) {
+	console.log(data)
+
+	if (data == 0) {
+		nameKor.innerHTML = `X`
+	}
+	if (data % 12 == 1 || data % 12 == 2) {
+		nameKor.innerHTML = `도`
+	}
+	if (data % 12 == 3 || data % 12 == 4) {
+		nameKor.innerHTML = `레`
+	}
+	if (data % 12 == 5) {
+		nameKor.innerHTML = `미`
+	}
+	if (data % 12 == 6 || data % 12 == 7) {
+		nameKor.innerHTML = `파`
+	}
+	if (data % 12 == 8 || data % 12 == 9) {
+		nameKor.innerHTML = `솔`
+	}
+	if (data % 12 == 10 || data % 12 == 11) {
+		nameKor.innerHTML = `라`
+	}
+	if (data % 12 == 0) {
+		nameKor.innerHTML = `시`
+	}
+	if (data %12 == 2 || data % 12 == 4 || data % 12 == 7 || data % 12 == 9 || data % 12 == 11) {
+		nameKor.innerHTML += `#`
+	}
+}
+

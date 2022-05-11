@@ -115,7 +115,7 @@ public class UserService {
 	
 	public void sendMail(UserDTO dto, int pinCode) {
 		
-		String setFrom = "smdf01726@naver.com";
+		String setFrom = "gjehdalshh@naver.com";
 		// 보내는 주소 이름을 바꿀순 없을까..?!
 		String toMail = dto.getUser_id();
 		String title = "[너목보]";
