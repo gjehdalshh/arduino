@@ -19,10 +19,10 @@
 	<div class="modal_wrap">
 		<div>옥타브 설정</div>
 		<div class="setOctave">
-			<div id="oc3" class="octave" onclick="getOctaveValue(0)">3옥타브</div>
-			<div id="oc4" class="octave" onclick="getOctaveValue(1)">4옥타브</div>
-			<div id="oc5" class="octave" onclick="getOctaveValue(2)">5옥타브</div>
-			<div id="oc6" class="octave" onclick="getOctaveValue(3)">6옥타브</div>
+			<div id="oc3" class="octave" onclick="setDefaultOctave(0)">3옥타브</div>
+			<div id="oc4" class="octave" onclick="setDefaultOctave(1)">4옥타브</div>
+			<div id="oc5" class="octave" onclick="setDefaultOctave(2)">5옥타브</div>
+			<div id="oc6" class="octave" onclick="setDefaultOctave(3)">6옥타브</div>
 		</div>
 		<div class="modal_close">
 			<div>시작하기</div>

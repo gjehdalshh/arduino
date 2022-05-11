@@ -34,7 +34,7 @@ function check(data) {
 	}
 }
 
-function getOctaveValue(oc){
+function setDefaultOctave(oc){
 	octave = oc
 	console.log(octave)
 }
