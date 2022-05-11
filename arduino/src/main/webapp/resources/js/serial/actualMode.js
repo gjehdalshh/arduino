@@ -3,7 +3,6 @@ let mask = document.querySelector('.mask')
 let defaultTime = document.querySelector('.defaultTime')
 let countdown = document.querySelector('.countdown')
 let count = defaultTime.value
-let val = 0
 let interval = 0
 let time = 0
 
@@ -11,7 +10,6 @@ function startActualMode() {
 	document.documentElement.style.setProperty("--duration", time + "s")
 	timer.style = "animation-play-state: running"
 	mask.style = "animation-play-state: running"
-	val = 1
 }
 
 function setting() {
