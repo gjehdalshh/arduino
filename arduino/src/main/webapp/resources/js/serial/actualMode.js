@@ -1,15 +1,52 @@
 let timer = document.querySelector('.timer')
 let mask = document.querySelector('.mask')
-let defaultTime = document.querySelector('.defaultTime')
 let countdown = document.querySelector('.countdown')
-let count = defaultTime.value
-let interval = 0
+let octave = -1
+let randomMelody = new Array('도', '도#', '레', '레#', '미', '파', '파#', '솔', '솔#', '라', '라#', '시');
+let melody = 0
 let time = 0
+
+function mode() {
+	fetch(`/serial/actualMode`, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+
+	}).then(function(res) {
+		return res.json()
+	}).then(function(data) {
+		console.log(data.data)
+		if (melody != 0) {
+			check(data.data)
+		}
+	})
+}
+setInterval(mode, 2000)
+
+function check(data) {
+	if (data == ((melody + 1) + 12 * octave)) {
+		console.log('정답입니다! +1')
+	} else {
+		console.log('틀렸습니다ㅠㅠ -1')
+	}
+}
+
+function runActualMode() {
+	melody = parseInt(Math.random() * 12)
+	console.log((melody + 1) + 12 * octave)
+	let value = randomMelody[melody]
+	console.log(value)
+	test.innerHTML = value;
+}
 
 function startActualMode() {
 	document.documentElement.style.setProperty("--duration", time + "s")
 	timer.style = "animation-play-state: running"
 	mask.style = "animation-play-state: running"
+	
+	runActualMode()
+	setInterval(runActualMode, time*1000)
 }
 
 function setting() {
@@ -29,7 +66,6 @@ function setting() {
 		timer.style = "animation-play-state: running"
 		mask.style = "animation-play-state: running"
 	}
-
 	document.querySelector('.restart').addEventListener('click', restart)
 	document.querySelector('.setModal_close').addEventListener('click', moveHome)
 }
@@ -59,6 +95,9 @@ let time20 = document.querySelector('#time20')
 let time25 = document.querySelector('#time25')
 
 function setDefaultOctave(value) {
+	octave = value
+	console.log(octave)
+	
 	oc3.style.backgroundColor = 'white'
 	oc4.style.backgroundColor = 'white'
 	oc5.style.backgroundColor = 'white'
@@ -76,12 +115,12 @@ function setDefaultOctave(value) {
 }
 function setDefaultTime(value) {
 	time = value
-	
+
 	time10.style.backgroundColor = 'white'
 	time15.style.backgroundColor = 'white'
 	time20.style.backgroundColor = 'white'
 	time25.style.backgroundColor = 'white'
-	
+
 	if (value == 10) {
 		time10.style.backgroundColor = 'skyblue'
 	} else if (value == 15) {
@@ -92,5 +131,3 @@ function setDefaultTime(value) {
 		time25.style.backgroundColor = 'skyblue'
 	}
 }
-
-
