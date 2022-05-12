@@ -11,6 +11,10 @@ body {
 	src: url('/res/font/a이끌림M.woff') format('woff');
 }
 
+.login_btn, .user_id, .user_pw {
+	font-family: 'a이끌림M';
+}
+
 .flex {
 	display: flex;
     align-items: center;

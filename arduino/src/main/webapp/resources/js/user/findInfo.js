@@ -3,9 +3,11 @@ let subTitileId = document.querySelector('.subTitileId')
 let subTitilePw = document.querySelector('.subTitilePw')
 
 if(currentPage.value == 1) {
-	subTitileId.style.backgroundColor = '#d4f3ff'
+	subTitileId.style.backgroundColor = '#FFC000'
+	subTitileId.style.color = "white"
 } else if(currentPage.value == 2) {
-	subTitilePw.style.backgroundColor = '#d4f3ff'
+	subTitilePw.style.backgroundColor = '#FFC000'
+	subTitilePw.style.color = "white"
 }
 
 /* ------------------- 아이디 찾기 ------------------  */

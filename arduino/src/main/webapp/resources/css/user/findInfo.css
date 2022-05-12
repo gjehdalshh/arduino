@@ -3,17 +3,25 @@
 body {
 	margin: 0px;
 	padding: 0px;
+	font-family: 'a이끌림M';
+}
+
+@font-face {
+	font-family : 'a이끌림M';
+	src: url('/res/font/a이끌림M.woff') format('woff');
 }
 
 #main_div {
 	width: 700px;
 	margin: auto;
-	margin-top: 100px;
+	margin-top: 85px;
 	position: relative;
 }
 
 .flex {
 	display: flex;
+	align-items: center;
+	margin-top: 30px;
 }
 
 .flex_borderBottom {
@@ -27,10 +35,13 @@ body {
 	margin-bottom: 30px;
 	align-items: center;
 	font-weight: 100;
+	width: 250px;
+    margin: 0 auto 40;
 }
 
 .main_logo {
 	width: 250px;
+	height: 120px;
 }
 
 .main_title {
@@ -46,7 +57,17 @@ body {
 	border-top: 0.1px solid darkgray;
 	padding: 5px;
 	text-align: center;
-	border-radius: 5px;
+	border-radius: 3px;
+}
+
+.sub_flex {
+	display: flex;
+	border-bottom: 0.1px solid darkgray;
+	align-items: center;
+}
+.sub_flex_last {
+	display: flex;
+	align-items: center;
 }
 
 .sub_div, .pwDiv, .pinCodeDiv, .chkPwDiv {
@@ -60,47 +81,48 @@ body {
 
 .pinCodeDiv {
 	display: none;
-	position: absolute;
-    top: 23%;
-    left: 48%;
-    transform: translate(-20%, 0);
-    width: 332px;
+    width: 343px;
 }
 
 .nm, .ph, .id, .newPw, .newChkPw {
-	font-size: 25px;
-	font-weight: 100;
+	width: 130px;
+	padding-left: 10px;
+	color: #595959;
+	font-size: 18px;
 }
 
-.user_nm, .user_id, .user_ph, .userNewPw, .userNewChkPw, .findId_btn, .changePw, .findPw_btn, .login_btn {
-	width: 500px;
-	height: 40;
-	border-radius: 7px;
-	border: 0.1px solid darkgray;
+.user_nm_div, .user_ph_div, .user_id_div, .user_newPw_div, .user_newChkPw_div {
+	border-left: 1px solid darkgray;
+    padding: 10px 0 10px;
 }
 
-.user_nm {
-	margin: 5 0 20;
-	font-size: 25px;
-	padding: 7px;
+.user_nm, .user_id, .user_ph, .userNewPw, .userNewChkPw {
+	width: 330px;
+    height: 35px;
+    padding: 10 0 6 10;
+    border: 1px solid #D9D9D9;
+    margin-left: 10px;
+    border-radius: 3px;
+    font-size: 15;
 }
 
-.user_ph, .userNewPw {
-	margin: 5 0 15;
-	font-size: 25px;
-	padding: 7px;
+.findId_flex, .findPw_flex, .changePw_flex {
+	display: flex;
+   	width: 187px;
+    margin: 40 auto 0;
 }
 
-.user_id, .userNewChkPw {
-	margin: 5 0 20;
-	font-size: 25px;
-	padding: 7px;
+.findId_btn, .findPw_btn, .changePw {
+	background-color: #FFC000;
+	margin-right: 10px;
+}
+.moveHome {
+    background-color: #adadad;
 }
 
-.findId_btn, .findPw_btn, .login_btn, .changePw {
-	background-color: #d4f3ff;
-	height: 45;
-	margin-bottom: 15px;
+.findId_btn, .findPw_btn, .changePw, .moveHome {
+	color: white;
+	padding: 8 30;
 }
 
 .subTitileId, .subTitilePw, .findId_btn, .findPw_btn, .login_btn {
@@ -112,32 +134,29 @@ body {
 }
 
 #findId {
-	display: none;
-	border: 0.1px solid darkgray;
-	height: 50;
 	text-align: center;
-	padding-top: 25;
-	border-radius: 6px;
-	margin-bottom: 30px;
+    margin: 50px 0;
+    font-size: 20px;
 }
 
 .pinCode {
 	font-size: 18px;
-    font-weight: 100;
-    margin: 3 10;
+    padding-top: 5px;
 }
 
 .inputPinCode {
-	height: 30;
-    border-radius: 5px;
-    border: 0.1px solid darkgray;
+	width: 200px;
+    padding: 10 0 6 10;
+    border: 1px solid #D9D9D9;
+    margin-left: 10px;
+    border-radius: 3px;
 }
 
 .pinCodeSubmit {
 	background-color: white;
-    border: 0.1px solid darkgray;
-    border-radius: 5px;
-    height: 30;
+    border: 0.1px solid #D9D9D9;
+    border-radius: 3px;
+    height: 35;
     margin-left: 10;
     padding: 0 15;
     cursor: pointer;
