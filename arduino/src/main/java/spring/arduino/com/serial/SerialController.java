@@ -54,7 +54,7 @@ public class SerialController extends HttpServlet {
 		
 		Map<String, Object> val = new HashMap<String, Object>();
 		
-		value = 10; //(int)(Math.random()*49);
+		value =(int)(Math.random()*12 + 1);
 		
 		val.put("data", value);
 		
