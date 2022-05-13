@@ -13,7 +13,12 @@
 	</div>
 
 	<div>
+		<<<<<<< HEAD
 		<div id="test"></div>
+		=======
+		<div id="nameKor"></div>
+		<div id="test" class="test"></div>
+		>>>>>>> branch 'master' of https://github.com/gjehdalshh/arduino.git
 	</div>
 
 	<!-- 설정 모달창 -->
@@ -37,13 +42,11 @@
 			<div id="oc4" class="octave" onclick="setDefaultOctave(1)">4옥타브</div>
 			<div id="oc5" class="octave" onclick="setDefaultOctave(2)">5옥타브</div>
 			<div id="oc6" class="octave" onclick="setDefaultOctave(3)">6옥타브</div>
-
 		</div>
 		<div class="setTime">
 			<div id="time10" class="defaultTime" onclick="setDefaultTime(10)">10초</div>
 			<div id="time15" class="defaultTime" onclick="setDefaultTime(15)">15초</div>
 			<div id="time20" class="defaultTime" onclick="setDefaultTime(20)">20초</div>
-
 		</div>
 		<div class="modal_close">
 			<div>시작하기</div>
@@ -61,4 +64,5 @@
 		</div>
 	</div>
 </div>
-	<script defer src="/res/js/serial/actualMode.js?ver=14"></script>
+<script defer src="/res/js/serial/actualMode.js?ver=14"></script>
+

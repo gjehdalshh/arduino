@@ -3,6 +3,27 @@
 body {
 	margin: 0px;
 	padding: 0px;
+	font-family: 'a이끌림M';
+}
+
+@font-face {
+	font-family : 'a이끌림M';
+	src: url('/res/font/a이끌림M.woff') format('woff');
+}
+
+.flex {
+	display: flex;
+	border-bottom: 0.1px solid darkgray;
+	align-items: center;
+}
+.flex_last {
+	display: flex;
+	align-items: center;
+}
+.join_flex{
+	display: flex;
+   	width: 187px;
+    margin: 40 auto 0;
 }
 
 #main_div {
@@ -12,11 +33,12 @@ body {
 
 .main_logo {
 	text-align: center;
+	margin: 80 0 50;
 }
 
 .main_logo img {
-	width: 400px;
-	height: 200px;
+	width: 250px;
+	height: 120px;
 }
 
 .input_div {
@@ -25,33 +47,39 @@ body {
 }
 
 .textId, .textPw, .textName, .textPhone, .textChkPw {
-	font-size: 20px;
-    margin-bottom: 5px;
-    font-weight: 100;
-    margin-top: 15px;
+	width: 120px;
+	padding-left: 10px;
+	color: #595959;
+	font-size: 18px;
 }
 
 .user_id, .user_pw, .user_name, .user_phone, .user_chkPw {
-	width: 500px;
-    height: 45px;
-    border-radius: 10px;
-    border: 0.1px solid darkgray;
-    padding: 10 10 5;
-    font-size: 25px;
+	width: 330px;
+    height: 35px;
+    padding: 10 0 6 10;
+    border: 1px solid #D9D9D9;
+    margin-left: 10px;
+    border-radius: 3px;
+    font-size: 15px;
+}
+
+.user_id_div, .user_pw_div ,.user_chkPw_div, .user_name_div, .user_phone_div {
+	border-left: 1px solid darkgray;
+    padding: 10px 0 10px;
 }
 
 .join_btn {
-	width: 500px;
-    height: 45px;
-    border-radius: 10px;
-    border: 0.1px solid darkgray;
-    font-size: 25px;
-    margin: 30 0 200;
-    background-color: aliceblue;
-   cursor: pointer;
+	background-color: #FFC000;
+	margin-right: 10px;
+}
+.moveHome {
+    background-color: #adadad;
 }
 
-
+.join_btn, .moveHome {
+	color: white;
+	padding: 8 30;
+}
 
 
 
