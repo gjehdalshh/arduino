@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link rel="stylesheet" href="/res/css/serial/actualMode.css?ver=27">
+<link rel="stylesheet" href="/res/css/serial/actualMode.css?ver=30">
 
 <input class="defaultTime" type="hidden" value="5">
 <div>
@@ -19,7 +19,7 @@
 
 	<!-- 설정 모달창 -->
 	<div onclick="setting()">설정</div>
-	
+
 	<div class="setBlack_bg"></div>
 	<div class="setModal_wrap">
 		<div class="restart">시작하기</div>
@@ -27,7 +27,7 @@
 			<div>종료하기</div>
 		</div>
 	</div>
-	
+
 
 	<!-- 초기화면 모달창 -->
 	<div class="black_bg"></div>
@@ -60,7 +60,17 @@
 			<div class="start_btn">START</div>
 		</div>
 	</div>
+	
+	<!-- 종료화면 모달창 -->
+	<div>
+		<div class="endBlack_bg"></div>
+		<div class="endModal_wrap">
+			<div id="currentScore"></div>
+			<div class="endModal_close">
+				<div>종료하기</div>
+			</div>
+		</div>
+	</div>
 </div>
-
-<script defer src="/res/js/serial/actualMode.js?ver=42"></script>
+<script defer src="/res/js/serial/actualMode.js?ver=14"></script>
 

@@ -5,8 +5,13 @@ let octave = -1
 let randomMelody = new Array('도', '도#', '레', '레#', '미', '파', '파#', '솔', '솔#', '라', '라#', '시');
 let melody = 0
 let time = 0
+let start
+let quizCount = 0
+let currScore = 0
+let addScore = 0
 let nameKor = document.querySelector('#real')
 
+/* 아두이노에서 실시간으로 받고 값 비교*/
 function mode() {
 	fetch(`/serial/actualMode`, {
 		method: 'POST',
@@ -24,49 +29,86 @@ function mode() {
 		}
 	})
 }
-setInterval(mode, 2000)
 
+/* 랜덤으로 생성된 값과 입력한 값 비교 */
 function check(data) {
 	if (data == ((melody + 1) + 12 * octave)) {
 		console.log('정답입니다! +1')
+		currScore += addScore
+		clearInterval(start)
+		runActualMode()
+		start = setInterval(runActualMode, time * 1000)
+		startTimer(timer)
+		startTimer(mask)
 	} else {
 		console.log('틀렸습니다ㅠㅠ -1')
 	}
 }
 
+/* 타이머 작동 */
+function startTimer(tar) {
+	const target = tar
+	target.classList.remove("effect")
+	void target.offsetWidth
+	target.classList.add("effect")
+}
+
+function moveHome(){
+	location.href = '/main/home'
+}
+
+/*  */
+
+/* 실전모드가 종료되고 종료화면 모달창 open */
+function endModalOpen() {
+	timer.style = "animation-play-state: paused"
+	mask.style = "animation-play-state: paused"
+	document.querySelector('.endModal_wrap').style.display = 'block'
+	document.querySelector('.endBlack_bg').style.display = 'block'
+	currentScore.innerHTML = currScore;
+	
+	document.querySelector('.endModal_close').addEventListener('click', moveHome)
+}
+
+
+/* 실전모드 run, 랜덤난수 생성 */
 function runActualMode() {
-	melody = parseInt(Math.random() * 12)
-	console.log((melody + 1) + 12 * octave)
-	let value = randomMelody[melody]
-	console.log(value)
-	test.innerHTML = value;
+	if (quizCount < 5) {
+		melody = parseInt(Math.random() * 12)
+		//console.log((melody + 1) + 12 * octave)
+		let value = randomMelody[melody]
+		//console.log(value)
+		test.innerHTML = value;
+		quizCount++
+	} else {
+		endModalOpen()
+	}
 }
 
 function startActualMode() {
+	startTimer(timer)
+	startTimer(mask)
 	document.documentElement.style.setProperty("--duration", time + "s")
 	timer.style = "animation-play-state: running"
 	mask.style = "animation-play-state: running"
-	
+
+	mode()
+	setInterval(mode, 2000)
 	runActualMode()
-	setInterval(runActualMode, time*1000)
+	start = setInterval(runActualMode, time * 1000)
 }
 
 function setting() {
-
 	timer.style = "animation-play-state: paused"
 	mask.style = "animation-play-state: paused"
+
+	clearInterval(start)
 
 	document.querySelector('.setModal_wrap').style.display = 'block'
 	document.querySelector('.setBlack_bg').style.display = 'block'
 
-	function moveHome() {
-		location.href = `/main/home`
-	}
 	function restart() {
-		document.querySelector('.setModal_wrap').style.display = 'none'
-		document.querySelector('.setBlack_bg').style.display = 'none'
-		timer.style = "animation-play-state: running"
-		mask.style = "animation-play-state: running"
+		location.reload()
 	}
 	document.querySelector('.restart').addEventListener('click', restart)
 	document.querySelector('.setModal_close').addEventListener('click', moveHome)
@@ -99,6 +141,7 @@ let time25 = document.querySelector('#time25')
 function setDefaultOctave(value) {
 	octave = value
 	console.log(octave)
+
 	oc3.style.backgroundColor = 'white'
 	oc3.style.color = '#646464'
 	oc4.style.backgroundColor = 'white'
@@ -136,12 +179,15 @@ function setDefaultTime(value) {
 	if (value == 10) {
 		time10.style.backgroundColor = '#0070C0'
 		time10.style.color = 'white'
+		addScore = 1
 	} else if (value == 15) {
 		time15.style.backgroundColor = '#FFC000'
 		time15.style.color = 'white'
+		addScore = 2
 	} else if (value == 20) {
 		time20.style.backgroundColor = '#FF0000'
 		time20.style.color = 'white'
+		addScore = 3
 	}
 }
 

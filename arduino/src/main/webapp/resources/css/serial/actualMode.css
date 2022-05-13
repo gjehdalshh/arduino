@@ -16,7 +16,7 @@ body {
 }
 
 /* ------------------------ 타이머 작동 ----------------------------- */
-.timer {
+.timer.effect {
     background: -webkit-linear-gradient(left, skyBlue 50%, #eee 50%);
     /* Foreground color, Background colour */
     border-radius: 100%;
@@ -31,7 +31,7 @@ body {
     animation-iteration-count: infinite;
     animation-play-state: paused;
 }
-.mask {
+.mask.effect {
     border-radius: 100% 0 0 100% / 50% 0 0 50%;
     height: 100%;
     left: 0;
@@ -155,6 +155,42 @@ body {
     color: white;
 }
 
+
+/* ----------------------- 종료화면 모달창 ------------------------*/
+.endModal_wrap {
+	display: none;
+	width: 500px;
+	height: 500px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -250px 0 0 -250px;
+	background: #eee;
+	z-index: 2;
+}
+
+.endBlack_bg {
+	display: none;
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+.endModal_close {
+	width: 79px;
+    height: 26px;
+    position: absolute;
+    right: 40%;
+    bottom: 3%;
+}
+
+
+
 .setOctave, .setTime, .setScore {
 	display: flex;
     justify-content: space-around;
@@ -191,7 +227,7 @@ body {
     width: 130;
 }
 
-.test {
+#test {
 	font-size: 200px;
     width: 400px;
     padding: 98px 227px;
