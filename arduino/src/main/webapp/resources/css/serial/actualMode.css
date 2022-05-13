@@ -1,5 +1,16 @@
 @charset "UTF-8";
 
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: 'a이끌림M';
+}
+
+@font-face {
+	font-family : 'a이끌림M';
+	src: url('/res/font/a이끌림M.woff') format('woff');
+}
+
 :root {
 	--duration : 10s;
 }
@@ -111,15 +122,16 @@
 
 /* ----------------------- 초기화면 모달창 ------------------------*/
 .modal_wrap {
-	display: none;
-	width: 500px;
-	height: 500px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin: -250px 0 0 -250px;
-	background: #eee;
-	z-index: 2;
+	width: 450px;
+    height: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -250px 0 0 -250px;
+    background: white;
+    z-index: 2;
+    padding: 30 20;
+    border-radius: 8px;
 }
 
 .black_bg {
@@ -135,25 +147,48 @@
 }
 
 .modal_close {
-	width: 79px;
-    height: 26px;
-    position: absolute;
-    right: 40%;
-    bottom: 3%;
+	margin: auto;
+    width: 80px;
+    font-size: 30px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
 }
 
-.setOctave, .setTime {
+.setOctave, .setTime, .setScore {
 	display: flex;
     justify-content: space-around;
 }
+.setScore {
+	font-size: 23px;
+    margin: 10 0 70px;
+}
 
 .octave, .defaultTime {
-	width: 60px;
     text-align: center;
-    padding: 15px 5px;
-    border: 0.1px solid darkgray;
     border-radius: 10%;
-    margin-bottom: 15px;
+    color: 646464;
+    font-size: 30;
+}
+.octave {
+	padding: 20px 0;
+	width: 100;
+	margin-bottom: 45px;
+	border: 2px solid #385723;
+}
+#time10 {
+	border: 2px solid #0070C0;
+}
+#time15 {
+	border: 2px solid #FFC000;
+}
+#time20 {
+	border: 2px solid #FF0000;
+}
+
+.defaultTime {
+	padding: 15px 0;
+    width: 130;
 }
 
 .test {
@@ -161,6 +196,19 @@
     width: 400px;
     padding: 98px 227px;
 }
+
+.octaveTitle, .timeTitle {
+	font-size: 20px;
+    margin: 0 0 10 10;
+    color: #646464;
+}
+.time {
+	font-size: 20px;
+	margin-top: 10px;
+}
+
+
+
 
 
 

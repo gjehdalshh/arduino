@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link rel="stylesheet" href="/res/css/serial/actualMode.css?ver=24">
+<link rel="stylesheet" href="/res/css/serial/actualMode.css?ver=27">
 
 <input class="defaultTime" type="hidden" value="5">
 <div>
@@ -32,24 +32,35 @@
 	<!-- 초기화면 모달창 -->
 	<div class="black_bg"></div>
 	<div class="modal_wrap">
-		<div>옥타브 설정</div>
+		<div class="octaveTitle">옥타브</div>
 		<div class="setOctave">
-			<div id="oc3" class="octave" onclick="setDefaultOctave(0)">3옥타브</div>
-			<div id="oc4" class="octave" onclick="setDefaultOctave(1)">4옥타브</div>
-			<div id="oc5" class="octave" onclick="setDefaultOctave(2)">5옥타브</div>
-			<div id="oc6" class="octave" onclick="setDefaultOctave(3)">6옥타브</div>
+			<div id="oc3" class="octave" onclick="setDefaultOctave(0)">3옥</div>
+			<div id="oc4" class="octave" onclick="setDefaultOctave(1)">4옥</div>
+			<div id="oc5" class="octave" onclick="setDefaultOctave(2)">5옥</div>
+			<div id="oc6" class="octave" onclick="setDefaultOctave(3)">6옥</div>
 		</div>
+		<div class="timeTitle">난이도</div>
 		<div class="setTime">
-			<div id="time10" class="defaultTime" onclick="setDefaultTime(10)">10초</div>
-			<div id="time15" class="defaultTime" onclick="setDefaultTime(15)">15초</div>
-			<div id="time20" class="defaultTime" onclick="setDefaultTime(20)">20초</div>
-			<div id="time25" class="defaultTime" onclick="setDefaultTime(25)">25초</div>
+			<div id="time10" class="defaultTime" onclick="setDefaultTime(10)">하
+				<div class="time">20초</div>
+			</div>
+			<div id="time15" class="defaultTime" onclick="setDefaultTime(15)">중
+				<div class="time">15초</div>
+			</div>
+			<div id="time20" class="defaultTime" onclick="setDefaultTime(20)">상
+				<div class="time">10초</div>
+			</div>
+		</div>
+		<div class="setScore">
+			<div>+1점</div>
+			<div>+2점</div>
+			<div>+3점</div>
 		</div>
 		<div class="modal_close">
-			<div>시작하기</div>
+			<div class="start_btn">START</div>
 		</div>
 	</div>
 </div>
 
-<script defer src="/res/js/serial/actualMode.js?ver=39"></script>
+<script defer src="/res/js/serial/actualMode.js?ver=42"></script>
 

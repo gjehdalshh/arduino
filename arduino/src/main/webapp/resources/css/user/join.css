@@ -1,16 +1,5 @@
 @charset "UTF-8";
 
-body {
-	margin: 0px;
-	padding: 0px;
-	font-family: 'a이끌림M';
-}
-
-@font-face {
-	font-family : 'a이끌림M';
-	src: url('/res/font/a이끌림M.woff') format('woff');
-}
-
 .flex {
 	display: flex;
 	border-bottom: 0.1px solid darkgray;
