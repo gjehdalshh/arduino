@@ -56,8 +56,10 @@ function startTimer(tar) {
 function moveHome(){
 	location.href = '/main/home'
 }
+function restart() {
+		location.reload()
+}
 
-/*  */
 
 /* 실전모드가 종료되고 종료화면 모달창 open */
 function endModalOpen() {
@@ -65,9 +67,10 @@ function endModalOpen() {
 	mask.style = "animation-play-state: paused"
 	document.querySelector('.endModal_wrap').style.display = 'block'
 	document.querySelector('.endBlack_bg').style.display = 'block'
-	currentScore.innerHTML = currScore;
+	currentScore.innerHTML = currScore+'점';
 	
-	document.querySelector('.endModal_close').addEventListener('click', moveHome)
+	document.querySelector('.endModal_home').addEventListener('click', moveHome)
+	document.querySelector('.endModal_restart').addEventListener('click', restart)
 }
 
 
@@ -107,9 +110,6 @@ function setting() {
 	document.querySelector('.setModal_wrap').style.display = 'block'
 	document.querySelector('.setBlack_bg').style.display = 'block'
 
-	function restart() {
-		location.reload()
-	}
 	document.querySelector('.restart').addEventListener('click', restart)
 	document.querySelector('.setModal_close').addEventListener('click', moveHome)
 }
@@ -136,7 +136,6 @@ let oc6 = document.querySelector('#oc6')
 let time10 = document.querySelector('#time10')
 let time15 = document.querySelector('#time15')
 let time20 = document.querySelector('#time20')
-let time25 = document.querySelector('#time25')
 
 function setDefaultOctave(value) {
 	octave = value
@@ -177,7 +176,7 @@ function setDefaultTime(value) {
 	time20.style.color = '#646464'
 
 	if (value == 10) {
-		time10.style.backgroundColor = '#0070C0'
+		time10.style.backgroundColor = '#FF0000'
 		time10.style.color = 'white'
 		addScore = 1
 	} else if (value == 15) {
@@ -185,7 +184,7 @@ function setDefaultTime(value) {
 		time15.style.color = 'white'
 		addScore = 2
 	} else if (value == 20) {
-		time20.style.backgroundColor = '#FF0000'
+		time20.style.backgroundColor = '#0070C0'
 		time20.style.color = 'white'
 		addScore = 3
 	}

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link rel="stylesheet" href="/res/css/serial/actualMode.css?ver=30">
+<link rel="stylesheet" href="/res/css/serial/actualMode.css?ver=40">
 
 <input class="defaultTime" type="hidden" value="5">
 <div>
@@ -41,13 +41,16 @@
 		</div>
 		<div class="timeTitle">난이도</div>
 		<div class="setTime">
-			<div id="time10" class="defaultTime" onclick="setDefaultTime(10)">하
+			<div id="time20" class="defaultTime" onclick="setDefaultTime(20)">
+				하
 				<div class="time">20초</div>
 			</div>
-			<div id="time15" class="defaultTime" onclick="setDefaultTime(15)">중
+			<div id="time15" class="defaultTime" onclick="setDefaultTime(15)">
+				중
 				<div class="time">15초</div>
 			</div>
-			<div id="time20" class="defaultTime" onclick="setDefaultTime(20)">상
+			<div id="time10" class="defaultTime" onclick="setDefaultTime(10)">
+				상
 				<div class="time">10초</div>
 			</div>
 		</div>
@@ -60,17 +63,53 @@
 			<div class="start_btn">START</div>
 		</div>
 	</div>
-	
+
 	<!-- 종료화면 모달창 -->
 	<div>
 		<div class="endBlack_bg"></div>
 		<div class="endModal_wrap">
-			<div id="currentScore"></div>
-			<div class="endModal_close">
-				<div>종료하기</div>
+			<div class="rankTtile">순 위</div>
+			<div class="rankFlex">
+				<div class="rankImg">
+					<img alt="" src="/res/img/first.png">
+				</div>
+				<div class="userName">이현아</div>
+				<div class="userPhone">(3395)</div>
+				<div>25점</div>
+			</div>
+			<div class="rankFlex">
+				<div class="rankImg">
+					<img alt="" src="/res/img/2nd.png">
+				</div>
+				<div class="userName">이현아</div>
+				<div class="userPhone">(3395)</div>
+				<div>13점</div>
+			</div>
+			<div class="rankFlex">
+				<div class="rankImg">
+					<img alt="" src="/res/img/3rd.png">
+				</div>
+				<div class="userName">이현아</div>
+				<div class="userPhone">(3395)</div>
+				<div>5점</div>
+			</div>
+			<div id="currentScoreDiv">현재기록</div>
+			<div id="rankFlex" class="rankFlex">
+				<div>6등</div>
+				<div class="userName">이현아</div>
+				<div class="userPhone">(3395)</div>
+				<div id="currentScore">현재기록</div>
+			</div>
+			<div class="myBestScore">
+				<span>나의</span> <span class="bestScoreSpan">최고 기록</span> <span>:
+					25점</span>
+			</div>
+			<div class="endFlex">
+				<div class="endModal_restart">RESTART</div>
+				<div class="endModal_home">HOME</div>
 			</div>
 		</div>
 	</div>
 </div>
-<script defer src="/res/js/serial/actualMode.js?ver=14"></script>
+<script defer src="/res/js/serial/actualMode.js?ver=20"></script>
 
