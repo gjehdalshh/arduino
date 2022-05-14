@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="spring.arduino.com.serial.SerialMapper">
+
+<insert id="recordScore"> 
+	INSERT INTO score_record 
+	(i_user, actual_mode_score) 
+	VALUES 
+	(#{i_user}, #{actual_mode_score});
+</insert>
+
+<select id="showRank" resultType="ScoreInfoDomain">
+SELECT A.actual_mode_score, B.user_phone, B.user_nm FROM score_record A INNER JOIN user B
+ON A.i_user = B.i_user
+ORDER BY actual_mode_score DESC, A.i_score_record DESC LIMIT 3;
+</select>
+
+<select id="showMyBestScore" resultType="ScoreInfoDomain">
+SELECT MAX(actual_mode_score) AS actual_mode_score FROM score_record
+WHERE i_user = #{i_user};
+</select>
+
+<select id="showMyRank" resultType="ScoreInfoDomain">
+SELECT actual_mode_score, i_score_record, i_user, ROW_NUMBER() OVER (ORDER BY actual_mode_score DESC, i_score_record DESC) my_rank 
+FROM score_record
+</select>
+
+</mapper>

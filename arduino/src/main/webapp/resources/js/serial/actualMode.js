@@ -1,15 +1,16 @@
 let timer = document.querySelector('.timer')
 let mask = document.querySelector('.mask')
 let countdown = document.querySelector('.countdown')
+let sessionIUser = document.querySelector('#iUser')
 let octave = -1
 let randomMelody = new Array('도', '도#', '레', '레#', '미', '파', '파#', '솔', '솔#', '라', '라#', '시');
 let melody = 0
 let time = 0
 let start
+let modeControl
 let quizCount = 0
 let currScore = 0
 let addScore = 0
-let nameKor = document.querySelector('#real')
 
 /* 아두이노에서 실시간으로 받고 값 비교*/
 function mode() {
@@ -53,21 +54,139 @@ function startTimer(tar) {
 	target.classList.add("effect")
 }
 
-function moveHome(){
+function moveHome() {
 	location.href = '/main/home'
 }
+function restart() {
+	location.reload()
+}
 
-/*  */
+function recordScoreAjax() {
+	
+	var param = {
+		i_user: sessionIUser.value,
+		actual_mode_score: currScore
+	}
+	console.log(param)
+	
+	fetch(`/serial/recordScore`, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body:JSON.stringify(param)
+	}).then(function(res) {
+		return res.json()
+	}).then(function(data){
+		if(data.value == 1) {
+			console.log('점수등록성공')
+		}
+	})
+}
+
+let userName = document.querySelector('.userName')
+
+function showRankAjax() {
+	fetch(`/serial/showRank`, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+	}).then(function(res){
+		return res.json()
+	}).then(function(data){
+		showRank(data)
+	})
+}
+
+let show = document.querySelector('.showRank')
+	
+
+function showRank(data) {
+	let j = 0;
+	let str = data[j].user_phone.substr(7, 11)
+	data.forEach(function(i){
+		show.innerHTML += `
+			<div class="rankFlex">
+				<div class="rankImg">
+					<img alt="" src="/res/img/${j+1}.png">
+				</div>
+				<div class="userName">${data[j].user_nm}</div>
+				<div class="userPhone">(${str})</div>
+				<div>${data[j].actual_mode_score}점</div>
+			</div>
+		`
+		j++
+	})
+
+}
+
+function showMyBestScoreAjax() {
+	let myBestScore = document.querySelector('.myBestScore')
+	let param = {
+		i_user: sessionIUser.value
+	}
+	fetch(`/serial/showMyBestScore`, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		}, 
+		body:JSON.stringify(param)
+	}).then(function(res){
+		return res.json()
+	}).then(function(data){
+		console.log(data)
+		myBestScore.innerHTML += ': ' + data.data.actual_mode_score + '점'
+	})
+}
+
+function showMyRankAjax() {
+	fetch(`/serial/showMyRank`, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		}, 
+	}).then(function(res){
+		return res.json()
+	}).then(function(data){
+		console.log('a')
+		console.log(data)
+		console.log('a')
+		myRank(data)
+	})
+}
+
+function myRank(data) {
+	let j = 0
+	data.forEach(function(i){
+		if(sessionIUser.value == data[j].i_user && currScore == data[j].actual_mode_score) {
+			currentScoreRank.innerHTML = data[j].my_rank + '등'
+			return;
+		}		
+		j++
+	})
+}
+
+let userPhone = document.querySelector('.userPhone')
+let ph = document.querySelector('#userPh')
 
 /* 실전모드가 종료되고 종료화면 모달창 open */
 function endModalOpen() {
 	timer.style = "animation-play-state: paused"
 	mask.style = "animation-play-state: paused"
+	clearInterval(modeControl)
 	document.querySelector('.endModal_wrap').style.display = 'block'
 	document.querySelector('.endBlack_bg').style.display = 'block'
-	currentScore.innerHTML = currScore;
+	let str = ph.value.substr(7, 11)
+	userPhone.innerHTML = '(' + str + ')'
+	currentScore.innerHTML = currScore + '점';
+	recordScoreAjax()
+	showRankAjax()
+	showMyBestScoreAjax()
+	showMyRankAjax()
 	
-	document.querySelector('.endModal_close').addEventListener('click', moveHome)
+	document.querySelector('.endModal_home').addEventListener('click', moveHome)
+	document.querySelector('.endModal_restart').addEventListener('click', restart)
 }
 
 
@@ -82,6 +201,7 @@ function runActualMode() {
 		quizCount++
 	} else {
 		endModalOpen()
+		clearInterval(start)
 	}
 }
 
@@ -93,7 +213,7 @@ function startActualMode() {
 	mask.style = "animation-play-state: running"
 
 	mode()
-	setInterval(mode, 2000)
+	modeControl = setInterval(mode, 2000)
 	runActualMode()
 	start = setInterval(runActualMode, time * 1000)
 }
@@ -107,9 +227,6 @@ function setting() {
 	document.querySelector('.setModal_wrap').style.display = 'block'
 	document.querySelector('.setBlack_bg').style.display = 'block'
 
-	function restart() {
-		location.reload()
-	}
 	document.querySelector('.restart').addEventListener('click', restart)
 	document.querySelector('.setModal_close').addEventListener('click', moveHome)
 }
@@ -136,46 +253,59 @@ let oc6 = document.querySelector('#oc6')
 let time10 = document.querySelector('#time10')
 let time15 = document.querySelector('#time15')
 let time20 = document.querySelector('#time20')
-let time25 = document.querySelector('#time25')
 
 function setDefaultOctave(value) {
 	octave = value
+	console.log(octave)
 
 	oc3.style.backgroundColor = 'white'
+	oc3.style.color = '#646464'
 	oc4.style.backgroundColor = 'white'
+	oc4.style.color = '#646464'
 	oc5.style.backgroundColor = 'white'
+	oc5.style.color = '#646464'
 	oc6.style.backgroundColor = 'white'
+	oc6.style.color = '#646464'
+
 
 	if (value == 0) {
-		oc3.style.backgroundColor = 'skyblue'
+		oc3.style.backgroundColor = '#385723'
+		oc3.style.color = 'white'
 	} else if (value == 1) {
-		oc4.style.backgroundColor = 'skyblue'
+		oc4.style.backgroundColor = '#385723'
+		oc4.style.color = 'white'
 	} else if (value == 2) {
-		oc5.style.backgroundColor = 'skyblue'
+		oc5.style.backgroundColor = '#385723'
+		oc5.style.color = 'white'
 	} else if (value == 3) {
-		oc6.style.backgroundColor = 'skyblue'
+		oc6.style.backgroundColor = '#385723'
+		oc6.style.color = 'white'
 	}
 }
 function setDefaultTime(value) {
-	time = value
+	time = 2
 
 	time10.style.backgroundColor = 'white'
+	time10.style.color = '#646464'
 	time15.style.backgroundColor = 'white'
+	time15.style.color = '#646464'
 	time20.style.backgroundColor = 'white'
+	time20.style.color = '#646464'
 
 	if (value == 10) {
-		addScore = 1
-		time10.style.backgroundColor = 'skyblue'
-	} else if (value == 15) {
-		addScore = 2
-		time15.style.backgroundColor = 'skyblue'
-	} else if (value == 20) {
+		time10.style.backgroundColor = '#FF0000'
+		time10.style.color = 'white'
 		addScore = 3
-		time20.style.backgroundColor = 'skyblue'
-	} 
+	} else if (value == 15) {
+		time15.style.backgroundColor = '#FFC000'
+		time15.style.color = 'white'
+		addScore = 2
+	} else if (value == 20) {
+		time20.style.backgroundColor = '#0070C0'
+		time20.style.color = 'white'
+		addScore = 1
+	}
 }
-
-
 
 function printData(data) {
 	console.log(data)
@@ -204,7 +334,7 @@ function printData(data) {
 	if (data % 12 == 0) {
 		nameKor.innerHTML = `시`
 	}
-	if (data %12 == 2 || data % 12 == 4 || data % 12 == 7 || data % 12 == 9 || data % 12 == 11) {
+	if (data % 12 == 2 || data % 12 == 4 || data % 12 == 7 || data % 12 == 9 || data % 12 == 11) {
 		nameKor.innerHTML += `#`
 	}
 }

@@ -11,7 +11,6 @@ if(currentPage.value == 1) {
 }
 
 /* ------------------- 아이디 찾기 ------------------  */
-
 function findId() {
 	let nm = document.querySelector('.user_nm')
 	let ph = document.querySelector('.user_ph')
@@ -51,7 +50,6 @@ function findIdAjax(data) {
 }
 
 /* -------------------------- 비밀번호 찾기 --------------------------- */
-
 let pinCode;
 let userNumber;
 
@@ -88,7 +86,6 @@ function findPw() {
 }
 
 /* -------------------- 보안코드 비교하기 ---------------------- */
-
 let pinCodeDiv = document.querySelector('.pinCodeDiv')
 let chkPwDiv = document.querySelector('.chkPwDiv')
 let pwDiv = document.querySelector('.pwDiv')
@@ -108,7 +105,6 @@ function comparePincode() {
 }
 
 /* ------------------------- 비밀번호 변경 -------------------------- */
-
 function changePw() {
 	
 	let newPw = document.querySelector('.userNewPw')
@@ -137,7 +133,6 @@ function changePw() {
 		alert('비밀번호가 맞지 않습니다. 다시 확인해주세요')
 	}
 }
-	
 
 function movePage(page) {
 	location.href=`/user/findInfo?page=`+page
