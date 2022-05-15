@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="/res/css/serial/actualMode.css?ver=40">
 
 <input class="defaultTime" type="hidden" value="5">
+<input class="sesstionId" type="hidden" value=${user.i_user }>
 <div>
 	<div id="Timer">
 		<div class="timer">
@@ -27,7 +28,6 @@
 			<div>종료하기</div>
 		</div>
 	</div>
-
 
 	<!-- 초기화면 모달창 -->
 	<div class="black_bg"></div>
@@ -111,5 +111,5 @@
 		</div>
 	</div>
 </div>
-<script defer src="/res/js/serial/actualMode.js?ver=20"></script>
+<script defer src="/res/js/serial/actualMode.js?ver=22"></script>
 

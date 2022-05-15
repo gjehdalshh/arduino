@@ -2,14 +2,15 @@ let timer = document.querySelector('.timer')
 let mask = document.querySelector('.mask')
 let countdown = document.querySelector('.countdown')
 let octave = -1
-let randomMelody = new Array('도', '도#', '레', '레#', '미', '파', '파#', '솔', '솔#', '라', '라#', '시');
+let randomMelodxy = new Array('도', '도#', '레', '레#', '미', '파', '파#', '솔', '솔#', '라', '라#', '시');
 let melody = 0
 let time = 0
 let start
 let quizCount = 0
 let currScore = 0
 let addScore = 0
-let nameKor = document.querySelector('#real')
+let sesstionId = document.querySelector('.sesstionId')
+console.log(sesstionId.value)
 
 /* 아두이노에서 실시간으로 받고 값 비교*/
 function mode() {
