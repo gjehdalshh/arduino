@@ -270,24 +270,25 @@ body {
 	height: 35px;
 }
 
-.rankFlex {
+.rankFlex, .curRankFlex {
 	display: flex;
 	align-items: center;
     font-size: 20px;
     margin-bottom: 10px;
 }
-#rankFlex {
+
+#curRankFlex {
 	box-shadow: 1px 1px 4px 1px #00b0f0, 0px 2px 5px 0px #00b0f0 inset;
     border: 1px solid #00b0f0;
     height: 50px;
-    padding: 0 10px;
+    padding: 0 9px;
 }
 
 .userName {
 	margin: 0 35 0 10;
 }
 .userPhone {
-	margin-right: 175px;
+	margin-right: 125px;
 }
 #currentScoreDiv {
 	margin: 40 0 10;

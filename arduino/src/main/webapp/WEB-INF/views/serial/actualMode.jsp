@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link rel="stylesheet" href="/res/css/serial/actualMode.css?ver=40">
+<link rel="stylesheet" href="/res/css/serial/actualMode.css?ver=43">
 
 <input class="defaultTime" type="hidden" value="5">
-<input class="sesstionId" type="hidden" value=${user.i_user }>
+<input id="iUser" type="hidden" value=${user.i_user }>
+<input id="userPh" type="hidden" value=${user.user_phone }>
 <div>
 	<div id="Timer">
 		<div class="timer">
@@ -69,47 +70,26 @@
 		<div class="endBlack_bg"></div>
 		<div class="endModal_wrap">
 			<div class="rankTtile">순 위</div>
-			<div class="rankFlex">
-				<div class="rankImg">
-					<img alt="" src="/res/img/first.png">
-				</div>
-				<div class="userName">이현아</div>
-				<div class="userPhone">(3395)</div>
-				<div>25점</div>
-			</div>
-			<div class="rankFlex">
-				<div class="rankImg">
-					<img alt="" src="/res/img/2nd.png">
-				</div>
-				<div class="userName">이현아</div>
-				<div class="userPhone">(3395)</div>
-				<div>13점</div>
-			</div>
-			<div class="rankFlex">
-				<div class="rankImg">
-					<img alt="" src="/res/img/3rd.png">
-				</div>
-				<div class="userName">이현아</div>
-				<div class="userPhone">(3395)</div>
-				<div>5점</div>
-			</div>
-			<div id="currentScoreDiv">현재기록</div>
-			<div id="rankFlex" class="rankFlex">
-				<div>6등</div>
-				<div class="userName">이현아</div>
-				<div class="userPhone">(3395)</div>
-				<div id="currentScore">현재기록</div>
-			</div>
-			<div class="myBestScore">
-				<span>나의</span> <span class="bestScoreSpan">최고 기록</span> <span>:
-					25점</span>
-			</div>
-			<div class="endFlex">
-				<div class="endModal_restart">RESTART</div>
-				<div class="endModal_home">HOME</div>
-			</div>
+			<div>
+			<div class="showRank"></div>
+		</div>
+		<div id="currentScoreDiv">현재기록</div>
+		<div id="curRankFlex" class="curRankFlex">
+			<div id="currentScoreRank"></div>
+			<div class="userName">${user.user_nm }</div>
+			<div class="userPhone"></div>
+			<div id="currentScore">현재기록</div>
+		</div>
+		<div class="myBestScore">
+			<span>나의</span> <span class="bestScoreSpan">최고 기록</span> <span class="myBestScore">
+				</span>
+		</div>
+		<div class="endFlex">
+			<div class="endModal_restart">RESTART</div>
+			<div class="endModal_home">HOME</div>
 		</div>
 	</div>
 </div>
-<script defer src="/res/js/serial/actualMode.js?ver=22"></script>
+</div>
+<script defer src="/res/js/serial/actualMode.js?ver=59"></script>
 

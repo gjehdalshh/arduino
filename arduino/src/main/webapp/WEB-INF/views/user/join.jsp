@@ -47,4 +47,4 @@
 	</div>
 </div>
 
-<script defer src="/res/js/user/join.js?ver=11"></script>
+<script defer src="/res/js/user/join.js?ver=12"></script>

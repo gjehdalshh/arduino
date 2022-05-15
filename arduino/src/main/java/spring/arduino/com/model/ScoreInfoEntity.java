@@ -1,16 +1,15 @@
 package spring.arduino.com.model;
 
 public class ScoreInfoEntity {
-	private int i_score;
+	private int i_score_record;
 	private int i_user;
-	private int i_music;
-	private int music_socre;
+	private int actual_mode_score;
 	private String r_dt;
-	public int getI_score() {
-		return i_score;
+	public int getI_score_record() {
+		return i_score_record;
 	}
-	public void setI_score(int i_score) {
-		this.i_score = i_score;
+	public void setI_score_record(int i_score_record) {
+		this.i_score_record = i_score_record;
 	}
 	public int getI_user() {
 		return i_user;
@@ -18,17 +17,11 @@ public class ScoreInfoEntity {
 	public void setI_user(int i_user) {
 		this.i_user = i_user;
 	}
-	public int getI_music() {
-		return i_music;
+	public int getActual_mode_score() {
+		return actual_mode_score;
 	}
-	public void setI_music(int i_music) {
-		this.i_music = i_music;
-	}
-	public int getMusic_socre() {
-		return music_socre;
-	}
-	public void setMusic_socre(int music_socre) {
-		this.music_socre = music_socre;
+	public void setActual_mode_score(int actual_mode_score) {
+		this.actual_mode_score = actual_mode_score;
 	}
 	public String getR_dt() {
 		return r_dt;
