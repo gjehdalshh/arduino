@@ -2,7 +2,12 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <link rel="stylesheet" href="/res/css/serial/actualMode.css?ver=43">
-
+<c:if test="${user == null}">
+	<script>
+		alert('로그인 후 이용해주세요')
+		location.href="/user/login"
+	</script>
+</c:if>
 <input class="defaultTime" type="hidden" value="5">
 <input id="iUser" type="hidden" value=${user.i_user }>
 <input id="userPh" type="hidden" value=${user.user_phone }>
@@ -91,5 +96,5 @@
 	</div>
 </div>
 </div>
-<script defer src="/res/js/serial/actualMode.js?ver=59"></script>
+<script defer src="/res/js/serial/actualMode.js?ver=61"></script>
 
