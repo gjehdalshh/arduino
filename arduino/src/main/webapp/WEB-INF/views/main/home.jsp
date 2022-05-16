@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link rel="stylesheet" href="/res/css/main/home.css?ver=14">
+<link rel="stylesheet" href="/res/css/main/home.css?ver=18">
 
 <div id="mainDiv">
 	<div id="header">
@@ -22,8 +22,14 @@
 				<div>
 					<input class="search" type="text" placeholder="SEARCH">
 				</div>
-				<div class="login">로그인</div>
-				<div class="join">회원가입</div>
+				<c:if test="${user == null}">
+					<div class="login" onclick="login()">로그인</div>
+					<div class="join" onclick="join()">회원가입</div>
+				</c:if>
+				<c:if test="${user != null}">
+					<div class="userName">${user.user_nm }님</div>
+					<div class="logout"><a href="/user/logout">로그아웃</a></div>
+				</c:if>
 			</div>
 		</div>
 	</div>
@@ -91,4 +97,4 @@
 	</div>
 </div>
 
-<script defer src="/res/js/main/home.js?ver=9"></script>
+<script defer src="/res/js/main/home.js?ver=11"></script>

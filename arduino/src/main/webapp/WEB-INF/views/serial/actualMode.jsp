@@ -30,7 +30,6 @@
 		</div>
 	</div>
 
-
 	<!-- 초기화면 모달창 -->
 	<div class="black_bg"></div>
 	<div class="modal_wrap">

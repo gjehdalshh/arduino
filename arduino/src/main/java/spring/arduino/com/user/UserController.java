@@ -4,6 +4,8 @@ import java.lang.ProcessBuilder.Redirect;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,10 +28,23 @@ public class UserController {
 	@Autowired
 	private UserService service;
 	
+	@Autowired
+	private HttpSession hs;
+	
 	/* ---------------- 로그인 페이지 열기 ---------------- */
 	
 	@GetMapping("/user/login")
 	public void login() {}
+	
+	/* ---------------- 로그인 페이지 열기 ---------------- */
+	
+	@GetMapping("/user/logout")
+	public String logout() {
+		
+		hs.invalidate();
+		
+		return "/main/home";
+	}
 	
 	/* ---------------- 로그인 ajax ---------------- */
 	

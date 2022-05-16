@@ -39,9 +39,6 @@ a {
    display: flex;
    align-items: baseline;
 }
-.mainLogoDiv {
-   
-}
 
 .mainLogo {
     height: 100px;
@@ -57,13 +54,14 @@ a {
    display: flex;
 }
 
-.login {
+.login, .logout, .join, .userName {
    font-size: 16;
     margin: 0 20;
 }
-.join {
-   font-size: 16;
-    margin: 0 20;
+
+.logout a {
+	color: black;
+	font-weight: 400;
 }
 
 .subCategori {

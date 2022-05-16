@@ -10,13 +10,13 @@
 	<div class="login_div">
 		<div class="flex">
 			<div><img class="id_logo"alt="" src="/res/img/id_logo.png"></div>
-			<div><input class="user_id" type="text" placeholder="아이디"></div>
+			<div><input onkeyup="enterkey()" class="user_id" type="text" placeholder="아이디"></div>
 		</div>
 		<div class="flex">
 			<div><img class="pw_logo"alt="" src="/res/img/pw_logo.png"></div>
-			<div><input class="user_pw" type="password" placeholder="비밀번호"></div>
+			<div><input class="user_pw" onkeyup="enterkey()" type="password" placeholder="비밀번호"></div>
 		</div>
-		<div><input class="login_btn" type="button" value="로그인"></div>
+		<div><input class="login_btn" onclick="login()" type="button" value="로그인"></div>
 	</div>
 	<div class="find_div">
 		<div class="findSub_div">

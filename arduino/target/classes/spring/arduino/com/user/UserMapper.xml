@@ -4,7 +4,7 @@
 
 <insert id="ins_user">
 	INSERT INTO user
-	(user_id, user_pw, user_nm, user_phone)
+	(user_id, user_pw, user_nm, user_phone																				)
 	VALUES
 	(#{user_id}, #{user_pw}, #{user_nm}, #{user_phone});
 </insert>

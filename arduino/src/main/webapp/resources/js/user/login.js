@@ -7,9 +7,7 @@ function moveFindInfo(page) {
 	location.href = "/user/findInfo?page="+page
 }
 
-var login_btn = document.querySelector('.login_btn')
-
-login_btn.onclick = function() {
+function login() {
 	var id = document.querySelector('.user_id')
 	var pw = document.querySelector('.user_pw')
 	console.log(id.value)
@@ -44,5 +42,9 @@ login_btn.onclick = function() {
 		})
 }
 
-
+function enterkey() {
+	if(window.event.keyCode == 13) {
+		login()
+	}
+}
 
