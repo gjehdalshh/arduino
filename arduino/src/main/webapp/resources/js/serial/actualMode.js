@@ -3,15 +3,13 @@ let mask = document.querySelector('.mask')
 let countdown = document.querySelector('.countdown')
 let sessionIUser = document.querySelector('#iUser')
 let octave = -1
-let randomMelodxy = new Array('도', '도#', '레', '레#', '미', '파', '파#', '솔', '솔#', '라', '라#', '시');
+let randomMelody = new Array('도', '도#', '레', '레#', '미', '파', '파#', '솔', '솔#', '라', '라#', '시');
 let melody = 0
 let time = 0
 let start
 let modeControl
 let quizCount = 0
 let currScore = 0
-let sesstionId = document.querySelector('.sesstionId')
-console.log(sesstionId.value)
 let addScore = 0
 
 /* 아두이노에서 실시간으로 받고 값 비교*/
