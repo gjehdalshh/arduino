@@ -14,17 +14,6 @@ public class SerialService {
 	@Autowired
 	SerialMapper mapper;
 	
-	public int test() {
-		try {	
-			(new Serial()).connect("COM3");
-		}
-		catch(Exception e) 
-		{
-			e.printStackTrace();
-		}
-		return 1;
-	}
-	
 	int recordScore (ScoreInfoDTO dto) {
 		return mapper.recordScore(dto);
 	}

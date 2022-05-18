@@ -50,8 +50,9 @@ public class SerialController extends HttpServlet {
 	@PostMapping("/serial/practiceMode")
 	public Map<String, Object> practiceModeProc() {
 		Map<String, Object> val = new HashMap<String, Object>();
-		
-		val.put("data", value);
+
+			val.put("data", value);
+
 		return val;
 	}
 	
