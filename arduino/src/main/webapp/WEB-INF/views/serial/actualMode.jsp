@@ -1,32 +1,56 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link rel="stylesheet" href="/res/css/serial/actualMode.css?ver=43">
+<link rel="stylesheet" href="/res/css/serial/actualMode.css?ver=69">
 <c:if test="${user == null}">
 	<script>
 		alert('로그인 후 이용해주세요')
-		location.href="/user/login"
+		location.href = "/user/login"
 	</script>
 </c:if>
 <input class="defaultTime" type="hidden" value="5">
 <input id="iUser" type="hidden" value=${user.i_user }>
 <input id="userPh" type="hidden" value=${user.user_phone }>
-<div>
-	<div id="Timer">
-		<div class="timer">
-			<div class="mask"></div>
+<div class="wholeDiv">
+	<div class="flex_top">
+		<div class="flex_sub_top">
+			<div id="Timer">
+				<img class="timerImg"  alt="" src="/res/img/timer.png">
+				<div class="timer">
+					<div class="mask"></div>
+				</div>
+				<div class="countdown"></div>
+			</div>
+			<div class="flex">
+				<div class="examCount"></div>
+				<div class="examCount"></div>
+				<div class="examCount"></div>
+				<div class="examCount"></div>
+				<div class="examCount"></div>
+				<div class="examCount"></div>
+			</div>
 		</div>
-		<div class="countdown"></div>
+		<div class="flex_sub_top">
+			<div class="showOctaveDiv"></div>
+			<div class="showTimeDiv"></div>
+			<div onclick="setting()">
+				<img class="settingImg" alt="" src="/res/img/setting.png">
+			</div>
+		</div>
 	</div>
 
-	<div>
-		<div id="nameKor"></div>
-		<div id="test" class="test"></div>
+	<div class="flex_melody">
+		<div id="nameKor">
+		</div>
+		<div class="reletiveDiv">
+			<div class="currentSound">현재음</div>
+			<div id="createRandomValue" class="createRandomValue">
+				<div class="whiteColorDiv"></div>
+			</div>
+		</div>
 	</div>
 
 	<!-- 설정 모달창 -->
-	<div onclick="setting()">설정</div>
-
 	<div class="setBlack_bg"></div>
 	<div class="setModal_wrap">
 		<div class="restart">시작하기</div>
@@ -76,25 +100,25 @@
 		<div class="endModal_wrap">
 			<div class="rankTtile">순 위</div>
 			<div>
-			<div class="showRank"></div>
-		</div>
-		<div id="currentScoreDiv">현재기록</div>
-		<div id="curRankFlex" class="curRankFlex">
-			<div id="currentScoreRank"></div>
-			<div class="userName">${user.user_nm }</div>
-			<div class="userPhone"></div>
-			<div id="currentScore">현재기록</div>
-		</div>
-		<div class="myBestScore">
-			<span>나의</span> <span class="bestScoreSpan">최고 기록</span> <span class="myBestScore">
-				</span>
-		</div>
-		<div class="endFlex">
-			<div class="endModal_restart">RESTART</div>
-			<div class="endModal_home">HOME</div>
+				<div class="showRank"></div>
+			</div>
+			<div id="currentScoreDiv">현재기록</div>
+			<div id="curRankFlex" class="curRankFlex">
+				<div id="currentScoreRank"></div>
+				<div class="userName">${user.user_nm }</div>
+				<div class="userPhone"></div>
+				<div id="currentScore">현재기록</div>
+			</div>
+			<div class="myBestScore">
+				<span>나의</span> <span class="bestScoreSpan">최고 기록</span> <span
+					class="myBestScore"> </span>
+			</div>
+			<div class="endFlex">
+				<div class="endModal_restart">RESTART</div>
+				<div class="endModal_home">HOME</div>
+			</div>
 		</div>
 	</div>
 </div>
-</div>
-<script defer src="/res/js/serial/actualMode.js?ver=61"></script>
+<script defer src="/res/js/serial/actualMode.js?ver=109"></script>
 

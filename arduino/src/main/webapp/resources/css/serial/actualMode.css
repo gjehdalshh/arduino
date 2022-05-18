@@ -15,7 +15,20 @@ body {
 	--duration : 10s;
 }
 
+.wholeDiv {
+	width: 900px;
+	margin: 50 auto 0;
+}
+
 /* ------------------------ 타이머 작동 ----------------------------- */
+.timerImg {
+	position: absolute;
+    width: 148px;
+    height: 175px;
+    left: -16%;
+    top: -50%;
+}
+
 .timer.effect {
     background: -webkit-linear-gradient(left, skyBlue 50%, #eee 50%);
     /* Foreground color, Background colour */
@@ -76,17 +89,132 @@ body {
 }
 #Timer {
 	position: relative;
-	width: 200px;
+	width: 150px;
 }
 .countdown {
 	position: absolute;
-    top: -10%;
-    left: 26px;
-    font-size: 80;
+    top: 13%;
+    left: 18px;
+    font-size: 60;
+    font-weight: bold;
+    width: 60px;
+    text-align: center;
+}
+.flex {
+	display: flex;
+}
+.flex_top {
+	display: flex;
+	justify-content: space-between;
+	margin: 100 0;
+}
+.flex_sub_top {
+	display: flex;
+	align-items: center;
+}
+.flex_melody {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.examCount {
+	background-color: #E7E6E6;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 7px;
+}
+
+.showOctaveDiv, .showTimeDiv {
+	margin-right: 25px;
+    font-size: 25px;
     font-weight: bold;
 }
 
+
+/* ----------------------- 출력 화면 --------------------- */
+#nameKor {
+	font-size: 200px;
+    border: 5px solid #FFC000;
+    width: 310px;
+    align-items: center;
+    padding: 50 0;
+    text-align: center;
+}
+#hexagon {
+width: 60px;
+    left: 35%;
+    top: 37%;
+    height: 74px;
+    background: #FFC000;
+    position: absolute;
+    transform: rotate(-90deg);
+    }
+    #hexagon:before {
+      content: "";
+      position: absolute;
+      top: -25px;
+      left: 0;
+      width: 0;
+      height: 0;
+          border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 25px solid #FFC000;
+    }
+    #hexagon:after {
+      content: "";
+      position: absolute;
+      bottom: -25px;
+      left: 0;
+      width: 0;
+      height: 0;
+          border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 25px solid #FFC000;
+    }
+.curStagy {
+	transform: rotate(90deg);
+    font-size: 40;
+    color: white;
+    text-align: center;
+    padding-left: 25px;
+}
+#createRandomValue {
+	font-size: 200px;
+    width: 310px;
+    align-items: center;
+    padding: 55 0;
+    text-align: center;
+    background-color: #d1edf9;
+    position: relative;
+}
+.whiteColorDiv {
+	background-color: white;
+    width: 96%;
+    height: 20px;
+    position: absolute;
+    top: 6px;
+    left: 6px;
+}
+.reletiveDiv {
+	position: relative;
+}
+.currentSound {
+	position: absolute;
+    z-index: 1;
+    top: -1%;
+    background-color: white;
+    left: 38%;
+    font-size: 25px;
+}
+
+
 /* ---------------------- 설정 모달창 -------------------- */
+.settingImg {
+	width: 50px;
+	height: 50px;
+}
+
 .setModal_wrap {
 	display: none;
 	width: 500px;
@@ -190,12 +318,6 @@ body {
 .defaultTime {
 	padding: 15px 0;
     width: 130;
-}
-
-#test {
-	font-size: 200px;
-    width: 400px;
-    padding: 98px 227px;
 }
 
 .octaveTitle, .timeTitle {

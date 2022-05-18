@@ -43,7 +43,7 @@ public class UserController {
 		
 		hs.invalidate();
 		
-		return "/main/home";
+		return "redirect:/main/home";
 	}
 	
 	/* ---------------- 로그인 ajax ---------------- */
