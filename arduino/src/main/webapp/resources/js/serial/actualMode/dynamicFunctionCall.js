@@ -58,8 +58,8 @@ function runActualMode() {
 		showCurrentExamCount()
 		melody = parseInt(Math.random() * 12)
 		let value = randomMelody[melody]
-		createRandomValue.innerHTML = `<div class="whiteColorDiv"></div>${value}`;
 		quizCount++
+		createRandomValue.innerHTML = `${value}<div id="hexagon"><div class="curStagy">${quizCount}</div></div>`;
 		console.log('quizCountValue : '+quizCount)
 		if(quizCount > 1 && successAndFailCheck == 0) {
 			showExamCountFail()	
@@ -145,7 +145,7 @@ function check(data) {
 		clearInterval(resetCount)
 		count = time
 		showCountDown()
-		if(quizCount < 6) {
+		if(quizCount < 7) {
 			resetCount = setInterval(showCountDown, 1000)
 			intervalModeValue = setInterval(intervalMode, 2000)
 			intervalValue = setInterval(interval, time * 1000)
@@ -168,25 +168,25 @@ function printData(data) {
 		nameKor.innerHTML = `X`
 	}
 	if (data % 12 == 1 || data % 12 == 2) {
-		nameKor.innerHTML = `도<div id="hexagon"><div class="curStagy">${quizCount}</div></div>`
+		nameKor.innerHTML = `도`
 	}
 	if (data % 12 == 3 || data % 12 == 4) {
-		nameKor.innerHTML = `레<div id="hexagon"><div class="curStagy">${quizCount}</div></div>`
+		nameKor.innerHTML = `레`
 	}
 	if (data % 12 == 5) {
-		nameKor.innerHTML = `미<div id="hexagon"><div class="curStagy">${quizCount}</div></div>`
+		nameKor.innerHTML = `미`
 	}
 	if (data % 12 == 6 || data % 12 == 7) {
-		nameKor.innerHTML = `파<div id="hexagon"><div class="curStagy">${quizCount}</div></div>`
+		nameKor.innerHTML = `파`
 	}
 	if (data % 12 == 8 || data % 12 == 9) {
-		nameKor.innerHTML = `솔<div id="hexagon"><div class="curStagy">${quizCount}</div></div>`
+		nameKor.innerHTML = `솔`
 	}
 	if (data % 12 == 10 || data % 12 == 11) {
-		nameKor.innerHTML = `라<div id="hexagon"><div class="curStagy">${quizCount}</div></div>`
+		nameKor.innerHTML = `라`
 	}
 	if (data % 12 == 0) {
-		nameKor.innerHTML = `시<div id="hexagon"><div class="curStagy">${quizCount}</div></div>`
+		nameKor.innerHTML = `시`
 	}
 	if (data % 12 == 2 || data % 12 == 4 || data % 12 == 7 || data % 12 == 9 || data % 12 == 11) {
 		nameKor.innerHTML += `#`

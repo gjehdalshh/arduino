@@ -133,22 +133,23 @@ body {
 
 
 /* ----------------------- 출력 화면 --------------------- */
-#nameKor {
+#createRandomValue {
 	font-size: 150px;
     border: 5px solid #FFC000;
     width: 310px;
     align-items: center;
     padding: 75 0;
     text-align: center;
+    position: relative;
 }
 #hexagon {
-width: 60px;
-    left: 35%;
-    top: 37%;
+	width: 60px;
     height: 74px;
     background: #FFC000;
     position: absolute;
     transform: rotate(-90deg);
+    top: -12%;
+    left: 40%;
     }
     #hexagon:before {
       content: "";
@@ -179,7 +180,7 @@ width: 60px;
     text-align: center;
     padding-left: 25px;
 }
-#createRandomValue {
+#nameKor {
 	font-size: 150px;
     width: 310px;
     align-items: center;
@@ -195,13 +196,14 @@ width: 60px;
     position: absolute;
     top: 6px;
     left: 6px;
+    z-index: 1;
 }
 .reletiveDiv {
 	position: relative;
 }
 .currentSound {
 	position: absolute;
-    z-index: 1;
+    z-index: 2;
     top: -3%;
     background-color: white;
     left: 39%;
