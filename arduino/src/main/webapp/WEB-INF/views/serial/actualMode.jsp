@@ -114,11 +114,14 @@
 					class="myBestScore"> </span>
 			</div>
 			<div class="endFlex">
-				<div class="endModal_restart">RESTART</div>
-				<div class="endModal_home">HOME</div>
+				<div class="endModal_restart" onclick="restart()">RESTART</div>
+				<div class="endModal_home" onclick="moveHome()">HOME</div>
 			</div>
 		</div>
 	</div>
 </div>
-<script defer src="/res/js/serial/actualMode.js?ver=110"></script>
+<script defer src="/res/js/serial/actualMode/startDefaultSet.js?ver=1"></script>
+<script defer src="/res/js/serial/actualMode/setting.js?ver=24"></script>
+<script defer src="/res/js/serial/actualMode/dynamicFunctionCall.js?ver=16"></script>
+<script defer src="/res/js/serial/actualMode/end.js?ver=5"></script>
 

@@ -27,10 +27,9 @@ function mode() {
 		return res.json()
 	}).then(function(data) {
 		console.log('test : '+data.data)
-		if (melody != 0) {
-			check(data.data)
-			printData(data.data)
-		}
+		console.log(data.data)
+		check(data.data)
+		printData(data.data)
 	})
 }
 

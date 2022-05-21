@@ -11,6 +11,7 @@ function mode() {
 	}).then(function(res) {
 		return res.json()
 	}).then(function(data) {
+		console.log(data.data)
 		test(data.data)
 	})
 }
