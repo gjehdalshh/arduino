@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link rel="stylesheet" href="/res/css/serial/actualMode.css?ver=69">
+<link rel="stylesheet" href="/res/css/serial/actualMode.css?ver=72">
 <c:if test="${user == null}">
 	<script>
 		alert('로그인 후 이용해주세요')
@@ -15,7 +15,7 @@
 	<div class="flex_top">
 		<div class="flex_sub_top">
 			<div id="Timer">
-				<img class="timerImg"  alt="" src="/res/img/timer.png">
+				<img class="timerImg" alt="" src="/res/img/timer.png">
 				<div class="timer">
 					<div class="mask"></div>
 				</div>
@@ -40,13 +40,11 @@
 	</div>
 
 	<div class="flex_melody">
-		<div id="nameKor">
-		</div>
+		<div id="createRandomValue"></div>
 		<div class="reletiveDiv">
 			<div class="currentSound">현재음</div>
-			<div id="createRandomValue" class="createRandomValue">
-				<div class="whiteColorDiv"></div>
-			</div>
+			<div class="whiteColorDiv"></div>
+			<div id="nameKor" class="nameKor"></div>
 		</div>
 	</div>
 
@@ -122,6 +120,7 @@
 </div>
 <script defer src="/res/js/serial/actualMode/startDefaultSet.js?ver=1"></script>
 <script defer src="/res/js/serial/actualMode/setting.js?ver=24"></script>
-<script defer src="/res/js/serial/actualMode/dynamicFunctionCall.js?ver=16"></script>
-<script defer src="/res/js/serial/actualMode/end.js?ver=5"></script>
+<script defer
+	src="/res/js/serial/actualMode/dynamicFunctionCall.js?ver=29"></script>
+<script defer src="/res/js/serial/actualMode/end.js?ver=7"></script>
 

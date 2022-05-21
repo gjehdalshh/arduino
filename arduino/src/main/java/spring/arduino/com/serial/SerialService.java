@@ -29,5 +29,4 @@ public class SerialService {
 	List<ScoreInfoDomain> showMyRank() {
 		return mapper.showMyRank();
 	}
-	
 }
