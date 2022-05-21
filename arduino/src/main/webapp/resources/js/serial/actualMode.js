@@ -11,6 +11,9 @@ let modeControl
 let quizCount = 0
 let currScore = 0
 let addScore = 0
+let count = 0
+let resetCount
+let examCountList = document.querySelectorAll('.examCount')
 
 /* 아두이노에서 실시간으로 받고 값 비교*/
 function mode() {
@@ -24,26 +27,49 @@ function mode() {
 		return res.json()
 	}).then(function(data) {
 		console.log(data.data)
-		if (melody != 0) {
 			check(data.data)
 			printData(data.data)
-		}
 	})
 }
+
+let successAndFailCheck = 0
 
 /* 랜덤으로 생성된 값과 입력한 값 비교 */
 function check(data) {
 	if (data == ((melody + 1) + 12 * octave)) {
+		successAndFailCheck = 1
 		console.log('정답입니다! +1')
+		console.log('time ='+time)
+		console.log('count ='+count)
+		showExamCountSuccess()
 		currScore += addScore
+		count = time
 		clearInterval(start)
 		runActualMode()
 		start = setInterval(runActualMode, time * 1000)
 		startTimer(timer)
 		startTimer(mask)
+		clearInterval(resetCount)
+		showCountDown()
+		resetCount = setInterval(showCountDown, 1000)
+		clearInterval(currentExamCount)
+		showCurrentExamCount()
+		currentExamCount = setInterval(showCurrentExamCount, time * 1000)
 	} else {
 		console.log('틀렸습니다ㅠㅠ -1')
+		successAndFailCheck = 0
 	}
+}
+
+function showCurrentExamCount() {
+	examCountList[quizCount].style.border = '1px solid #000000'
+}
+
+function showExamCountSuccess() {
+	examCountList[quizCount-1].style.backgroundColor = '#70AD47'
+}
+function showExamCountFail() {
+	examCountList[quizCount-2].style.backgroundColor = '#C00000'
 }
 
 /* 타이머 작동 */
@@ -158,7 +184,7 @@ function showMyRankAjax() {
 
 function myRank(data) {
 	let j = 0
-	data.forEach(function(i){
+	data.forEach(function(){
 		if(sessionIUser.value == data[j].i_user && currScore == data[j].actual_mode_score) {
 			currentScoreRank.innerHTML = data[j].my_rank + '등'
 			return;
@@ -175,6 +201,7 @@ function endModalOpen() {
 	timer.style = "animation-play-state: paused"
 	mask.style = "animation-play-state: paused"
 	clearInterval(modeControl)
+	clearInterval(resetCount)
 	document.querySelector('.endModal_wrap').style.display = 'block'
 	document.querySelector('.endBlack_bg').style.display = 'block'
 	let str = ph.value.substr(7, 11)
@@ -190,6 +217,8 @@ function endModalOpen() {
 }
 
 
+let currentExamCount
+
 /* 실전모드 run, 랜덤난수 생성 */
 function runActualMode() {
 	if (quizCount < 5) {
@@ -197,12 +226,40 @@ function runActualMode() {
 		//console.log((melody + 1) + 12 * octave)
 		let value = randomMelody[melody]
 		//console.log(value)
-		test.innerHTML = value;
+		createRandomValue.innerHTML = `<div class="whiteColorDiv"></div>${value}`;
 		quizCount++
+		console.log('quizCountValue : '+quizCount)
+		if(quizCount > 1 && successAndFailCheck == 0) {
+			showExamCountFail()	
+		}
 	} else {
 		endModalOpen()
 		clearInterval(start)
 	}
+}
+
+let showOctaveDiv = document.querySelector('.showOctaveDiv')
+let showTimeDiv = document.querySelector('.showTimeDiv')
+
+function showOctaveAndTime() {
+	showOctaveDiv.innerHTML = "옥타브 " + (octave+3)
+	if(time == 10) {
+		showTimeDiv.innerHTML = "난이도 상"
+	} else if(time == 15) {
+		showTimeDiv.innerHTML = "난이도 중"
+	} else if(time == 20) {
+		showTimeDiv.innerHTML = "난이도 하"
+	}
+}
+
+function showCountDown() {
+		if(count == 0) {
+			count = time
+		}
+		countdown.innerHTML = `
+		${count}
+		`
+		count--
 }
 
 function startActualMode() {
@@ -211,11 +268,16 @@ function startActualMode() {
 	document.documentElement.style.setProperty("--duration", time + "s")
 	timer.style = "animation-play-state: running"
 	mask.style = "animation-play-state: running"
-
+	showCurrentExamCount()
+	currentExamCount = setInterval(showCurrentExamCount, time * 1000)
 	mode()
 	modeControl = setInterval(mode, 2000)
 	runActualMode()
 	start = setInterval(runActualMode, time * 1000)
+	showOctaveAndTime()
+	count = time
+	showCountDown()
+	resetCount = setInterval(showCountDown, 1000)
 }
 
 function setting() {
@@ -283,7 +345,7 @@ function setDefaultOctave(value) {
 	}
 }
 function setDefaultTime(value) {
-	time = 2
+	time = value
 
 	time10.style.backgroundColor = 'white'
 	time10.style.color = '#646464'
@@ -314,25 +376,25 @@ function printData(data) {
 		nameKor.innerHTML = `X`
 	}
 	if (data % 12 == 1 || data % 12 == 2) {
-		nameKor.innerHTML = `도`
+		nameKor.innerHTML = `도<div id="hexagon"><div class="curStagy">${quizCount}</div></div>`
 	}
 	if (data % 12 == 3 || data % 12 == 4) {
-		nameKor.innerHTML = `레`
+		nameKor.innerHTML = `레<div id="hexagon"><div class="curStagy">${quizCount}</div></div>`
 	}
 	if (data % 12 == 5) {
-		nameKor.innerHTML = `미`
+		nameKor.innerHTML = `미<div id="hexagon"><div class="curStagy">${quizCount}</div></div>`
 	}
 	if (data % 12 == 6 || data % 12 == 7) {
-		nameKor.innerHTML = `파`
+		nameKor.innerHTML = `파<div id="hexagon"><div class="curStagy">${quizCount}</div></div>`
 	}
 	if (data % 12 == 8 || data % 12 == 9) {
-		nameKor.innerHTML = `솔`
+		nameKor.innerHTML = `솔<div id="hexagon"><div class="curStagy">${quizCount}</div></div>`
 	}
 	if (data % 12 == 10 || data % 12 == 11) {
-		nameKor.innerHTML = `라`
+		nameKor.innerHTML = `라<div id="hexagon"><div class="curStagy">${quizCount}</div></div>`
 	}
 	if (data % 12 == 0) {
-		nameKor.innerHTML = `시`
+		nameKor.innerHTML = `시<div id="hexagon"><div class="curStagy">${quizCount}</div></div>`
 	}
 	if (data % 12 == 2 || data % 12 == 4 || data % 12 == 7 || data % 12 == 9 || data % 12 == 11) {
 		nameKor.innerHTML += `#`
