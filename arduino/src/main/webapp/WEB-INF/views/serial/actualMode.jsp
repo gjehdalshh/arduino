@@ -122,6 +122,6 @@
 </div>
 <script defer src="/res/js/serial/actualMode/startDefaultSet.js?ver=1"></script>
 <script defer src="/res/js/serial/actualMode/setting.js?ver=24"></script>
-<script defer src="/res/js/serial/actualMode/dynamicFunctionCall.js?ver=16"></script>
-<script defer src="/res/js/serial/actualMode/end.js?ver=5"></script>
+<script defer src="/res/js/serial/actualMode/dynamicFunctionCall.js?ver=22"></script>
+<script defer src="/res/js/serial/actualMode/end.js?ver=7"></script>
 

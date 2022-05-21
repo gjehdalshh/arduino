@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link rel="stylesheet" href="/res/css/main/home.css?ver=18">
+<link rel="stylesheet" href="/res/css/main/home.css?ver=19">
 
 <div id="mainDiv">
 	<div id="header">
 		<div class="top">
 			<div class="logoAndInput">
 				<div class="mainLogoDiv">
-					<img class="mainLogo" alt="" src="/res/img/mainlogo.png">
+					<img class="mainLogo" onclick="home()" alt="" src="/res/img/mainlogo.png">
 				</div>
 			</div>
 		</div>
@@ -97,4 +97,4 @@
 	</div>
 </div>
 
-<script defer src="/res/js/main/home.js?ver=11"></script>
+<script defer src="/res/js/main/home.js?ver=12"></script>

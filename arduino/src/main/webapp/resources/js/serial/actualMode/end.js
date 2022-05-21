@@ -1,8 +1,8 @@
 /* 실전모드가 종료되고 종료화면 모달창 open */
 function endModalOpen() {
+	end()
 	document.querySelector('.endModal_wrap').style.display = 'block'
 	document.querySelector('.endBlack_bg').style.display = 'block'
-	end()
 	showRankingdisplay()
 }
 

@@ -14,7 +14,7 @@
 		</div>
 		<div class="flex">
 			<div><img class="pw_logo"alt="" src="/res/img/pw_logo.png"></div>
-			<div><input class="user_pw" onkeyup="enterkey()" type="password" value="smdf01726" placeholder="비밀번호"></div>
+			<div><input class="user_pw" onkeyup="enterkey()" type="password" value="sui072981" placeholder="비밀번호"></div>
 		</div>
 		<div><input class="login_btn" onclick="login()" type="button" value="로그인"></div>
 	</div>

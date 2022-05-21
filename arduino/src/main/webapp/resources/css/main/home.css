@@ -12,6 +12,10 @@ a {
    font-weight: bold;
 }
 
+.mainLogo, .myPage, .notice, .questionAndAnswer {
+	cursor: pointer;
+}
+
 .titleMode {
    font-size: 25;
     letter-spacing: 4px;

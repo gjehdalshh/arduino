@@ -57,9 +57,7 @@ function runActualMode() {
 	if (quizCount < 6) {
 		showCurrentExamCount()
 		melody = parseInt(Math.random() * 12)
-		//console.log((melody + 1) + 12 * octave)
 		let value = randomMelody[melody]
-		//console.log(value)
 		createRandomValue.innerHTML = `<div class="whiteColorDiv"></div>${value}`;
 		quizCount++
 		console.log('quizCountValue : '+quizCount)
@@ -76,7 +74,6 @@ function runActualMode() {
 			showExamCountSuccess()
 		}
 		endModalOpen()
-		
 	}
 }
 
@@ -142,16 +139,17 @@ function check(data) {
 		currScore += addScore
 		clearIntervalAll()
 		interval()
-		intervalValue = setInterval(interval, time * 1000)
 		intervalMode()
-		intervalModeValue = setInterval(intervalMode, 2000)
 		setTimer(timer)
 		setTimer(mask)
 		clearInterval(resetCount)
 		count = time
 		showCountDown()
-		resetCount = setInterval(showCountDown, 1000)
-		
+		if(quizCount < 6) {
+			resetCount = setInterval(showCountDown, 1000)
+			intervalModeValue = setInterval(intervalMode, 2000)
+			intervalValue = setInterval(interval, time * 1000)
+		}
 	} else {
 		console.log('틀렸습니다ㅠㅠ -1')
 		successAndFailCheck = 0
