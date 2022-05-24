@@ -44,7 +44,8 @@
 		<div class="reletiveDiv">
 			<div class="currentSound">현재음</div>
 			<div class="whiteColorDiv"></div>
-			<div id="nameKor" class="nameKor"></div>
+			<div id="nameKor" class="nameKor">
+			</div>
 		</div>
 	</div>
 
@@ -120,7 +121,6 @@
 </div>
 <script defer src="/res/js/serial/actualMode/startDefaultSet.js?ver=1"></script>
 <script defer src="/res/js/serial/actualMode/setting.js?ver=24"></script>
-<script defer
-	src="/res/js/serial/actualMode/dynamicFunctionCall.js?ver=29"></script>
-<script defer src="/res/js/serial/actualMode/end.js?ver=8"></script>
+<script defer src="/res/js/serial/actualMode/dynamicFunctionCall.js?ver=29"></script>
+<script defer src="/res/js/serial/actualMode/end.js?ver=7"></script>
 

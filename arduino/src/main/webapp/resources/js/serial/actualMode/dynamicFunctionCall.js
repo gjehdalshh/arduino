@@ -145,7 +145,11 @@ function check(data) {
 		setTimer(mask)
 		clearInterval(resetCount)
 		count = time
+<<<<<<< HEAD
 		showCountDown()
+=======
+		showCountDown()
+>>>>>>> branch 'master' of https://github.com/gjehdalshh/arduino.git
 		if(quizCount < 7) {
 			resetCount = setInterval(showCountDown, 1000)
 			intervalModeValue = setInterval(intervalMode, 2000)
