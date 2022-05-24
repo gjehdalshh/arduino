@@ -21,20 +21,26 @@
 			<div class="myName">${user.user_nm }</div>
 			<div class="myId">${user.user_id }</div>
 			<div class="navDiv">
-				<div class="leftUl">actualModeList</div>
-				<div class="leftUl">
-					<form action="/user/actualModeList" name="actualModeList"
-						method="get">
-						<input type="submit" value="실전모드 기록">
-					</form>
-				</div>
-				<div class="leftUl">
-					<form action="/user/myBoardList" name="myBoardList" method="get">
-						<input type="submit" value="내가 쓴 글">
-					</form>
-				</div>
-				<div class="leftUl">댓글 단 글</div>
-				<div class="leftUl">스크랩</div>
+				<form action="/user/myInfo" method="get">
+					<input id="myProfileCategory" class="leftUlActualMode"
+						type="submit" value="내 프로필">
+				</form>
+				<form action="/user/actualModeList" method="get">
+					<input id="actualModeRecordCategory" class="leftUlActualMode"
+						type="submit" value="실전모드 기록">
+				</form>
+				<form action="/user/myBoardList" method="get">
+					<input id="myPostCategory" class="leftUlActualMode" type="submit"
+						value="내가 쓴 글">
+				</form>
+				<form action="/user/myCmtList" method="get">
+					<input id="myCmtCategory" class="leftUlActualMode" type="submit"
+						value="댓글 단 글">
+				</form>
+				<form action="/user/myScrapList" method="get">
+					<input id="myScrapCategory" class="leftUlActualMode" type="submit"
+						value="스크랩">
+				</form>
 			</div>
 		</div>
 		<div id="mainRightDiv">
@@ -123,4 +129,4 @@
 	</div>
 </div>
 
-<script defer src="/res/js/user/myPage.js?ver=17"></script>
+<script defer src="/res/js/user/myPage.js?ver=11"></script>

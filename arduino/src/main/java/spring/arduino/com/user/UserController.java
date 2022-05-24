@@ -139,7 +139,19 @@ public class UserController {
 		HttpSession session = request.getSession();
 		UserDomain domain = (UserDomain)session.getAttribute("user");
 		model.addAttribute("URL", "myBoardList");
-		model.addAttribute("myBoardList", service.showMyBoardList(domain));
+		model.addAttribute("myBoardList", service.showMyBoardList(domain));	
+		return "user/myPage";
+	}
+	
+	@GetMapping("/user/myCmtList")
+	public String showMyCmtList(UserDTO dto){
+		
+		return "user/myPage";
+	}
+	
+	@GetMapping("/user/myScrapList")
+	public String showMyScrapList(UserDTO dto){
+		
 		return "user/myPage";
 	}
 }

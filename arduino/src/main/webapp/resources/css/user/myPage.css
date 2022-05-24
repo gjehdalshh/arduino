@@ -68,6 +68,13 @@ body {
 	color: 7F7F7F;
 	font-size: 20px;
 }
+.leftUlActualMode {
+	color: 7F7F7F;
+    font-size: 20px;
+    border: none;
+    background-color: white;
+    font-family: 'a이끌림M';
+}
 
 .myInfoBox {
 	padding: 20 20 5 20;
