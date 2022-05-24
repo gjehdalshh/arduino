@@ -2,8 +2,10 @@ package spring.arduino.com.user;
 
 import java.lang.ProcessBuilder.Redirect;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +17,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import spring.arduino.com.DTO.ScoreInfoDTO;
 import spring.arduino.com.DTO.UserDTO;
+import spring.arduino.com.domain.ScoreInfoDomain;
 import spring.arduino.com.domain.UserDomain;
 
 @Controller
@@ -109,6 +113,27 @@ public class UserController {
 		val.put("result", service.changePw(dto));
 		
 		return val;
+	}
+	
+	/* ----------------- 마이페이지 ajax ----------------- */
+	@GetMapping("/user/myPage")
+	public void myPage() {}
+	
+	@ResponseBody
+	@PostMapping("/user/myInfo")
+	public Map<String, Object> showMyInfo(@RequestBody UserDTO dto){
+		Map<String, Object> val = new HashMap<String, Object>();
+		
+		return val;
+	}
+	
+	@GetMapping("/user/actualModeList")
+	public String showMyActualModeList (HttpServletRequest request, Model model) {
+		HttpSession session = request.getSession();
+		UserDomain domain = (UserDomain)session.getAttribute("user");
+		model.addAttribute("URL", "actualModeList");
+		model.addAttribute("value", service.showMyActualModeRecord(domain));
+		return "user/myPage";
 	}
 }
 

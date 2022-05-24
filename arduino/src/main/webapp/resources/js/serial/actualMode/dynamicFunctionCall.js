@@ -10,6 +10,7 @@ let currScore = 0
 let addScore = 0
 let count = 0
 let resetCount
+let value
 let examCountList = document.querySelectorAll('.examCount')
 
 /* actualMode start */
@@ -56,9 +57,9 @@ function runActualMode() {
 	if (quizCount < 6) {
 		showCurrentExamCount()
 		melody = parseInt(Math.random() * 12)
-		let value = randomMelody[melody]
+		value = randomMelody[melody]
 		quizCount++
-		createRandomValue.innerHTML = `${value}<div id="hexagon"><div class="curStagy">${quizCount}</div></div>`;
+		createRandomValue.innerHTML = `${value}<div id="hexagon"><div class="curStagy">${quizCount}</div></div>`
 		console.log('quizCountValue : '+quizCount)
 		if(quizCount > 1 && successAndFailCheck == 0) {
 			showExamCountFail()	
@@ -66,10 +67,10 @@ function runActualMode() {
 			showExamCountSuccess()
 		}
 	} else {
-		quizCount++;
+		quizCount++
 		if(successAndFailCheck == 0) {
 			showExamCountFail()
-		} else {
+		} else if (successAndFailCheck == 1) {
 			showExamCountSuccess()
 		}
 		endModalOpen()

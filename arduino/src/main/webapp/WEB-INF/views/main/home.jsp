@@ -97,4 +97,5 @@
 	</div>
 </div>
 
-<script defer src="/res/js/main/home.js?ver=14"></script>
+
+<script defer src="/res/js/main/home.js?ver=13"></script>

@@ -1,6 +1,7 @@
 package spring.arduino.com.user;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
@@ -13,7 +14,9 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 
+import spring.arduino.com.DTO.ScoreInfoDTO;
 import spring.arduino.com.DTO.UserDTO;
+import spring.arduino.com.domain.ScoreInfoDomain;
 import spring.arduino.com.domain.UserDomain;
 
 
@@ -141,5 +144,10 @@ public class UserService {
 		 dto.setNewPw(bcrypt.encode(dto.getNewPw()));
 		 
 		 return mapper.changePw(dto);		
+	}
+
+	public List<ScoreInfoDomain> showMyActualModeRecord(UserDomain domain) {
+		return mapper.showMyActualModeRecord(domain);
+		
 	}
 }

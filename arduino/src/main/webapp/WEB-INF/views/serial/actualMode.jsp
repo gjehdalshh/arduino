@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link rel="stylesheet" href="/res/css/serial/actualMode.css?ver=76">
+<link rel="stylesheet" href="/res/css/serial/actualMode.css?ver=72">
 <c:if test="${user == null}">
 	<script>
 		alert('로그인 후 이용해주세요')
@@ -15,7 +15,7 @@
 	<div class="flex_top">
 		<div class="flex_sub_top">
 			<div id="Timer">
-				<img class="timerImg"  alt="" src="/res/img/timer.png">
+				<img class="timerImg" alt="" src="/res/img/timer.png">
 				<div class="timer">
 					<div class="mask"></div>
 				</div>
@@ -120,7 +120,11 @@
 	</div>
 </div>
 <script defer src="/res/js/serial/actualMode/startDefaultSet.js?ver=1"></script>
+<<<<<<< HEAD
 <script defer src="/res/js/serial/actualMode/setting.js?ver=25"></script>
+=======
+<script defer src="/res/js/serial/actualMode/setting.js?ver=24"></script>
+>>>>>>> branch 'master' of https://github.com/gjehdalshh/arduino.git
 <script defer src="/res/js/serial/actualMode/dynamicFunctionCall.js?ver=29"></script>
 <script defer src="/res/js/serial/actualMode/end.js?ver=7"></script>
 

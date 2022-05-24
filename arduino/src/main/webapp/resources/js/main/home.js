@@ -11,5 +11,6 @@ function home() {
 }
 
 function moveMyInfo() {
-	location.href = `/user/myInfo`
+	location.href = `/user/myPage`
 }
+

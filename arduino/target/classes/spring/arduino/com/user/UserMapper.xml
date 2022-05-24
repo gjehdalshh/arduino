@@ -22,7 +22,12 @@
 </select>
 
 <update id="changePw">
-	UPDATE user SET user_pw = #{newPw} WHERE i_user = #{i_user}
+	UPDATE user SET user_pw = #{newPw} WHERE i_user = #{i_user};
 </update>
+
+<select id="showMyActualModeRecord" resultType="ScoreInfoDomain">
+	SELECT * FROM (SELECT *, ROW_NUMBER() OVER (ORDER BY r_dt DESC) my_rank FROM score_record) AS score_table 
+	WHERE i_user = #{i_user} and actual_mode_score > 0
+</select>
 
 </mapper>

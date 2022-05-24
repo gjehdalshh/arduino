@@ -2,8 +2,9 @@ function setting() {
 	timer.style = "animation-play-state: paused"
 	mask.style = "animation-play-state: paused"
 
-	clearInterval(intervalModeValue)
+
 	clearInterval(intervalValue)
+	clearInterval(intervalModeValue)
 	clearInterval(resetCount)
 
 	document.querySelector('.setModal_wrap').style.display = 'block'
