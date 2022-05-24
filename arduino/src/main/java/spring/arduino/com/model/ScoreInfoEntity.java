@@ -5,6 +5,20 @@ public class ScoreInfoEntity {
 	private int i_user;
 	private int actual_mode_score;
 	private String r_dt;
+	private int octave;
+	private String level;
+	public int getOctave() {
+		return octave;
+	}
+	public void setOctave(int octave) {
+		this.octave = octave;
+	}
+	public String getLevel() {
+		return level;
+	}
+	public void setLevel(String level) {
+		this.level = level;
+	}
 	public int getI_score_record() {
 		return i_score_record;
 	}

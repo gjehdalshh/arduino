@@ -122,5 +122,5 @@
 <script defer src="/res/js/serial/actualMode/setting.js?ver=24"></script>
 <script defer
 	src="/res/js/serial/actualMode/dynamicFunctionCall.js?ver=29"></script>
-<script defer src="/res/js/serial/actualMode/end.js?ver=7"></script>
+<script defer src="/res/js/serial/actualMode/end.js?ver=8"></script>
 

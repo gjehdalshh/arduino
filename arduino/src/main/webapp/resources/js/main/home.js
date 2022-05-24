@@ -9,3 +9,7 @@ function join() {
 function home() {
 	location.href = `/main/home`
 }
+
+function myInfo() {
+	location.href = `/user/myInfo`
+}

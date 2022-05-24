@@ -32,7 +32,9 @@ function end() {
 function recordScoreAjax() {
 	var param = {
 		i_user: sessionIUser.value,
-		actual_mode_score: currScore
+		actual_mode_score: currScore,
+		octave: octave + 3,
+		level: level
 	}
 	
 	fetch(`/serial/recordScore`, {

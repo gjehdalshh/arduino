@@ -1,4 +1,5 @@
 let time = 0
+let level
 let octave = -1
 
 let oc3 = document.querySelector('#oc3')
@@ -55,14 +56,17 @@ function setDefaultTime(value) {
 		time10.style.backgroundColor = '#FF0000'
 		time10.style.color = 'white'
 		addScore = 3
+		level = '상'
 	} else if (value == 15) {
 		time15.style.backgroundColor = '#FFC000'
 		time15.style.color = 'white'
 		addScore = 2
+		level = '중'
 	} else if (value == 20) {
 		time20.style.backgroundColor = '#0070C0'
 		time20.style.color = 'white'
 		addScore = 1
+		level = '하'
 	}
 }
 

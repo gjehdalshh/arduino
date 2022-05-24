@@ -14,7 +14,7 @@
 		</div>
 		<div class="subCategori">
 			<div class="flex">
-				<div class="myPage">마이페이지</div>
+				<div class="myPage" onclick="myInfo()">마이페이지</div>
 				<div class="notice">공지사항</div>
 				<div class="questionAndAnswer">Q&A</div>
 			</div>
@@ -97,4 +97,4 @@
 	</div>
 </div>
 
-<script defer src="/res/js/main/home.js?ver=12"></script>
+<script defer src="/res/js/main/home.js?ver=13"></script>

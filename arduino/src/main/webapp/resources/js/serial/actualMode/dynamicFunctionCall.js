@@ -146,7 +146,7 @@ function check(data) {
 		clearInterval(resetCount)
 		count = time
 		showCountDown()
-		if(quizCount < 6) {
+		if(quizCount < 7) {
 			resetCount = setInterval(showCountDown, 1000)
 			intervalModeValue = setInterval(intervalMode, 2000)
 			intervalValue = setInterval(interval, time * 1000)
