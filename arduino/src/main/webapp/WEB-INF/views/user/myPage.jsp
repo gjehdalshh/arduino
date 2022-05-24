@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link rel="stylesheet" href="/res/css/user/myInfo.css?ver=72">
+<link rel="stylesheet" href="/res/css/user/myPage.css?ver=72">
 <c:if test="${user == null}">
 	<script>
 		alert('로그인 후 이용해주세요')
@@ -24,4 +24,4 @@
 	</c:if>
 
 </div>
-<script defer src="/res/js/user/myInfo.js?ver=17"></script>
+<script defer src="/res/js/user/myPage.js?ver=17"></script>

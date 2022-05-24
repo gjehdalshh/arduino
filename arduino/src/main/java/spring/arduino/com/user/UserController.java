@@ -117,8 +117,8 @@ public class UserController {
 	}
 	
 	/* ----------------- 마이페이지 ajax ----------------- */
-	@GetMapping("/user/myInfo")
-	public void myInfo() {}
+	@GetMapping("/user/myPage")
+	public void myPage() {}
 	
 	@ResponseBody
 	@PostMapping("/user/myInfo")
@@ -134,7 +134,7 @@ public class UserController {
 		UserDomain domain = (UserDomain)session.getAttribute("user");
 		model.addAttribute("URL", "actualModeList");
 		model.addAttribute("value", service.showMyActualModeRecord(domain));
-		return "user/myInfo";
+		return "user/myPage";
 	}
 }
 
