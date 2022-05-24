@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link rel="stylesheet" href="/res/css/main/home.css?ver=20">
+<link rel="stylesheet" href="/res/css/main/home.css?ver=25">
 
 <div id="mainDiv">
 	<div id="header">
@@ -14,7 +14,9 @@
 		</div>
 		<div class="subCategori">
 			<div class="flex">
-				<div class="myPage" onclick="moveMyInfo()">마이페이지</div>
+				<form class="myProfile" action="/user/myInfo" method="get">
+					<input id="myProfileCategory" class="leftUlActualMode" type="submit" value="마이페이지">
+				</form>
 				<div class="notice">공지사항</div>
 				<div class="questionAndAnswer">Q&A</div>
 			</div>
