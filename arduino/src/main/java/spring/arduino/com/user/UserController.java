@@ -109,10 +109,6 @@ public class UserController {
 		val.put("result", service.changePw(dto));
 		
 		return val;
-		
 	}
 }
-
-
-
 

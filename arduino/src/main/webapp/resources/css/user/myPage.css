@@ -1,0 +1,236 @@
+@charset "UTF-8";
+
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: 'a이끌림M';
+}
+
+@font-face {
+	font-family : 'a이끌림M';
+	src: url('/res/font/a이끌림M.woff') format('woff');
+}
+
+.flex {
+	display: flex;
+}
+
+#mainDiv {
+   width: 900px;
+   margin: auto;
+   margin-top: 50px;
+}
+
+.mainLogoDiv {
+	margin: 0 0 30 55px;
+}
+
+.mainLogo {
+    height: 100px;
+}
+
+.myProfileImg {
+	width: 150px;
+    border-radius: 50%;
+}
+
+#mainLeftDiv {
+    width: 270px;
+    text-align: center;
+    border-left: 1px solid #A6A6A6;
+    padding: 50 0 35;
+    padding-top: 50px;
+    box-shadow: 3px 0px 5px 2px #a6a6a6;
+}
+
+#mainRightDiv {
+	width: 600px;
+	margin-left: 30px;
+}
+
+.myName {
+	margin: 8 0 5;
+    color: 404040;
+    font-size: 18px;
+    font-weight: bold;
+}
+.myId {
+	color: 595959;
+    font-size: 15px;
+}
+
+.navDiv {
+	margin-top: 40px;
+}
+
+.leftUl {
+	margin: 20 0;
+	color: 7F7F7F;
+	font-size: 20px;
+}
+
+.myInfoBox {
+	padding: 20 20 5 20;
+    border: 3px solid #FFC000;
+    border-radius: 15px;
+}
+
+.defaultInfo {
+	color: 7F7F7F;
+	margin-bottom: 20px;
+}
+.defaultNameDiv {
+	border-bottom: 1px solid #A6A6A6;
+    padding: 0 0 5 10;
+    margin-bottom: 5px;
+    justify-content: space-between;
+    display: flex;
+}
+.defaultName {
+	font-weight: 600;
+    font-size: 20px;
+}
+.infoModify {
+	background-color: FFC000;
+    color: white;
+    width: 50px;
+    text-align: center;
+    padding: 3 0 3;
+}
+.defaultId {
+	font-size: 18px;
+	color: 595959;
+}
+.defaultId_flex img {
+	width: 30px;
+	margin-right: 6px;
+	margin-top: 6px;
+	padding-left: 8px;
+}
+.defaultPh {
+	font-size: 18px;
+	color: 595959;
+}
+.defaultPh_flex img {
+	width: 30px;
+	margin-right: 9px;
+	padding-left: 5px;
+}
+.default_flex {
+	display: flex;
+    align-items: center;
+    width: 600px;
+    justify-content: space-between;
+}
+.default_sub_flex {
+	display: flex;
+	align-items: center;
+}
+
+.defaultId_flex, .defaultPh_flex {
+	display: flex;
+	border-bottom: 1px solid #A6A6A6;
+	padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.deleteUser {
+	text-align: end;
+    margin: 20 15 0;
+    color: 595959;
+}
+
+/* ------------------- actualModeList ----------------- */
+.actualModeListDiv {
+	
+}
+
+.actualModeList {
+	padding: 20;
+    border: 2px solid #A6A6A6;
+    border-radius: 15px;
+}
+.actualModeRecord {
+	font-size: 20px;
+	margin-bottom: 10px;
+	color: 262626;
+}
+
+.lately {
+	text-align: end;
+    margin: 0 10 15;
+    color: 7F7F7F;
+}
+
+.actual_flex {
+	display: flex;
+    padding: 10 0;
+    border-bottom: 1px solid #A6A6A6;
+}
+
+.actaulNumber, .actaulNumberValue {
+	width: 100px;
+}
+.actualDate, .actualDateValue {
+	width: 150px;
+}
+.actualOctave, .actualOctaveValue {
+	width: 100px;
+}
+.actualLevel, .actualLevelValue {
+	width: 100px;
+}
+.actualScore, .actualScoreValue {
+	width: 100px;
+}
+
+.actaulNumber, .actualDate, .actualOctave, .actualLevel, .actualScore {
+	font-size: 20px;
+    text-align: center;
+}
+
+
+.actaulNumberValue, .actualDateValue, .actualOctaveValue, .actualLevelValue, .actualScoreValue {
+	font-size: 20px;
+    text-align: center;
+    color: 595959;
+}
+
+/*  ---------------------- myPostList ----------------- */
+.myPostListDiv {
+	
+}
+
+.myPostList {
+	padding: 20px;
+    border: 3px solid #A6A6A6;
+    border-radius: 15px;
+}
+
+.list_flex {
+	display: flex;
+    padding: 10 0;
+    border-bottom: 1px solid #A6A6A6;
+    font-size: 18px;
+}
+
+.postNumber {
+	width: 50px;
+	text-align: center;
+}
+.postTitle {
+	width: 260px;
+	    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.postCategory {
+	width: 120px;
+	text-align: center;
+	color: A6A6A6;
+}
+.postDate {
+	width: 120px;
+	text-align: center;
+}
+
