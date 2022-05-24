@@ -3,7 +3,12 @@
 body {
    margin: 0px;
    padding: 0px;
-   font-family: 'NanumSquare', sans-serif;
+   font-family: 'a이끌림M';
+}
+
+@font-face {
+	font-family : 'a이끌림M';
+	src: url('/res/font/a이끌림M.woff') format('woff');
 }
 
 a {
@@ -12,7 +17,7 @@ a {
    font-weight: bold;
 }
 
-.mainLogo, .myPage, .notice, .questionAndAnswer {
+.mainLogo, .notice, .questionAndAnswer {
 	cursor: pointer;
 }
 
@@ -81,8 +86,19 @@ a {
     justify-content: space-between;
 }
 
-.myPage, .notice, .questionAndAnswer {
+.myProfile, .notice, .questionAndAnswer {
    margin: 0 15;
+   font-size: 18px;
+}
+
+#myProfileCategory {
+	border: none;
+    background-color: white;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    font-family: 'a이끌림M';
+    cursor: pointer;
 }
 
 .practiceModeDiv, .actualModeDiv {
