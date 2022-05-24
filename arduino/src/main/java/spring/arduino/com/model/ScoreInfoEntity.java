@@ -1,5 +1,7 @@
 package spring.arduino.com.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class ScoreInfoEntity {
 	private int i_score_record;
 	private int i_user;

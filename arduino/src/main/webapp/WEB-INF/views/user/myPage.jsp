@@ -21,11 +21,21 @@
 			<div class="myName">허동민</div>
 			<div class="myId">gjehdalshh@naver.com</div>
 			<div class="navDiv">
-				<div class="leftUl">내 프로필</div>
-				<div class="leftUl">실전모드 기록</div>
-				<div class="leftUl">내가 쓴 글</div>
-				<div class="leftUl">댓글 단 글</div>
-				<div class="leftUl">스크랩</div>
+				<form action="/user/myInfo" method="get">
+					<input id="myProfileCategory" class="leftUlActualMode" type="submit" value="내 프로필">
+				</form>
+				<form action="/user/actualModeList" method="get">
+					<input id="actualModeRecordCategory" class="leftUlActualMode" type="submit" value="실전모드 기록">
+				</form>
+				<form action="/user/myBoardList" method="get">
+					<input id="myPostCategory" class="leftUlActualMode" type="submit" value="내가 쓴 글">
+				</form>
+				<form action="/user/myCmtList" method="get">
+					<input id="myCmtCategory" class="leftUlActualMode" type="submit" value="댓글 단 글">
+				</form>
+				<form action="/user/myScrapList" method="get">
+					<input id="myScrapCategory" class="leftUlActualMode" type="submit" value="스크랩">
+				</form>
 			</div>
 		</div>
 		<div id="mainRightDiv">
@@ -66,53 +76,29 @@
 				<div class="deleteUser">회원탈퇴 ></div>
 			</div>
 			<div class="actualModeListDiv">
+				<c:if test="${URL == 'actualModeList'}">
 				<div class="actualModeRecord">실전모드 기록</div>
-				<div>
-					<form action="/user/actualModeList" name="myInfo" method="get">
-						<input type="submit" value="실전모드">
-					</form>
-
-					<c:if test="${URL == 'actualModeList'}">
-						<div class="actualModeList">
-							실전모드 기록
-							<c:forEach items="${value}" var="item">
-								<div>${item.octave}</div>
-							</c:forEach>
+					<div class="actualModeList">
+						<div class="lately">최신순</div>
+						<div class="actual_flex">
+							<div class="actaulNumber">번호</div>
+							<div class="actualDate">날짜</div>
+							<div class="actualOctave">옥타브</div>
+							<div class="actualLevel">난이도</div>
+							<div class="actualScore">점수</div>
 						</div>
-					</c:if>
-
-				</div>
-				<div class="actualModeList">
-					<div class="lately">최신순</div>
-					<div class="actual_flex">
-						<div class="actaulNumber">번호</div>
-						<div class="actualDate">날짜</div>
-						<div class="actualOctave">옥타브</div>
-						<div class="actualLevel">난이도</div>
-						<div class="actualScore">점수</div>
+						<c:forEach items="${actualModeList}" var="actualModeList">
+							<c:set var="i" value="${i+1}"></c:set>
+							<div class="actual_flex">
+								<div class="actaulNumberValue">${i}</div>
+								<div class="actualDateValue">${actualModeList.r_dt.substring(0, 10)}</div>
+								<div class="actualOctaveValue">${actualModeList.octave}</div>
+								<div class="actualLevelValue">${actualModeList.level}</div>
+								<div class="actualScoreValue">${actualModeList.actual_mode_score}</div>
+							</div>
+						</c:forEach>
 					</div>
-					<div class="actual_flex">
-						<div class="actaulNumberValue">1</div>
-						<div class="actualDateValue">2022.05.23</div>
-						<div class="actualOctaveValue">4</div>
-						<div class="actualLevelValue">중</div>
-						<div class="actualScoreValue">17</div>
-					</div>
-					<div class="actual_flex">
-						<div class="actaulNumberValue">1</div>
-						<div class="actualDateValue">2022.05.21</div>
-						<div class="actualOctaveValue">3</div>
-						<div class="actualLevelValue">하</div>
-						<div class="actualScoreValue">19</div>
-					</div>
-					<div class="actual_flex">
-						<div class="actaulNumberValue">1</div>
-						<div class="actualDateValue">2022.05.23</div>
-						<div class="actualOctaveValue">4</div>
-						<div class="actualLevelValue">중</div>
-						<div class="actualScoreValue">17</div>
-					</div>
-				</div>
+				</c:if>
 			</div>
 			<div class="myPostListDiv">
 				<div class="myPostList">
@@ -140,7 +126,6 @@
 			</div>
 		</div>
 	</div>
-
 </div>
 
-<script defer src="/res/js/user/myPage.js?ver=17"></script>
+<script defer src="/res/js/user/myPage.js?ver=11"></script>
