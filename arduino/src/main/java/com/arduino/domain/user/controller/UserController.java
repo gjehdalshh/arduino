@@ -55,7 +55,7 @@ public class UserController {
 	public Map<String, Object> loginProc(@RequestBody UserDTO dto) {
 		Map<String, Object> val = new HashMap<String, Object>();
 		
-		val.put("result", service.loginProc(dto));
+		//val.put("result", service.loginProc(dto));
 		return val;
 	}
 	
@@ -71,7 +71,7 @@ public class UserController {
 	public Map<String, Object> join(@RequestBody UserDTO dto) {
 		Map<String, Object> val = new HashMap<String, Object>();
 		
-		val.put("result", service.ins_user(dto));
+		//val.put("result", service.ins_user(dto));
 		
 		return val;
 	}
@@ -126,4 +126,3 @@ public class UserController {
 		return val;
 	}
 }
-

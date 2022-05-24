@@ -113,19 +113,16 @@ public class UserController {
 		val.put("result", service.changePw(dto));
 		
 		return val;
-		
 	}
 	
 	/* ----------------- 마이페이지 ajax ----------------- */
 	@GetMapping("/user/myPage")
 	public void myPage() {}
 	
-	@ResponseBody
-	@PostMapping("/user/myInfo")
-	public Map<String, Object> showMyInfo(@RequestBody UserDTO dto){
-		Map<String, Object> val = new HashMap<String, Object>();
-		
-		return val;
+	@GetMapping("/user/myInfo")
+	public String showMyInfo (Model model) {
+		model.addAttribute("URL", "myInfo");
+		return "user/myPage";
 	}
 	
 	@GetMapping("/user/actualModeList")
@@ -133,11 +130,17 @@ public class UserController {
 		HttpSession session = request.getSession();
 		UserDomain domain = (UserDomain)session.getAttribute("user");
 		model.addAttribute("URL", "actualModeList");
-		model.addAttribute("value", service.showMyActualModeRecord(domain));
+		model.addAttribute("actualModeList", service.showMyActualModeRecord(domain));
+		return "user/myPage";
+	}
+	
+	@GetMapping("/user/myBoardList")
+	public String showMyBoardList (HttpServletRequest request, Model model) {
+		HttpSession session = request.getSession();
+		UserDomain domain = (UserDomain)session.getAttribute("user");
+		model.addAttribute("URL", "myBoardList");
+		model.addAttribute("myBoardList", service.showMyBoardList(domain));
 		return "user/myPage";
 	}
 }
-
-
-
 

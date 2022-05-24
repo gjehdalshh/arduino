@@ -116,6 +116,12 @@ body {
 	display: flex;
 	justify-content: space-evenly;
 }
+.flex_set {
+	display: flex;
+    height: 120;
+    align-items: center;
+    justify-content: space-around;
+}
 
 .examCount {
 	background-color: #E7E6E6;
@@ -219,14 +225,14 @@ body {
 
 .setModal_wrap {
 	display: none;
-	width: 500px;
-	height: 500px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin: -250px 0 0 -250px;
-	background: #eee;
-	z-index: 2;
+    width: 420px;
+    height: 120;
+    position: absolute;
+    top: 76%;
+    left: 56%;
+    margin: -250px 0 0 -250px;
+    background: #eee;
+    z-index: 2;
 }
 
 .setBlack_bg {
@@ -238,17 +244,22 @@ body {
 	background-color: rgba(0, 0, 0, 0.5);
 	top: 0;
 	left: 0;
-	z-index: 1;
+	z-index: 2;
+}
+.restart {
+	font-size: 35px;
 }
 
 .setModal_close {
-	width: 79px;
-    height: 26px;
-    position: absolute;
-    right: 40%;
-    bottom: 3%;
+	font-size: 35px;
 }
 
+.restart, .setModal_close {
+	font-size: 35px;
+    border: 1px solid;
+    border-radius: 22px;
+    padding: 28 22;
+}
 
 /* ----------------------- 초기화면 모달창 ------------------------*/
 .modal_wrap {
@@ -357,7 +368,7 @@ body {
 	background-color: rgba(0, 0, 0, 0.5);
 	top: 0;
 	left: 0;
-	z-index: 1;
+	z-index: 2;
 }
 
 .endModal_restart, .endModal_home {

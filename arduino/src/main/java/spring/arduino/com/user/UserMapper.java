@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import spring.arduino.com.DTO.ScoreInfoDTO;
 import spring.arduino.com.DTO.UserDTO;
+import spring.arduino.com.domain.BoardDomain;
 import spring.arduino.com.domain.ScoreInfoDomain;
 import spring.arduino.com.domain.UserDomain;
 
@@ -17,4 +18,5 @@ public interface UserMapper {
 	UserDomain findPw(UserDTO dto);
 	int changePw(UserDTO dto);
 	List<ScoreInfoDomain> showMyActualModeRecord(UserDomain domain);
+	List<BoardDomain> showMyBoardList(UserDomain domain);
 }

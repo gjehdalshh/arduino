@@ -4,7 +4,6 @@ let sessionIUser = document.querySelector('#iUser')
 let countdown = document.querySelector('.countdown')
 let randomMelody = new Array('도', '도#', '레', '레#', '미', '파', '파#', '솔', '솔#', '라', '라#', '시');
 let melody = 0
-let start
 let modeControl
 let quizCount = 0
 let currScore = 0
@@ -145,11 +144,7 @@ function check(data) {
 		setTimer(mask)
 		clearInterval(resetCount)
 		count = time
-<<<<<<< HEAD
 		showCountDown()
-=======
-		showCountDown()
->>>>>>> branch 'master' of https://github.com/gjehdalshh/arduino.git
 		if(quizCount < 7) {
 			resetCount = setInterval(showCountDown, 1000)
 			intervalModeValue = setInterval(intervalMode, 2000)

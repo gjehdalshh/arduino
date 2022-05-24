@@ -16,6 +16,7 @@ import org.springframework.stereotype.Controller;
 
 import spring.arduino.com.DTO.ScoreInfoDTO;
 import spring.arduino.com.DTO.UserDTO;
+import spring.arduino.com.domain.BoardDomain;
 import spring.arduino.com.domain.ScoreInfoDomain;
 import spring.arduino.com.domain.UserDomain;
 
@@ -148,6 +149,9 @@ public class UserService {
 
 	public List<ScoreInfoDomain> showMyActualModeRecord(UserDomain domain) {
 		return mapper.showMyActualModeRecord(domain);
-		
+	}
+	
+	public List<BoardDomain> showMyBoardList(UserDomain domain) {
+		return mapper.showMyBoardList(domain);
 	}
 }

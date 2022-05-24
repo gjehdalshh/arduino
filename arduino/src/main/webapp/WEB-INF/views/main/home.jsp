@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link rel="stylesheet" href="/res/css/main/home.css?ver=19">
+<link rel="stylesheet" href="/res/css/main/home.css?ver=20">
 
 <div id="mainDiv">
 	<div id="header">
@@ -14,7 +14,7 @@
 		</div>
 		<div class="subCategori">
 			<div class="flex">
-				<div class="myPage" onclick="myInfo()">마이페이지</div>
+				<div class="myPage" onclick="moveMyInfo()">마이페이지</div>
 				<div class="notice">공지사항</div>
 				<div class="questionAndAnswer">Q&A</div>
 			</div>
@@ -97,4 +97,5 @@
 	</div>
 </div>
 
-<script defer src="/res/js/main/home.js?ver=13"></script>
+
+<script defer src="/res/js/main/home.js?ver=14"></script>

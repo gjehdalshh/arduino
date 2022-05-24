@@ -52,9 +52,9 @@
 	<!-- 설정 모달창 -->
 	<div class="setBlack_bg"></div>
 	<div class="setModal_wrap">
-		<div class="restart">시작하기</div>
-		<div class="setModal_close">
-			<div>종료하기</div>
+		<div class="flex_set">
+			<div class="restart">시작하기</div>
+			<div class="setModal_close">종료하기</div>
 		</div>
 	</div>
 

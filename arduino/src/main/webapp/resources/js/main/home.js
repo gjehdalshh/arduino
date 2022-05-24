@@ -10,6 +10,7 @@ function home() {
 	location.href = `/main/home`
 }
 
-function myInfo() {
-	location.href = `/user/myInfo`
+function moveMyInfo() {
+	location.href = `/user/myPage`
 }
+

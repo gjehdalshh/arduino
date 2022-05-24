@@ -2,6 +2,7 @@ function setting() {
 	timer.style = "animation-play-state: paused"
 	mask.style = "animation-play-state: paused"
 
+
 	clearInterval(intervalValue)
 	clearInterval(intervalModeValue)
 	clearInterval(resetCount)
