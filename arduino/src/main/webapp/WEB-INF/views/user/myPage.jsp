@@ -1,11 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<<<<<<< HEAD
-<link rel="stylesheet" href="/res/css/user/myPage.css?ver=23">
-=======
 <link rel="stylesheet" href="/res/css/user/myPage.css?ver=24">
->>>>>>> branch 'master' of https://github.com/gjehdalshh/arduino.git
 <c:if test="${user == null}">
 	<script>
 		alert('로그인 후 이용해주세요')
@@ -81,7 +77,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="deleteUser">회원탈퇴 ></div>
+					<div onclick="deleteUserCall()" class="deleteUser">회원탈퇴 ></div>
 				</div>
 			</c:if>
 			<c:if test="${URL == 'actualModeList'}">
@@ -167,10 +163,40 @@
 			<div onclick="modifyPhoneCall()" class="setModal_close">변경</div>
 		</div>
 	</div>
+
+	<!-- 회원탈퇴 모달창 -->
+	<div class="deleteUser_bg"></div>
+	<div class="deleteUser_wrap">
+		<div class="msg1">회원탈퇴</div>
+		<div class="msg2">탈퇴 후 회원정보가 모두 삭제됩니다.</div>
+		<div class="msg3"> - 메일주소, 핸드폰 번호/기타 연락처 등 회원정보가 모두 삭제되며, 삭제된 데이터는 복구되지 않습니다.</div>
+		<div class="msg4">탈퇴 후에도 작성된 게시글은 그대로 남아 있습니다.</div>
+		<div class="msg5"> - 각 게시판에 등록한 게시물 및 댓글은 탈퇴 후에도 남아있습니다.<br> - 삭제를 원하시는 게시물은 탈퇴 전 반드시
+			삭제하시기 바랍니다.<br> - (탈퇴 후에는 게시글 임의 삭제 요청을 받지 않습니다.)</div>
+		<div class="msg6">탈퇴 후에는 게시판의 게시글은 삭제할 수 없으며, 위의 안내 내용에 동의합니다.</div>
+		<div class="sub_flex">
+				<div class="id">아이디</div>
+				<div class="user_id_div">
+					<input class="user_id" type="text">
+				</div>
+			</div>
+			<div class="sub_flex">
+				<div class="pw">비밀번호</div>
+				<div class="user_pw_div">
+					<input class="user_pw" type="text">
+				</div>
+			</div>
+			<div class="sub_flex_last">
+				<div class="chkPw">비밀번호 확인</div>
+				<div class="user_chkPw_div">
+					<input class="user_chkPw" type="text">
+				</div>
+			</div>
+		<div class="cancelAndDeleteDiv">
+			<div class="cancel">취소</div>
+			<div onclick="deleteUserAjax()" class="deleteUserBtn">삭제</div>
+		</div>
+	</div>
 </div>
 
-<<<<<<< HEAD
-<script defer src="/res/js/user/myPage.js?ver=19"></script>
-=======
-<script defer src="/res/js/user/myPage.js?ver=25"></script>
->>>>>>> branch 'master' of https://github.com/gjehdalshh/arduino.git
+<script defer src="/res/js/user/myPage.js?ver=23"></script>

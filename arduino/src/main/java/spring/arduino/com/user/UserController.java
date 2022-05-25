@@ -169,7 +169,6 @@ public class UserController {
 		return "user/myPage";
 	}
 	
-	
 	/* ----------------- 이름 변경 --------------------- */
 	@ResponseBody
 	@PostMapping("/user/modifyName")
@@ -186,6 +185,16 @@ public class UserController {
 	public Map<String, Object> modifyPhone(@RequestBody UserDTO dto) {
 		Map<String, Object> val = new HashMap<String, Object>();
 		val.put("result", service.modifyPhone(dto));
+		
+		return val;
+	}
+	
+	/* ---------------- 회원 삭제 ----------------------- */
+	@ResponseBody
+	@PostMapping("/user/deleteUser")
+	public Map<String, Object> deleteUser(@RequestBody UserDTO dto) {
+		Map<String, Object> val = new HashMap<String, Object>();
+		val.put("result", service.deleteUser(dto));
 		
 		return val;
 	}

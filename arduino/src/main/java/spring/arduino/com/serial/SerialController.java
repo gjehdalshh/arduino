@@ -104,5 +104,6 @@ public class SerialController extends HttpServlet {
 	public List<ScoreInfoDomain> showMyRank() {
 		return service.showMyRank();
 	}
+	
 }
 

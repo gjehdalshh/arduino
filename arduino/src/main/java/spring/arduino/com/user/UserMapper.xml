@@ -74,5 +74,9 @@
 		ON A.i_board_list = B.i_board_list WHERE A.i_user = #{i_user} ORDER BY
 		board_hit ASC;
 	</select>
+	
+	<delete id="deleteUser">
+		DELETE FROM user WHERE i_user = #{i_user};
+	</delete>
 
 </mapper>

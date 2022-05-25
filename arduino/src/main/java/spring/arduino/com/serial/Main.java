@@ -3,7 +3,7 @@ public class Main {
 	public static void main(String[] args) 
 	{
 		try {	
-			(new Serial()).connect("COM3");
+			(new Serial()).connect("COM4");
 		}
 		catch(Exception e) 
 		{

@@ -24,4 +24,5 @@ public interface UserMapper {
 	int modifyPhone(UserDTO dto);
 	List<BoardDomain> showMyLatelyBoardList(UserDomain domain);
 	List<BoardDomain> showMyPopularityBoardList(UserDomain domain);
+	int deleteUser(UserDTO dto);
 }

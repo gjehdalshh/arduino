@@ -30,6 +30,7 @@ function end() {
 
 /* recordMyCurrentScore ajax call */
 function recordScoreAjax() {
+	recordDataBeforeChanging()
 	var param = {
 		i_user: sessionIUser.value,
 		actual_mode_score: currScore,
@@ -46,6 +47,7 @@ function recordScoreAjax() {
 	}).then(function(res) {
 		return res.json()
 	}).then(function(data){
+		checkRecordDataAfterChanging()
 	})
 }
 
