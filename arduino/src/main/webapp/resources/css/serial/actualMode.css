@@ -106,7 +106,7 @@ body {
 .flex_top {
 	display: flex;
 	justify-content: space-between;
-	margin: 100 0;
+	margin: 100 0 80;
 }
 .flex_sub_top {
 	display: flex;
