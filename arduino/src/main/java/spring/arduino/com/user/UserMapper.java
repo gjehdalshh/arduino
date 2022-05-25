@@ -18,5 +18,6 @@ public interface UserMapper {
 	UserDomain findPw(UserDTO dto);
 	int changePw(UserDTO dto);
 	List<ScoreInfoDomain> showMyActualModeRecord(UserDomain domain);
-	List<BoardDomain> showMyBoardList(UserDomain domain);
+	List<BoardDomain> showMyLatelyBoardList(UserDomain domain);
+	List<BoardDomain> showMyPopularityBoardList(UserDomain domain);
 }

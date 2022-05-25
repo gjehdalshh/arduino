@@ -152,7 +152,12 @@ public class UserService {
 		return mapper.showMyActualModeRecord(domain);
 	}
 	
-	public List<BoardDomain> showMyBoardList(UserDomain domain) {
-		return mapper.showMyBoardList(domain);
+	public List<BoardDomain> showMyLatelyBoardList(UserDomain domain) {
+		return mapper.showMyLatelyBoardList(domain);
+	}
+
+	public List<BoardDomain> showMyPopularityBoardList(UserDomain domain) {
+		return mapper.showMyPopularityBoardList(domain);
+		
 	}
 }

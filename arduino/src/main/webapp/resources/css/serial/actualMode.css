@@ -187,20 +187,20 @@ body {
     padding-left: 25px;
 }
 #nameKor {
-	font-size: 135px;
+	font-size: 150px;
     width: 310px;
     align-items: center;
-    padding: 10px 0 70px;
+    padding: 8px 0 91px;
     text-align: center;
     background-color: #d1edf9;
     position: relative;
 }
 
 #currentSoundOctave {
-    font-size: 35px;
+    font-size: 30px;
     width: 310px;
     align-items: center;
-    padding: 87px 0px 0px;
+    padding: 54px 0px 0px;
     text-align: center;
     background-color: #d1edf9;
     position: relative;
@@ -306,6 +306,7 @@ body {
     padding: 10px 20px;
     background-color: black;
     color: white;
+    cursor: pointer;
 }
 
 .setOctave, .setTime, .setScore {
@@ -322,6 +323,7 @@ body {
     border-radius: 10%;
     color: 646464;
     font-size: 30;
+    cursor: pointer;
 }
 .octave {
 	padding: 20px 0;

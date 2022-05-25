@@ -19,6 +19,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import spring.arduino.com.DTO.ScoreInfoDTO;
 import spring.arduino.com.DTO.UserDTO;
+import spring.arduino.com.domain.BoardDomain;
 import spring.arduino.com.domain.ScoreInfoDomain;
 import spring.arduino.com.domain.UserDomain;
 
@@ -28,6 +29,7 @@ public class UserController {
 	final String FIND_ID = "findUserId";
 	final String FIND_PW = "findUserPw";
 	Double a;
+	UserDomain domain;
 	
 	@Autowired
 	private UserService service;
@@ -58,6 +60,7 @@ public class UserController {
 		Map<String, Object> val = new HashMap<String, Object>();
 		
 		val.put("result", service.loginProc(dto));
+		
 		return val;
 	}
 	
@@ -72,6 +75,7 @@ public class UserController {
 	@PostMapping("/user/joinProc")
 	public Map<String, Object> join(@RequestBody UserDTO dto) {
 		Map<String, Object> val = new HashMap<String, Object>();
+		
 		
 		val.put("result", service.ins_user(dto));
 		
@@ -120,27 +124,37 @@ public class UserController {
 	public void myPage() {}
 	
 	@GetMapping("/user/myInfo")
-	public String showMyInfo (Model model) {
+	public String showMyInfo (HttpServletRequest request, Model model) {
+		HttpSession session = request.getSession();
+		domain = (UserDomain)session.getAttribute("user");
 		model.addAttribute("URL", "myInfo");
 		return "user/myPage";
 	}
 	
 	@GetMapping("/user/actualModeList")
-	public String showMyActualModeList (HttpServletRequest request, Model model) {
-		HttpSession session = request.getSession();
-		UserDomain domain = (UserDomain)session.getAttribute("user");
+	public String showMyActualModeList (Model model) {
 		model.addAttribute("URL", "actualModeList");
 		model.addAttribute("actualModeList", service.showMyActualModeRecord(domain));
 		return "user/myPage";
 	}
 	
 	@GetMapping("/user/myBoardList")
-	public String showMyBoardList (HttpServletRequest request, Model model) {
-		HttpSession session = request.getSession();
-		UserDomain domain = (UserDomain)session.getAttribute("user");
+	public String showMyBoardList (Model model) {
 		model.addAttribute("URL", "myBoardList");
-		model.addAttribute("myBoardList", service.showMyBoardList(domain));	
+		model.addAttribute("myBoardList", service.showMyLatelyBoardList(domain));	
 		return "user/myPage";
+	}
+	
+	@ResponseBody
+	@PostMapping("/user/myLatelyBoardList")
+	public List<BoardDomain> showMyLatelyBoardList (Model model) {
+		return service.showMyLatelyBoardList(domain);
+	}
+	
+	@ResponseBody
+	@PostMapping("/user/myPopularityBoardList")
+	public List<BoardDomain> showMyPopularityBoardList (Model model) {
+		return service.showMyPopularityBoardList(domain);
 	}
 	
 	@GetMapping("/user/myCmtList")
