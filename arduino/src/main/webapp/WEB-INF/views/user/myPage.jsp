@@ -10,7 +10,7 @@
 </c:if>
 <div id="mainDiv">
 	<div class="mainLogoDiv">
-		<img class="mainLogo" onclick="home()" alt=""
+		<img class="mainLogo" onclick="moveHome()" alt=""
 			src="/res/img/mainlogo.png">
 	</div>
 	<div class="flex">
@@ -22,23 +22,23 @@
 			<div class="myId">${user.user_id }</div>
 			<div class="navDiv">
 				<form action="/user/myInfo" method="get">
-					<input id="myProfileCategory" class="leftUlActualMode"
+					<input id="myProfileCategory" class="leftUl"
 						type="submit" value="내 프로필">
 				</form>
 				<form action="/user/actualModeList" method="get">
-					<input id="actualModeRecordCategory" class="leftUlActualMode"
+					<input id="actualModeRecordCategory" class="leftUl"
 						type="submit" value="실전모드 기록">
 				</form>
 				<form action="/user/myBoardList" method="get">
-					<input id="myPostCategory" class="leftUlActualMode" type="submit"
+					<input id="myPostCategory" class="leftUl" type="submit"
 						value="내가 쓴 글">
 				</form>
 				<form action="/user/myCmtList" method="get">
-					<input id="myCmtCategory" class="leftUlActualMode" type="submit"
+					<input id="myCmtCategory" class="leftUl" type="submit"
 						value="댓글 단 글">
 				</form>
 				<form action="/user/myScrapList" method="get">
-					<input id="myScrapCategory" class="leftUlActualMode" type="submit"
+					<input id="myScrapCategory" class="leftUl" type="submit"
 						value="스크랩">
 				</form>
 			</div>
@@ -111,6 +111,7 @@
 			</c:if>
 			<c:if test="${URL == 'myBoardList'}">
 				<div class="myPostListDiv">
+					<div class="myPostTitle">내가 쓴 글</div>
 					<div class="myPostList">
 						<div class="lately">최신순</div>
 						<c:forEach items="${myBoardList}" var="myBoardList">
@@ -129,4 +130,4 @@
 	</div>
 </div>
 
-<script defer src="/res/js/user/myPage.js?ver=11"></script>
+<script defer src="/res/js/user/myPage.js?ver=12"></script>

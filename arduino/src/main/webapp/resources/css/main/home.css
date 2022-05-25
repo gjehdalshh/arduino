@@ -109,6 +109,7 @@ a {
    width: 350px;
    color:white;
    padding-left: 20px;
+   font-family: 'NanumSquare', sans-serif;
 }
 .practiceModeImg, .actualModeImg {
    width: 550;

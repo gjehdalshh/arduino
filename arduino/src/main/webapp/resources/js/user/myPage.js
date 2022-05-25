@@ -4,6 +4,10 @@ let myPost = document.querySelector('#myPostCategory')
 let myCmt = document.querySelector('#myCmtCategory')
 let myScrap = document.querySelector('#myScrapCategory')
 
+function moveHome() {
+	location.href=`/main/home`
+}
+
 function categoryChange(target) {
 	target.style.color = 'black'
 	target.style.borderBottom = '3px solid #000000'
