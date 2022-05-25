@@ -5,7 +5,7 @@ let myCmt = document.querySelector('#myCmtCategory')
 let myScrap = document.querySelector('#myScrapCategory')
 
 function moveHome() {
-	location.href=`/main/home`
+	location.href = `/main/home`
 }
 
 function categoryChange(target) {
@@ -28,3 +28,4 @@ if(url == 'myInfo?') {
 } else if(url == 'myScrapList?') {
 	categoryChange(myScrap)
 }
+

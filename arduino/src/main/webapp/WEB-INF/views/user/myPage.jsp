@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link rel="stylesheet" href="/res/css/user/myPage.css?ver=20">
+<link rel="stylesheet" href="/res/css/user/myPage.css?ver=21">
 <c:if test="${user == null}">
 	<script>
 		alert('로그인 후 이용해주세요')
@@ -111,7 +111,7 @@
 			</c:if>
 			<c:if test="${URL == 'myBoardList'}">
 				<div class="myPostListDiv">
-					<div class="myPostTitle">내가 쓴 글</div>
+				<div class="myPostTitle">내가 쓴 글</div>
 					<div class="myPostList">
 						<div class="lately">최신순</div>
 						<c:forEach items="${myBoardList}" var="myBoardList">
