@@ -154,5 +154,29 @@ public class UserController {
 		
 		return "user/myPage";
 	}
+	
+	
+	/* ----------------- 이름 변경 --------------------- */
+	@ResponseBody
+	@PostMapping("/user/modifyName")
+	public Map<String, Object> modifyName(@RequestBody UserDTO dto) {
+		Map<String, Object> val = new HashMap<String, Object>();
+		val.put("result", service.modifyName(dto));
+		
+		return val;
+	}
+	
+	/* ----------------- 휴대폰 번호 변경 -----------------  */
+	@ResponseBody
+	@PostMapping("/user/modifyPhone")
+	public Map<String, Object> modifyPhone(@RequestBody UserDTO dto) {
+		Map<String, Object> val = new HashMap<String, Object>();
+		val.put("result", service.modifyPhone(dto));
+		
+		return val;
+	}
 }
+
+
+
 

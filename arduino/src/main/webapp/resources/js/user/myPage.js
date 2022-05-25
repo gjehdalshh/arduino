@@ -29,3 +29,94 @@ if(url == 'myInfo?') {
 	categoryChange(myScrap)
 }
 
+let modifyName_bg = document.querySelector('.modifyName_bg')
+let modifyName_wrap = document.querySelector('.modifyName_wrap')
+let modifyPhone_bg = document.querySelector('.modifyPhone_bg')
+let modifyPhone_wrap = document.querySelector('.modifyPhone_wrap')
+
+function infoModofy(value) {
+	if(value == 1) {
+		modifyName_bg.style.display = 'block'
+		modifyName_wrap.style.display = 'block'
+	} else if(value == 2) {
+		modifyPhone_bg.style.display = 'block'
+		modifyPhone_wrap.style.display = 'block'
+	}
+}
+
+function modifyNameCall() {
+	modifyNameAjax()
+}
+
+function modifyNameAjax() {
+	
+	let currentName = document.querySelector('.currentName')
+	let modifyName = document.querySelector('.modifyName')
+	
+	let param = {
+			i_user: iUser.value,
+			user_nm: currentName.value,
+			modifyName: modifyName.value
+	}
+	console.log(param)
+	fetch(`/user/modifyName`, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body:JSON.stringify(param)
+	}).then(function(res){
+		return res.json()
+	}).then(function(data){
+		switch(data.result) {
+				case 1:
+					alert('이름이 변경되었습니다.')
+					location.href = `/user/myInfo`
+					break;
+				case 2:
+					alert('현재 이름을 다시 작성해주세요.')
+					break;
+			}
+	})
+}
+
+function modifyPhoneCall() {
+	modifyPhoneAjax()
+}
+
+function modifyPhoneAjax() {
+	
+	let currentPhone = document.querySelector('.currentPhone')
+	let modifyPhone = document.querySelector('.modifyPhone')
+	
+	let param = {
+			i_user: iUser.value,
+			user_phone: currentPhone.value,
+			modifyPhone: modifyPhone.value
+	}
+	console.log(param)
+	fetch(`/user/modifyPhone`, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body:JSON.stringify(param)
+	}).then(function(res){
+		return res.json()
+	}).then(function(data){
+		switch(data.result) {
+				case 1:
+					alert('휴대폰 번호가 변경되었습니다.')
+					location.href = `/user/myInfo`
+					break;
+				case 2:
+					alert('현재 휴대폰 번호를 다시 작성해주세요..')
+					break;
+			}
+	})
+}
+
+
+
+
+
