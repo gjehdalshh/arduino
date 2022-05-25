@@ -66,7 +66,7 @@ function showRankAjax() {
 /* show totalRank */
 let show = document.querySelector('.showRank')
 function showRank(data) {
-	let j = 0;
+	let j = 0
 	let str = data[j].user_phone.substr(7, 11)
 	data.forEach(function(i){
 		show.innerHTML += `

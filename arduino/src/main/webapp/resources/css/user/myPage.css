@@ -11,7 +11,7 @@ body {
 	src: url('/res/font/a이끌림M.woff') format('woff');
 }
 
-.mainLogo, .leftUl, .infoModify, .deleteUser, .postTitle {
+.mainLogo, .leftUl, .infoModify, .deleteUser, .postTitle, .popularity, .lately {
 	cursor: pointer;
 }
 
@@ -167,6 +167,12 @@ body {
     color: 7F7F7F;
 }
 
+.popularity {
+	text-align: end;
+    margin: 0 10 15;
+    color: 7F7F7F;
+}
+
 .actual_flex {
 	display: flex;
     padding: 10 0;
@@ -202,8 +208,9 @@ body {
 }
 
 /*  ---------------------- myPostList ----------------- */
-.myPostListDiv {
-	
+.filter_flex {
+    display: flex;
+    justify-content: flex-end;	
 }
 
 .myPostList {

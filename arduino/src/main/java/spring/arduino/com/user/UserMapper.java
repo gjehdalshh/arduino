@@ -22,4 +22,6 @@ public interface UserMapper {
 	UserDomain selI_user(UserDTO dto);
 	int modifyName(UserDTO dto);
 	int modifyPhone(UserDTO dto);
+	List<BoardDomain> showMyLatelyBoardList(UserDomain domain);
+	List<BoardDomain> showMyPopularityBoardList(UserDomain domain);
 }

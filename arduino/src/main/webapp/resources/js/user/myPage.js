@@ -117,6 +117,47 @@ function modifyPhoneAjax() {
 }
 
 
+let lately = document.querySelector('.lately')
+function sortBoardLately() {
+	fetch(`/user/myLatelyBoardList`, {
+			method: 'POST',
+			headers: {
+		'Content-Type': 'application/json'
+			},
+		}).then(function(res) {
+			return res.json()
+		}).then(function(myBoardList) {
+			showBoardList(myBoardList)
+		})
+}
 
+let popularity = document.querySelector('.popularity')
+function sortBoardPopularity() {
+	fetch(`/user/myPopularityBoardList`, {
+			method: 'POST',
+			headers: {
+		'Content-Type': 'application/json'
+			},
+		}).then(function(res) {
+			return res.json()
+		}).then(function(myBoardList) {
+			showBoardList(myBoardList)
+		})
+}
 
-
+function showBoardList(myBoardList) {
+	let j = 0
+	let str = myBoardList[j].m_dt.substring(0, 10)
+	sortBoard.innerHTML = ''
+	myBoardList.forEach(function(i){
+		sortBoard.innerHTML += `
+		<div class="list_flex">
+			<div class="postNumber">${j+1 }</div>
+			<div class="postTitle">${myBoardList[j].board_title }</div>
+			<div class="postCategory">${myBoardList[j].board_list_nm }</div>
+			<div class="postDate">${str }</div>
+		<div>
+		`
+		j++
+	})
+}
