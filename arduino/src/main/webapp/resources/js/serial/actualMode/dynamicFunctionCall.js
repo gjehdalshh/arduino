@@ -127,6 +127,7 @@ function mode() {
 	}).then(function(data) {
 		check(data.data)
 		printData(data.data)
+		printCurrentOctave(data.data)
 	})
 }
 
@@ -190,5 +191,25 @@ function printData(data) {
 	}
 	if (data % 12 == 2 || data % 12 == 4 || data % 12 == 7 || data % 12 == 9 || data % 12 == 11) {
 		nameKor.innerHTML += `#`
+	}
+}
+
+/* printCurrentOctave */
+function printCurrentOctave(data) {
+
+	if (data == 0) {
+		currentSoundOctave.innerHTML = ' '
+	}
+	if (data > 0 && data < 13) {
+		currentSoundOctave.innerHTML = '3옥타브'
+	}
+	if (data > 12 && data < 25) {
+		currentSoundOctave.innerHTML = '4옥타브'
+	}
+	if (data > 24 && data < 37) {
+		currentSoundOctave.innerHTML = '5옥타브'
+	}
+	if (data > 36 && data < 49) {
+		currentSoundOctave.innerHTML = '6옥타브'
 	}
 }

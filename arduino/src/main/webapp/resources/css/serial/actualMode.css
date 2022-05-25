@@ -144,9 +144,9 @@ body {
     border: 5px solid #FFC000;
     width: 310px;
     align-items: center;
-    padding: 75 0;
+    padding: 89px 0;
     text-align: center;
-    position: relative;
+    position: relative
 }
 #hexagon {
 	width: 60px;
@@ -187,14 +187,25 @@ body {
     padding-left: 25px;
 }
 #nameKor {
-	font-size: 150px;
+	font-size: 135px;
     width: 310px;
     align-items: center;
-    padding: 90 0;
+    padding: 10px 0 70px;
     text-align: center;
     background-color: #d1edf9;
     position: relative;
 }
+
+#currentSoundOctave {
+    font-size: 35px;
+    width: 310px;
+    align-items: center;
+    padding: 87px 0px 0px;
+    text-align: center;
+    background-color: #d1edf9;
+    position: relative;
+}
+
 .whiteColorDiv {
 	background-color: white;
     width: 96%;
