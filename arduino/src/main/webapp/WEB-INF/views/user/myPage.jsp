@@ -8,6 +8,7 @@
 		location.href = "/user/login"
 	</script>
 </c:if>
+<input id="iUser" type="hidden" value=${user.i_user }>
 <div id="mainDiv">
 	<div class="mainLogoDiv">
 		<img class="mainLogo" onclick="moveHome()" alt=""
@@ -50,7 +51,7 @@
 						<div class="defaultInfo">기본정보</div>
 						<div class="defaultNameDiv">
 							<div class="defaultName">${user.user_nm }</div>
-							<div class="infoModify">수정</div>
+							<div onclick="infoModofy(1)" class="infoModify">수정</div>
 						</div>
 						<div class="defaultId_flex">
 							<div class="default_flex">
@@ -59,9 +60,6 @@
 										<img alt="" src="/res/img/mail.png">
 									</div>
 									<div class="defaultId">${user.user_id }</div>
-								</div>
-								<div>
-									<div class="infoModify">수정</div>
 								</div>
 							</div>
 						</div>
@@ -74,7 +72,7 @@
 									<div class="defaultPh">${user.user_phone }</div>
 								</div>
 								<div>
-									<div class="infoModify">수정</div>
+									<div onclick="infoModofy(2)" class="infoModify">수정</div>
 								</div>
 							</div>
 						</div>
@@ -131,6 +129,38 @@
 					</div>
 				</div>
 			</c:if>
+		</div>
+	</div>
+
+	<!-- 이름 변경 모달창  -->
+	<div class="modifyName_bg"></div>
+	<div class="modifyName_wrap">
+		<div>이름변경</div>
+		<div>
+			<input class="currentName" type="text" placeholder="현재이름">
+		</div>
+		<div>
+			<input class="modifyName" type="text" placeholder="변경할이름">
+		</div>
+		<div class="flex">
+			<div class="restart">취소</div>
+			<div onclick="modifyNameCall()" class="setModal_close">변경</div>
+		</div>
+	</div>
+
+	<!-- 휴대폰 변경 모달창 -->
+	<div class="modifyPhone_bg"></div>
+	<div class="modifyPhone_wrap">
+		<div>휴대폰번호변경</div>
+		<div>
+			<input class="currentPhone" type="text" placeholder="현재휴대폰번호">
+		</div>
+		<div>
+			<input class="modifyPhone" type="text" placeholder="변경할휴대폰번호">
+		</div>
+		<div class="flex">
+			<div class="restart">취소</div>
+			<div onclick="modifyPhoneCall()" class="setModal_close">변경</div>
 		</div>
 	</div>
 </div>

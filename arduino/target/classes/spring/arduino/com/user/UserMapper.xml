@@ -2,42 +2,77 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="spring.arduino.com.user.UserMapper">
 
-<insert id="ins_user">
-	INSERT INTO user
-	(user_id, user_pw, user_nm, user_phone																				)
-	VALUES
-	(#{user_id}, #{user_pw}, #{user_nm}, #{user_phone});
-</insert>
+	<insert id="ins_user">
+		INSERT INTO user
+		(user_id, user_pw, user_nm,
+		user_phone )
+		VALUES
+		(#{user_id}, #{user_pw}, #{user_nm}, #{user_phone});
+	</insert>
 
-<select id="selUser" resultType="UserDomain">
-	SELECT * FROM user WHERE user_id = #{user_id};
-</select>
+	<select id="selUser" resultType="UserDomain">
+		SELECT * FROM user WHERE user_id
+		= #{user_id};
+	</select>
 
-<select id="findId" resultType="UserDomain">
-	SELECT * FROM user WHERE user_nm = #{user_nm} AND user_phone = #{user_phone};
-</select>
+	<select id="findId" resultType="UserDomain">
+		SELECT * FROM user WHERE user_nm
+		= #{user_nm} AND user_phone =
+		#{user_phone};
+	</select>
 
-<select id="findPw" resultType="UserDomain">
-	SELECT * FROM user WHERE user_nm = #{user_nm} AND user_phone = #{user_phone} AND user_id = #{user_id};
-</select>
+	<select id="findPw" resultType="UserDomain">
+		SELECT * FROM user WHERE user_nm
+		= #{user_nm} AND user_phone = #{user_phone}
+		AND user_id = #{user_id};
+	</select>
 
-<update id="changePw">
-	UPDATE user SET user_pw = #{newPw} WHERE i_user = #{i_user};
-</update>
+	<update id="changePw">
+		UPDATE user SET user_pw = #{newPw} WHERE i_user =
+		#{i_user};
+	</update>
 
-<select id="showMyActualModeRecord" resultType="ScoreInfoDomain">
-	SELECT * FROM (SELECT *, ROW_NUMBER() OVER (ORDER BY r_dt DESC) my_rank FROM score_record) AS score_table 
-	WHERE i_user = #{i_user} and actual_mode_score > 0
-</select>
+	<select id="showMyActualModeRecord" resultType="ScoreInfoDomain">
+		SELECT * FROM
+		(SELECT *, ROW_NUMBER() OVER (ORDER BY r_dt DESC) my_rank FROM
+		score_record) AS score_table
+		WHERE i_user = #{i_user} and
+		actual_mode_score > 0
+	</select>
 
-<select id="showMyLatelyBoardList" resultType="BoardDomain">
-SELECT A.board_title, B.board_list_nm, A.m_dt FROM board A INNER JOIN board_list B 
-ON A.i_board_list = B.i_board_list WHERE A.i_user = #{i_user} ORDER BY m_dt DESC;
-</select>
+	<select id="showMyBoardList" resultType="BoardDomain">
+		SELECT A.board_title,
+		B.board_list_nm, A.m_dt FROM board A INNER JOIN
+		board_list B
+		ON
+		A.i_board_list = B.i_board_list WHERE A.i_user = #{i_user} ORDER BY
+		m_dt DESC;
+	</select>
 
-<select id="showMyPopularityBoardList" resultType="BoardDomain">
-SELECT A.board_title, B.board_list_nm, A.m_dt FROM board A INNER JOIN board_list B 
-ON A.i_board_list = B.i_board_list WHERE A.i_user = #{i_user} ORDER BY board_hit ASC;
-</select>
+	<select id="selI_user" resultType="UserDomain">
+		SELECT * FROM user WHERE
+		i_user = #{i_user};
+	</select>
+
+	<update id="modifyName">
+		UPDATE user SET user_nm = #{modifyName} WHERE i_user = #{i_user};
+	</update>
+
+	<update id="modifyPhone">
+		UPDATE user SET user_phone = #{modifyPhone} WHERE
+		i_user = #{i_user};
+	</update>
+	<select id="showMyLatelyBoardList" resultType="BoardDomain">
+		SELECT A.board_title, B.board_list_nm, A.m_dt FROM board A INNER JOIN
+		board_list B
+		ON A.i_board_list = B.i_board_list WHERE A.i_user = #{i_user} ORDER BY
+		m_dt DESC;
+	</select>
+	<select id="showMyPopularityBoardList" resultType="BoardDomain">
+		SELECT A.board_title, B.board_list_nm, A.m_dt FROM board A INNER JOIN
+		board_list B
+		ON A.i_board_list = B.i_board_list WHERE A.i_user = #{i_user} ORDER BY
+		board_hit ASC;
+	</select>
 
 </mapper>

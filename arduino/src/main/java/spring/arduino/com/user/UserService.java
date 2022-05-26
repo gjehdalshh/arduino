@@ -37,6 +37,11 @@ public class UserService {
 	@Autowired
 	private JavaMailSender mailSender;
 	
+	public boolean checkMail() {
+		
+		return true;
+	}
+	
 	public int ins_user(UserDTO dto) {
 		
 		UserDomain vo = mapper.selUser(dto);
@@ -159,5 +164,32 @@ public class UserService {
 	public List<BoardDomain> showMyPopularityBoardList(UserDomain domain) {
 		return mapper.showMyPopularityBoardList(domain);
 		
+	}
+	
+	
+	public int modifyName(UserDTO dto) {
+		
+		UserDomain vo = mapper.selI_user(dto);
+		if(!dto.getUser_nm().equals(vo.getUser_nm())) {
+			return 2;
+		}
+		mapper.modifyName(dto);
+		vo = mapper.selI_user(dto);
+		hs.setAttribute("user", vo);
+		
+		return 1;
+	}
+	
+public int modifyPhone(UserDTO dto) {
+		
+		UserDomain vo = mapper.selI_user(dto);
+		if(!dto.getUser_phone().equals(vo.getUser_phone())) {
+			return 2;
+		}
+		mapper.modifyPhone(dto);
+		vo = mapper.selI_user(dto);
+		hs.setAttribute("user", vo);
+		
+		return 1;
 	}
 }
