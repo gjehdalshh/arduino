@@ -24,17 +24,18 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="spring.arduino.com" />
-
-	<!-- 	<beans:bean id="hikariConfig"
+<!--  AWS DB driver -->
+	 	<beans:bean id="hikariConfig"
 		class="com.zaxxer.hikari.HikariConfig">
 		<beans:property name="driverClassName"
 			value="com.mysql.cj.jdbc.Driver" />
 		<beans:property name="jdbcUrl"
-			value="jdbc:mysql://webservicearduino.cv8mgadnxliy.ap-northeast-2.rds.amazonaws.com:3306/arduino?autoReconnect=true&amp;useSSL=false" />
+		value="jdbc:mysql://webservicearduino.cv8mgadnxliy.ap-northeast-2.rds.amazonaws.com:3306/arduino?characterEncoding=UTF-8&amp;serverTimezone=UTC&amp;useSSL=false&amp;autoReconnect=true" />
+			<!-- value="jdbc:mysql://webservicearduino.cv8mgadnxliy.ap-northeast-2.rds.amazonaws.com:3306/arduino?autoReconnect=true&amp;useSSL=false" />-->
 		<beans:property name="username" value="admin" />
 		<beans:property name="password" value="ehdals11" />
-	</beans:bean> -->
-	
+	</beans:bean> 
+	<!--   local DB driver  
 	<beans:bean id="hikariConfig"
 		class="com.zaxxer.hikari.HikariConfig">
 		<beans:property name="driverClassName"
@@ -44,7 +45,7 @@
 		<beans:property name="username" value="root" />
 		<beans:property name="password" value="koreait2020" />
 	</beans:bean>
-
+-->
 	<beans:bean id="dataSource"
 		class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
 		<beans:constructor-arg ref="hikariConfig" />

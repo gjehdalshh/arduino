@@ -20,7 +20,6 @@ function showRankingdisplay() {
 
 /* dynamicFunctionCall 종료 */
 function end() {
-	console.log('a')
 	timer.style = "animation-play-state: paused"
 	mask.style = "animation-play-state: paused"
 	clearInterval(intervalModeValue)

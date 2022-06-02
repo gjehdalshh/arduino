@@ -97,9 +97,6 @@
 			</div>
 		</div>
 	</div>
-	<form action="/sms/send" method="Post">
-		<input type="submit">문자 발송
-	</form>
 </div>
 
 

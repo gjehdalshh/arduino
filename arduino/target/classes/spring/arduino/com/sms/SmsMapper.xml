@@ -5,7 +5,7 @@
 	<select id="selUserRank" resultType="ScoreInfoDomain">
 		SELECT actual_mode_score, i_score_record, i_user, ROW_NUMBER()
 		OVER (ORDER BY actual_mode_score DESC, i_score_record DESC) my_rank
-		FROM score_record LIMIT 9,1;
+		FROM score_record LIMIT 2,1;
 	</select>
 	
 	<select id="pushedRanking" resultType="UserDomain">
