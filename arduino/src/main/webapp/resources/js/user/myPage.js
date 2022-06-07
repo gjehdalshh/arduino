@@ -7,6 +7,9 @@ let myScrap = document.querySelector('#myScrapCategory')
 function moveHome() {
 	location.href = `/main/home`
 }
+function moveRecord() {
+	location.reload()
+}
 
 function categoryChange(target) {
 	target.style.color = 'black'
@@ -185,7 +188,7 @@ function deleteUserAjax() {
 		return res.json()
 	}).then(function(data) {
 		alert('회원정보가 삭제되었습니다.\n그동안 저희 서비스를 이용해주셔서 감사합니다.')
-		location.href=`/user/login`
+		location.href = `/user/login`
 	})
 }
 

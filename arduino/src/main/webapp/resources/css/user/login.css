@@ -31,7 +31,7 @@ body {
 	#main_div {
 		width: 1024px;
 		margin: auto;
-		margin-top: 400px;
+		margin-top: 300px;
 		text-align: center;
 	}
 	.main_logo {
@@ -45,6 +45,16 @@ body {
 	}
 	.lgoin_btn_div_desktop {
 		display: none;
+	}
+	.kakao_login_btn, .naver_login_btn {
+		width: 350px;
+		height: 80px;
+	}
+	.variousLogins {
+		margin: 150 0 30;
+		font-size: 40px;
+		padding-bottom: 20;
+		border-bottom: 2px solid #cacaca;
 	}
 	.user_id, .user_pw {
 		width: 600px;
@@ -92,7 +102,8 @@ body {
 	}
 	.comment {
 		color: #858484;
-		font-size: 30px;
+		font-size: 35px;
+		margin: 70 0 50;
 	}
 }
 
@@ -122,6 +133,16 @@ body {
 	}
 	.lgoin_btn_div_mobile {
 		display: none;
+	}
+	.kakao_login_btn, .naver_login_btn {
+		width: 200px;
+		height: 50px;
+	}
+	.variousLogins {
+		margin: 50 0 20;
+		font-size: 18px;
+		padding-bottom: 10;
+		border-bottom: 2px solid #cacaca;
 	}
 	.user_id, .user_pw {
 		width: 360px;
@@ -155,7 +176,6 @@ body {
 		display: flex;
 		justify-content: space-evenly;
 		margin-top: 20px;
-		margin-bottom: 60px;
 		font-size: 15px;
 	}
 	.cursor {
@@ -170,5 +190,6 @@ body {
 	}
 	.comment {
 		color: #858484;
+		margin: 30 0;
 	}
 }

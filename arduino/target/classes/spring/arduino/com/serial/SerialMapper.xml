@@ -4,9 +4,9 @@
 
 <insert id="recordScore"> 
 	INSERT INTO score_record 
-	(i_user, actual_mode_score, octave, level) 
+	(i_user, actual_mode_score, octave, score_level) 
 	VALUES 
-	(#{i_user}, #{actual_mode_score}, #{octave}, #{level});
+	(#{i_user}, #{actual_mode_score}, #{octave}, #{score_level});
 </insert>
 
 <select id="showRank" resultType="ScoreInfoDomain">

@@ -30,7 +30,12 @@
 				</c:if>
 				<c:if test="${user != null}">
 					<div class="userName">${user.user_nm }님</div>
-					<div class="logout"><a href="/user/logout">로그아웃</a></div>
+					<c:if test="${kakaoToken != null}">
+						<div class="logout"><a href="https://kauth.kakao.com/oauth/logout?client_id=c0619824ec57add63ccf0d6c388122d7&logout_redirect_uri=http://localhost:8090/user/logout">로그아웃</a></div>
+					</c:if>
+					<c:if test="${kakaoToken == null}">
+						<div class="logout"><a href="/user/logout">로그아웃</a></div>
+					</c:if>
 				</c:if>
 			</div>
 		</div>

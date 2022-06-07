@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link rel="stylesheet" href="/res/css/user/login.css?ver=70">
+<link rel="stylesheet" href="/res/css/user/login.css?ver=78">
 
 <div id="main_div">
 	<div class="title_div">
@@ -16,7 +16,7 @@
 			</div>
 			<div>
 				<input onkeyup="enterkey()" class="user_id" type="text"
-					value="smdf01726@naver.com" placeholder="아이디">
+					value="gjehdalshh@naver.com" placeholder="아이디">
 			</div>
 		</div>
 		<div class="flex">
@@ -25,23 +25,38 @@
 			</div>
 			<div>
 				<input class="user_pw" onkeyup="enterkey()" type="password"
-					value="sui072981" placeholder="비밀번호">
+					value="ehdals11" placeholder="비밀번호">
 			</div>
 		</div>
 		<div class="lgoin_btn_div_desktop">
-			<input class="login_btn" onclick="loginDesktop()" type="button" value="로그인">
+			<input class="login_btn" onclick="loginDesktop()" type="button"
+				value="로그인">
 		</div>
 		<div class="lgoin_btn_div_mobile">
-			<input class="login_btn" onclick="loginMobile()" type="button" value="로그인">
+			<input class="login_btn" onclick="loginMobile()" type="button"
+				value="로그인">
+		</div>
+		<div class="find_div">
+			<div class="findSub_div">
+				<div class="cursor" onclick="moveJoin()">회원가입</div>
+				<div class="cursor" onclick="moveFindInfo(1)">아이디/비밀번호 찾기</div>
+			</div>
+		</div>
+		<div class="variousLogins">소셜 로그인</div>
+		<div class="flex">
+			<div>
+				<a
+					href="https://kauth.kakao.com/oauth/authorize?client_id=c0619824ec57add63ccf0d6c388122d7&redirect_uri=http://localhost:8090/user/kakao/login&response_type=code">
+					<img class="kakao_login_btn" alt="" src="/res/img/kakao_login.png">
+				</a>
+			</div>
+			<div>
+				<a> <img class="naver_login_btn" alt=""
+					src="/res/img/naver_login.png">
+				</a>
+			</div>
 		</div>
 	</div>
-	<div class="find_div">
-		<div class="findSub_div">
-			<div class="cursor" onclick="moveJoin()">회원가입</div>
-			<div class="cursor" onclick="moveFindInfo(1)">아이디/비밀번호 찾기</div>
-		</div>
-	</div>
-	
 	<div class="comment">로그인하시면 커뮤니티를 이용하실 수 있습니다.</div>
 </div>
 
