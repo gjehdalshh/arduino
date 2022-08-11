@@ -127,7 +127,7 @@
 									<div class="actaulNumberValue">${i }</div>
 									<div class="actualDateValue">${actualModeList.r_dt.substring(0,10) }</div>
 									<div class="actualOctaveValue">${actualModeList.octave }</div>
-									<div class="actualLevelValue">${actualModeList.level }</div>
+									<div class="actualLevelValue">${actualModeList.score_level }</div>
 									<div class="actualScoreValue">${actualModeList.actual_mode_score }</div>
 								</div>
 							</c:forEach>

@@ -16,7 +16,7 @@
 			</div>
 			<div>
 				<input onkeyup="enterkey()" class="user_id" type="text"
-					value="gjehdalshh@naver.com" placeholder="아이디">
+					 placeholder="아이디">
 			</div>
 		</div>
 		<div class="flex">
@@ -25,7 +25,7 @@
 			</div>
 			<div>
 				<input class="user_pw" onkeyup="enterkey()" type="password"
-					value="ehdals11" placeholder="비밀번호">
+					 placeholder="비밀번호">
 			</div>
 		</div>
 		<div class="lgoin_btn_div_desktop">
