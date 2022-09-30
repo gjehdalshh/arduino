@@ -8,18 +8,18 @@ public class ScoreInfoEntity {
 	private int actual_mode_score;
 	private String r_dt;
 	private int octave;
-	private String level;
+	private String score_level;
 	public int getOctave() {
 		return octave;
 	}
 	public void setOctave(int octave) {
 		this.octave = octave;
 	}
-	public String getLevel() {
-		return level;
+	public String getScore_level() {
+		return score_level;
 	}
-	public void setLevel(String level) {
-		this.level = level;
+	public void setScore_level(String score_level) {
+		this.score_level = score_level;
 	}
 	public int getI_score_record() {
 		return i_score_record;

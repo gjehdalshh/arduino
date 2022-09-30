@@ -1,6 +1,5 @@
 package spring.arduino.com.user;
 
-import java.lang.ProcessBuilder.Redirect;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,17 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import spring.arduino.com.DTO.ScoreInfoDTO;
 import spring.arduino.com.DTO.UserDTO;
-import spring.arduino.com.domain.ScoreInfoDomain;
+import spring.arduino.com.domain.BoardDomain;
 import spring.arduino.com.domain.UserDomain;
 
 @Controller
@@ -28,9 +26,13 @@ public class UserController {
 	final String FIND_ID = "findUserId";
 	final String FIND_PW = "findUserPw";
 	Double a;
+	UserDomain domain;
 	
 	@Autowired
 	private UserService service;
+	
+	@Autowired
+	private KakaoLoginApiService kakaoService;
 	
 	@Autowired
 	private HttpSession hs;
@@ -40,13 +42,23 @@ public class UserController {
 	@GetMapping("/user/login")
 	public void login() {}
 	
-	/* ---------------- 로그인 페이지 열기 ---------------- */
+	/* ---------------- 로그아웃 ---------------- */
 	
 	@GetMapping("/user/logout")
-	public String logout() {
+	public String logout(HttpServletRequest request) {
+		String sesstion = (String)hs.getAttribute("kakaoToken");
+		HttpSecurity se;
 		
+		if(sesstion != null) {
+			//kakaoService.getLogout(sesstion);
+			//hs.removeAttribute("kakoToken");
+			//hs.setAttribute("kakaoToken", null);
+			//hs.setAttribute("user", null);
+		}
 		hs.invalidate();
-		
+		System.out.println(hs.getAttribute("kakoToken"));
+		System.out.println(hs.getAttribute("user"));
+
 		return "redirect:/main/home";
 	}
 	
@@ -58,6 +70,7 @@ public class UserController {
 		Map<String, Object> val = new HashMap<String, Object>();
 		
 		val.put("result", service.loginProc(dto));
+		
 		return val;
 	}
 	
@@ -72,6 +85,7 @@ public class UserController {
 	@PostMapping("/user/joinProc")
 	public Map<String, Object> join(@RequestBody UserDTO dto) {
 		Map<String, Object> val = new HashMap<String, Object>();
+		
 		
 		val.put("result", service.ins_user(dto));
 		
@@ -120,27 +134,37 @@ public class UserController {
 	public void myPage() {}
 	
 	@GetMapping("/user/myInfo")
-	public String showMyInfo (Model model) {
+	public String showMyInfo (HttpServletRequest request, Model model) {
+		HttpSession session = request.getSession();
+		domain = (UserDomain)session.getAttribute("user");
 		model.addAttribute("URL", "myInfo");
 		return "user/myPage";
 	}
 	
 	@GetMapping("/user/actualModeList")
-	public String showMyActualModeList (HttpServletRequest request, Model model) {
-		HttpSession session = request.getSession();
-		UserDomain domain = (UserDomain)session.getAttribute("user");
+	public String showMyActualModeList (Model model) {
 		model.addAttribute("URL", "actualModeList");
 		model.addAttribute("actualModeList", service.showMyActualModeRecord(domain));
 		return "user/myPage";
 	}
 	
 	@GetMapping("/user/myBoardList")
-	public String showMyBoardList (HttpServletRequest request, Model model) {
-		HttpSession session = request.getSession();
-		UserDomain domain = (UserDomain)session.getAttribute("user");
+	public String showMyBoardList (Model model) {
 		model.addAttribute("URL", "myBoardList");
-		model.addAttribute("myBoardList", service.showMyBoardList(domain));	
+		model.addAttribute("myBoardList", service.showMyLatelyBoardList(domain));	
 		return "user/myPage";
+	}
+	
+	@ResponseBody
+	@PostMapping("/user/myLatelyBoardList")
+	public List<BoardDomain> showMyLatelyBoardList (Model model) {
+		return service.showMyLatelyBoardList(domain);
+	}
+	
+	@ResponseBody
+	@PostMapping("/user/myPopularityBoardList")
+	public List<BoardDomain> showMyPopularityBoardList (Model model) {
+		return service.showMyPopularityBoardList(domain);
 	}
 	
 	@GetMapping("/user/myCmtList")
@@ -154,7 +178,6 @@ public class UserController {
 		
 		return "user/myPage";
 	}
-	
 	
 	/* ----------------- 이름 변경 --------------------- */
 	@ResponseBody
@@ -172,6 +195,16 @@ public class UserController {
 	public Map<String, Object> modifyPhone(@RequestBody UserDTO dto) {
 		Map<String, Object> val = new HashMap<String, Object>();
 		val.put("result", service.modifyPhone(dto));
+		
+		return val;
+	}
+	
+	/* ---------------- 회원 삭제 ----------------------- */
+	@ResponseBody
+	@PostMapping("/user/deleteUser")
+	public Map<String, Object> deleteUser(@RequestBody UserDTO dto) {
+		Map<String, Object> val = new HashMap<String, Object>();
+		val.put("result", service.deleteUser(dto));
 		
 		return val;
 	}

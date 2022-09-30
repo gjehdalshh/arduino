@@ -21,90 +21,89 @@ import spring.arduino.com.domain.BoardDomain;
 import spring.arduino.com.domain.ScoreInfoDomain;
 import spring.arduino.com.domain.UserDomain;
 
-
 @Controller
 public class UserService {
 
 	@Autowired
 	private UserMapper mapper;
-	
+
 	@Autowired
 	private HttpSession hs;
-	
+
 	@Autowired
 	private BCryptPasswordEncoder bcrypt;
-	
+
 	@Autowired
 	private JavaMailSender mailSender;
-	
+
 	public boolean checkMail() {
-		
+
 		return true;
 	}
-	
+
 	public int ins_user(UserDTO dto) {
-		
+
 		UserDomain vo = mapper.selUser(dto);
-		
-		if(vo != null) {
+
+		if (vo != null) {
 			return 2;
 		}
-		
-		if(!dto.getUser_id().contains("@") && !dto.getUser_id().contains(".")) {
+
+		if (!dto.getUser_id().contains("@") && !dto.getUser_id().contains(".")) {
 			return 3;
 		}
-		
-		if(!dto.getUser_pw().equals(dto.getUser_chkPw())) {
+
+		if (!dto.getUser_pw().equals(dto.getUser_chkPw())) {
 			return 4;
 		}
-		
-		if(dto.getUser_nm().length()>4) {
+
+		if (dto.getUser_nm().length() > 4) {
 			return 5;
 		}
 
 		String reg = "^[0-9]*$";
 		String parsePh = dto.getUser_phone().substring(0, 3);
-		
-		if(!dto.getUser_phone().matches(reg) || !parsePh.equals("010") || dto.getUser_phone().length() != 11) {
+
+		if (!dto.getUser_phone().matches(reg) || !parsePh.equals("010") || dto.getUser_phone().length() != 11) {
 			return 6;
 		}
-		
+
 		dto.setUser_pw(bcrypt.encode(dto.getUser_pw()));
-		
+
 		return mapper.ins_user(dto);
 	}
-	
+
 	public int loginProc(UserDTO dto) {
-		
-		UserDomain vo =  mapper.selUser(dto);
-		
-		if(vo == null) {
+
+		UserDomain vo = mapper.selUser(dto);
+
+		if (vo == null) {
 			return 2;
 		}
-		
-		if(!bcrypt.matches(dto.getUser_pw(), vo.getUser_pw())) {
+
+		if (!bcrypt.matches(dto.getUser_pw(), vo.getUser_pw())) {
 			return 3;
 		}
-		
+
 		hs.setAttribute("user", vo);
-		
+
 		return 1;
 	}
-	
-	public Map<String, Object> findInfo(UserDTO dto, String pageClassification){
+
+	public Map<String, Object> findInfo(UserDTO dto, String pageClassification) {
 		Map<String, Object> val = new HashMap<String, Object>();
-		
+
 		UserDomain vo = null;
-		
-		if(pageClassification.equals("findUserId")) {
+
+		if (pageClassification.equals("findUserId")) {
 			vo = mapper.findId(dto);
 		} else if (pageClassification.equals("findUserPw")) {
 			vo = mapper.findPw(dto);
 		}
-		
+
 		if (vo != null) {
 			val.put("result", vo);
-			if(pageClassification.equals("findUserPw")) {
+			if (pageClassification.equals("findUserPw")) {
 				int pinCode = createRandomPincode();
 				sendMail(dto, pinCode);
 				val.put("pinCode", pinCode);
@@ -112,79 +111,95 @@ public class UserService {
 		} else {
 			val.put("result", "error");
 		}
-		
+
 		return val;
 	}
 
 	public int createRandomPincode() {
-	
-			Random r = new Random();
-			return r.nextInt(999999);
+
+		Random r = new Random();
+		return r.nextInt(999999);
 
 	}
-	
+
 	public void sendMail(UserDTO dto, int pinCode) {
-		
+
 		String setFrom = "gjehdalshh@naver.com";
 		// 보내는 주소 이름을 바꿀순 없을까..?!
 		String toMail = dto.getUser_id();
 		String title = "[너목보]";
 		String content = pinCode + "";
-		
+
 		try {
 			MimeMessage message = mailSender.createMimeMessage();
-			
+
 			MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
-			
+
 			messageHelper.setFrom(setFrom);
 			messageHelper.setTo(toMail);
 			messageHelper.setSubject(title);
 			messageHelper.setText(content);
 			mailSender.send(message);
-		}catch(Exception e) {
+		} catch (Exception e) {
 			System.out.println(e);
 		}
 	}
-	
+
 	public int changePw(UserDTO dto) {
-		
-		 dto.setNewPw(bcrypt.encode(dto.getNewPw()));
-		 
-		 return mapper.changePw(dto);		
+
+		dto.setNewPw(bcrypt.encode(dto.getNewPw()));
+
+		return mapper.changePw(dto);
 	}
 
 	public List<ScoreInfoDomain> showMyActualModeRecord(UserDomain domain) {
 		return mapper.showMyActualModeRecord(domain);
 	}
-	
-	public List<BoardDomain> showMyBoardList(UserDomain domain) {
-		return mapper.showMyBoardList(domain);
+
+	public List<BoardDomain> showMyLatelyBoardList(UserDomain domain) {
+		return mapper.showMyLatelyBoardList(domain);
 	}
-	
-	
+
+	public List<BoardDomain> showMyPopularityBoardList(UserDomain domain) {
+		return mapper.showMyPopularityBoardList(domain);
+
+	}
+
 	public int modifyName(UserDTO dto) {
-		
+
 		UserDomain vo = mapper.selI_user(dto);
-		if(!dto.getUser_nm().equals(vo.getUser_nm())) {
+		if (!dto.getUser_nm().equals(vo.getUser_nm())) {
 			return 2;
 		}
 		mapper.modifyName(dto);
 		vo = mapper.selI_user(dto);
 		hs.setAttribute("user", vo);
-		
+
 		return 1;
 	}
-	
-public int modifyPhone(UserDTO dto) {
-		
+
+	public int modifyPhone(UserDTO dto) {
+
 		UserDomain vo = mapper.selI_user(dto);
-		if(!dto.getUser_phone().equals(vo.getUser_phone())) {
+		if (!dto.getUser_phone().equals(vo.getUser_phone())) {
 			return 2;
 		}
 		mapper.modifyPhone(dto);
 		vo = mapper.selI_user(dto);
 		hs.setAttribute("user", vo);
-		
+
 		return 1;
 	}
+	
+	public int deleteUser(UserDTO dto) {
+		// 아이디, 비밀번호, 비밀번호 확인 후 delete 로직 작성 예정
+		//if(dto.getUser_id() ) {
+			
+		//}
+		
+		hs.invalidate();
+		return mapper.deleteUser(dto);
+	}
 }
+
+

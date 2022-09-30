@@ -24,27 +24,29 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="spring.arduino.com" />
-
-	<!-- 	<beans:bean id="hikariConfig"
+<!-- AWS DB driver -->
+	 	<beans:bean id="hikariConfig"
 		class="com.zaxxer.hikari.HikariConfig">
 		<beans:property name="driverClassName"
-			value="com.mysql.cj.jdbc.Driver" />
+			value="${aws.db.driver}" />
 		<beans:property name="jdbcUrl"
-			value="jdbc:mysql://webservicearduino.cv8mgadnxliy.ap-northeast-2.rds.amazonaws.com:3306/arduino?autoReconnect=true&amp;useSSL=false" />
-		<beans:property name="username" value="admin" />
-		<beans:property name="password" value="ehdals11" />
-	</beans:bean> -->
+		value="${aws.url}" />
+		<beans:property name="username" value="${aws.db.username}" />
+		<beans:property name="password" value="${aws.db.password}" />
+	</beans:bean> 
 	
+	<!--   local DB driver  -->
+	<!--  
 	<beans:bean id="hikariConfig"
 		class="com.zaxxer.hikari.HikariConfig">
 		<beans:property name="driverClassName"
-			value="com.mysql.cj.jdbc.Driver" />
+			value="${db.driver}" />
 		<beans:property name="jdbcUrl"
-			value="jdbc:mysql://localhost:3306/arduino?serverTimezone=UTC" />
-		<beans:property name="username" value="root" />
-		<beans:property name="password" value="koreait2020" />
+			value="${db.url}" />
+		<beans:property name="username" value="${db.username}" />
+		<beans:property name="password" value="${db.password}" />
 	</beans:bean>
-
+-->
 	<beans:bean id="dataSource"
 		class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
 		<beans:constructor-arg ref="hikariConfig" />
@@ -61,8 +63,8 @@
 	<beans:bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl"> 
 	 <beans:property name="host" value="smtp.naver.com"/> <!-- 메이서버 호스트 -->
 	 <beans:property name="port" value="465"/> <!-- 메이서버 포트번호 -->
-	 <beans:property name="username" value="gjehdalshh@naver.com"/> <!-- 자신의 이메일 아이디 -->
-	 <beans:property name="password" value="@784523ea"/> <!-- 자신의 비밀번호 -->
+	 <beans:property name="username" value="${mail.username}"/> <!-- 자신의 이메일 아이디 -->
+	 <beans:property name="password" value="${mail.password}"/> <!-- 자신의 비밀번호 -->
 	   <!-- 보안연결 SSL과 관련된 설정 -->
 	 <beans:property name="javaMailProperties">
 	  <beans:props>
@@ -80,6 +82,8 @@
 	<beans:bean id="bcryptPasswordEncoder"
 		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
 	
+	
+	<context:property-placeholder location="WEB-INF//config/*.properties" /> 
 	
 	<mybatis-spring:scan
 		base-package="spring.arduino.com" />

@@ -56,7 +56,6 @@ public class SerialController extends HttpServlet {
 		return val;
 	}
 
-
 	@GetMapping("/serial/actualMode")
 	public void actualMode() {}
 	
@@ -66,7 +65,7 @@ public class SerialController extends HttpServlet {
 		
 		Map<String, Object> val = new HashMap<String, Object>();
 		
-		value =(int)(Math.random()*12 + 1);
+		//value =(int)(Math.random()*12 + 1);
 		
 		val.put("data", value);
 		
@@ -104,5 +103,6 @@ public class SerialController extends HttpServlet {
 	public List<ScoreInfoDomain> showMyRank() {
 		return service.showMyRank();
 	}
+	
 }
 

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link rel="stylesheet" href="/res/css/main/home.css?ver=25">
+<link rel="stylesheet" href="/res/css/main/home.css?ver=26">
 
 <div id="mainDiv">
 	<div id="header">
@@ -30,7 +30,12 @@
 				</c:if>
 				<c:if test="${user != null}">
 					<div class="userName">${user.user_nm }님</div>
-					<div class="logout"><a href="/user/logout">로그아웃</a></div>
+					<c:if test="${kakaoToken != null}">
+						<div class="logout"><a href="https://kauth.kakao.com/oauth/logout?client_id=c0619824ec57add63ccf0d6c388122d7&logout_redirect_uri=http://localhost:8090/user/logout">로그아웃</a></div>
+					</c:if>
+					<c:if test="${kakaoToken == null}">
+						<div class="logout"><a href="/user/logout">로그아웃</a></div>
+					</c:if>
 				</c:if>
 			</div>
 		</div>

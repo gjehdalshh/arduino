@@ -20,7 +20,6 @@ function showRankingdisplay() {
 
 /* dynamicFunctionCall 종료 */
 function end() {
-	console.log('a')
 	timer.style = "animation-play-state: paused"
 	mask.style = "animation-play-state: paused"
 	clearInterval(intervalModeValue)
@@ -30,6 +29,7 @@ function end() {
 
 /* recordMyCurrentScore ajax call */
 function recordScoreAjax() {
+	recordDataBeforeChanging()
 	var param = {
 		i_user: sessionIUser.value,
 		actual_mode_score: currScore,
@@ -46,6 +46,7 @@ function recordScoreAjax() {
 	}).then(function(res) {
 		return res.json()
 	}).then(function(data){
+		checkRecordDataAfterChanging()
 	})
 }
 
@@ -66,7 +67,7 @@ function showRankAjax() {
 /* show totalRank */
 let show = document.querySelector('.showRank')
 function showRank(data) {
-	let j = 0;
+	let j = 0
 	let str = data[j].user_phone.substr(7, 11)
 	data.forEach(function(i){
 		show.innerHTML += `

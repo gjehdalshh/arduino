@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="spring.arduino.com.sms.SmsMapper">
+
+	<select id="selUserRank" resultType="ScoreInfoDomain">
+		SELECT actual_mode_score, i_score_record, i_user, ROW_NUMBER()
+		OVER (ORDER BY actual_mode_score DESC, i_score_record DESC) my_rank
+		FROM score_record LIMIT 2,1;
+	</select>
+	
+	<select id="pushedRanking" resultType="UserDomain">
+		SELECT * FROM user where i_user = #{i_user};
+	</select>
+
+</mapper>
