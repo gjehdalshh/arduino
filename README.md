@@ -33,13 +33,15 @@
 |:---|:---|:---|:---|
 | Accept | `appication/json;charset=UTF-8` | true | |
 | Content-Type | `appication/json;charset=UTF-8` | true | |
-| Url | `appication/json;charset=UTF-8` | true | |
+| Url | `appication/json;charset=UTF-8` | true | |  
+  
+  
 
 ## Board
 ### BoardController
 ### 게시판
 #### /main/menu/notice and /main/menu/community etc..
-### Request
+### Requestvm
 #### Request Field:
 | 필드명 | 타입 | 필수값 | 양식 | 설명 |
 |:---|:---|:---|:---| :--- |
@@ -355,9 +357,11 @@ Content-Type: application/json;charset-UTF-8
    "count(i_favorite_cmt)" : "12"
    "session.i_user" : "1"
 }
-```
+```  
+  
+  
 
-##Cmt
+## Cmt
 ### CmtController
 ### 댓글 작성
 #### /main/menu/{1}
@@ -433,7 +437,9 @@ Content-Type: application/json;charset-UTF-8
 	"stateCode" : 204,
 	"stateMessage" : "No Content"
 }
-```
+```  
+  
+  
 
 ## Favorite
 ### FavoriteController
@@ -505,7 +511,9 @@ Content-Type: application/json;charset-UTF-8
 	"stateCode" : 201,
 	"stateMessage" : "Created"
 }
-```
+```  
+  
+  
 
 ## Main
 ### MainController
@@ -590,7 +598,9 @@ Content-Type: application/json;charset-UTF-8
    "board_id" : 1,
    "board_order" : 0
 }
-```
+```  
+  
+  
 
 ## User
 ### UserController
