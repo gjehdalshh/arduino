@@ -4,6 +4,8 @@
 * #### 연습모드를 통해 연습하고, 실전모드를 통해 기록을 남길 수 있음
 * #### 커뮤니티를 통한 유저간의 활발한 교류 가능
 
+### Front & Back 혼자 작업 - 개인 프로젝트
+
 <p align="center">
   <img src="https://user-images.githubusercontent.com/77053445/233032703-f864f547-f25a-4379-99c9-04467646a244.png">
 </p>
